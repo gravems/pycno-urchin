@@ -93,21 +93,24 @@ ggplot(urchin_timeseries %>%
        aes(x = timepoint, y = cc, color = factor(pycno))) + 
   scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
   geom_point() +
+  geom_line(aes(group = ID), alpha = 0.25) +
   geom_smooth(method = "lm") +
+  theme_minimal() +
+  scale_y_continuous(name = "Cumulative Confetti Consumed")
+
+# mean number of confetti consumed per time point per treatment
+
+ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
+  scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
+  geom_boxplot() +
+  facet_grid(.~timepoint)
   theme_minimal() 
 
 
-# cumulative total consumed by time period per urchin
-ggplot(urchin_timeseries, aes(x = as.factor(timepoint), y = consumed, color = pycno, group = ID)) + 
-  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
-  geom_point() +
-  theme_minimal() +
-  scale_y_continuous(name = "Confetti Consumed") +
-  theme(axis.text.x = element_text(angle = -45)) 
-  
+
 # total confetti eaten per treatment
 urchin_fear_pycno %>%
-  group_by(pycno) %>%
+  group_by(treatment) %>%
   summarise(sum(consumed))
 
 

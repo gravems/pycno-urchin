@@ -167,7 +167,7 @@ date,time,trial,timepoint,bin,tank,treatment,diameter,consumed,pycno,notes
 2020-09-18,07:45,2,3,2,E,empty,79,10,no,
 2020-09-18,07:45,2,3,1,E,empty,67,0.9,no,
 2020-09-18,07:45,2,3,15,E,empty,72,2.3,no,
-2020-09-18,07:45,2,3,6,E,empty,77,5,no,formerly bucket 3
+2020-09-18,07:45,2,3,3,E,empty,77,5,no,"now bucket 6, kept as 3 in bin column for analysis"
 2020-09-18,07:45,2,3,14,D,pycno,76,1.8,yes,
 2020-09-18,07:45,2,3,16,D,pycno,69,0,yes,
 2020-09-18,07:45,2,3,10,D,pycno,62,0.2,yes,
