@@ -1,10 +1,10 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #                                                                                ##
 # Urchin-Pycno fear feeding trials                                               ##
-# Data are current as of 2020-09-15                                              ##
+# Data are current as of 2020-09-18                                              ##
 # Data source: Ross Whippo - UO/OIMB                                             ##
 # R code prepared by Ross Whippo                                                 ##
-# Last updated 2020-09-15                                                        ##
+# Last updated 2020-09-18                                                        ##
 #                                                                                ##
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -87,12 +87,17 @@ test <- urchin_timeseries %>%
   group_by(pycno, ID) %>%
   mutate(cc = cumsum(consumed))
 
+# change unknown diameters to 61
+
+urchin_timeseries$diameter <- urchin_timeseries$diameter %>%
+  recode("nd" = "61")
+
 ggplot(urchin_timeseries %>%
          group_by(pycno, ID) %>%
          mutate(cc = cumsum(consumed)),
        aes(x = timepoint, y = cc, color = factor(pycno))) + 
-  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
-  geom_point() +
+  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
+  geom_point(aes(size = as.numeric(urchin_timeseries$diameter)), alpha = 0.8) +
   geom_line(aes(group = ID), alpha = 0.25) +
   geom_smooth(method = "lm") +
   theme_minimal() +
@@ -104,7 +109,7 @@ ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
   scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
   geom_boxplot() +
   facet_grid(.~timepoint)
-  theme_minimal() 
+    theme_minimal() 
 
 
 
