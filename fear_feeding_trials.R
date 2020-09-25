@@ -69,7 +69,14 @@
     scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
     theme_minimal()
   
-  # amount consumed per timepoint
+  # total consumed per trial
+  
+  ggplot(urchin_fear_pycno, aes(x = pycno, y = consumed, fill = pycno)) +
+    geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
+    theme_minimal()
+  
+    # amount consumed per timepoint
   
   urchin_timeseries <- urchin_fear_pycno %>%
     unite("datetime", date:time, sep = " ") 
@@ -112,9 +119,9 @@
     geom_line(aes(group = ID), alpha = 0.25) +
     geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs")) +
     theme_minimal() +
-    scale_y_continuous(name = "Cumulative Confetti Consumed (linear)")
+    scale_y_continuous(name = "Cumulative Confetti Consumed (gam)")
   
-  # mean number of confetti consumed per time point per treatment
+    # mean number of confetti consumed per time point per treatment
   
   ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
     scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
