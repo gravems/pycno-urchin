@@ -88,13 +88,18 @@
     scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
     facet_wrap(~pycno) 
   
-  # cumulative total consumed by time period (only works for one trial)
+  # cumulative total consumed by trial
   
-  test <- urchin_timeseries %>%
-    group_by(pycno, ID) %>%
-    mutate(cc = cumsum(consumed))
+ ggplot(urchin_timeseries %>%
+    group_by(trial, pycno) %>%
+      mutate(tot_consumed = sum(consumed)),
+    aes(x = pycno, y = tot_consumed, fill = factor(pycno))) +
+   geom_boxplot() +
+   scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
+   theme_minimal()
   
-  # change unknown diameters to 61
+  
+    # change unknown diameters to 61
   
   urchin_timeseries$diameter <- urchin_timeseries$diameter %>%
     recode("nd" = "61")
@@ -104,7 +109,7 @@
            mutate(cc = cumsum(consumed)),
          aes(x = timepoint, y = cc, color = factor(pycno))) + 
     scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
-    geom_point(aes(size = as.numeric(urchin_timeseries$diameter)), alpha = 0.8) +
+    geom_point(aes(size = log(as.numeric(urchin_timeseries$diameter))*2), alpha = 0.7) +
     geom_line(aes(group = ID), alpha = 0.25) +
     geom_smooth(method = "lm") +
     theme_minimal() +
@@ -115,7 +120,7 @@
            mutate(cc = cumsum(consumed)),
          aes(x = timepoint, y = cc, color = factor(pycno))) + 
     scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
-    geom_point(aes(size = as.numeric(urchin_timeseries$diameter)), alpha = 0.8) +
+    geom_point(aes(size = log(as.numeric(urchin_timeseries$diameter))*2), alpha = 0.7) +
     geom_line(aes(group = ID), alpha = 0.25) +
     geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs")) +
     theme_minimal() +
@@ -136,10 +141,15 @@
     group_by(treatment) %>%
     summarise(sum(consumed))
   
+  #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  # MANIPULATE DATA - STATS                                                      ####
+  #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
+  # is total amount of confetti consumed per trial different between groups?
+  t.test(total_consumed ~ pycno, data = per_urchin_consumed_total)
   
-  
-  
+  # is aount of confetti consumed per time point different between groups?
+  # need repeated measures metric
   
   ############### SUBSECTION HERE
   
