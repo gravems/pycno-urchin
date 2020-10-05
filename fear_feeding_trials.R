@@ -43,6 +43,7 @@ library(tidyverse)
 library(viridis)
 library(nlme)
 library(vegan)
+library(ggpubr)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # READ IN AND PREPARE DATA                                                     ####
@@ -80,11 +81,19 @@ names(per_urchin_consumed_total)[names(per_urchin_consumed_total) ==
 # urchin sizes
 urchin_size <- urchin_fear_pycno %>%
   filter(timepoint == 0)
-plot(urchin_size$diameter ~ as.factor(as.character(urchin_size$ID)))
-summary(as.numeric(urchin_size$diameter))
+urchin_size$diameter <- as.numeric(urchin_size$diameter)
+size_plot <- ggplot(
+  urchin_size, aes(x = pycno, y = as.numeric(diameter), fill = pycno)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE,
+                     begin = 0.2,
+                     end = 0.9) +
+  theme_minimal()
 
-# total consumed across all trials
-ggplot(per_urchin_consumed_total,
+summary(urchin_size$diameter)
+
+# total consumed by each urchin across all trials
+total_consumed_plot <- ggplot(per_urchin_consumed_total,
        aes(x = pycno, y = total_consumed, fill = pycno)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE,
@@ -92,13 +101,35 @@ ggplot(per_urchin_consumed_total,
                      end = 0.9) +
   theme_minimal()
 
+t.test(diameter ~ pycno, data = urchin_size)
+
+per_trial_pycno <- per_urchin_consumed_total %>%
+  filter(pycno == "yes")
+summary(per_trial_pycno$total_consumed)
+sd(per_trial_pycno$total_consumed)
+
+per_trial_empty <- per_urchin_consumed_total %>%
+  filter(pycno == "no")
+summary(per_trial_empty$total_consumed)
+sd(per_trial_empty$total_consumed)
+
 # amount consumed per timepoint
-ggplot(urchin_fear_pycno, aes(x = pycno, y = consumed, fill = pycno)) +
+timepoint_consumed_plot <- ggplot(urchin_fear_pycno, aes(x = pycno, y = consumed, fill = pycno)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE,
                      begin = 0.2,
                      end = 0.9) +
   theme_minimal()
+
+per_timepoint_pycno <- urchin_fear_pycno %>%
+  filter(pycno == "yes")
+summary(per_timepoint_pycno$consumed)
+sd(per_timepoint_pycno$consumed)
+
+per_timepoint_empty <- urchin_fear_pycno %>%
+  filter(pycno == "no")
+summary(per_timepoint_empty$consumed)
+sd(per_timepoint_empty$consumed)
 
 
 urchin_timeseries <- urchin_fear_pycno %>%
@@ -107,7 +138,7 @@ urchin_timeseries <- urchin_fear_pycno %>%
 urchin_timeseries$datetime <-
   as.POSIXlt(urchin_timeseries$datetime)
 
-ggplot(urchin_timeseries, aes(
+timeseries_bar <- ggplot(urchin_timeseries, aes(
   x = as.POSIXct(datetime),
   y = consumed,
   fill = pycno
@@ -120,7 +151,11 @@ ggplot(urchin_timeseries, aes(
 
 # cumulative total consumed by trial
 
-ggplot(
+urchin_time <- urchin_timeseries %>%
+  group_by(trial, pycno) %>%
+  mutate(tot_consumed = sum(consumed))
+
+total_box <- ggplot(
   urchin_timeseries %>%
     group_by(trial, pycno) %>%
     mutate(tot_consumed = sum(consumed)),
@@ -131,6 +166,18 @@ ggplot(
                      begin = 0.2,
                      end = 0.9) +
   theme_minimal()
+
+per_exp_pycno <- urchin_time %>%
+  select(-datetime) %>%
+  filter(pycno == "yes")
+summary(per_exp_pycno$tot_consumed)
+sd(per_exp_pycno$tot_consumed)
+
+per_exp_empty <- urchin_time %>%
+  select(-datetime) %>%
+  filter(pycno == "no")
+summary(per_exp_empty$tot_consumed)
+sd(per_exp_empty$tot_consumed)
 
 
 # change unknown diameters to 61
@@ -174,7 +221,7 @@ urchin_timeseries$hours <- urchin_timeseries$timepoint %>%
     '9' = 69
   )
 
-ggplot(
+hour_line <- ggplot(
   urchin_timeseries %>%
     group_by(pycno, ID) %>%
     mutate(cc = cumsum(consumed)),
@@ -197,13 +244,13 @@ ggplot(
 
 # mean number of confetti consumed per time point per treatment
 
-ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
+timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
   scale_fill_viridis(discrete = TRUE,
                      begin = 0.3,
                      end = 0.9) +
   geom_boxplot() +
-  facet_grid(. ~ timepoint)
-theme_minimal()
+  facet_grid(. ~ timepoint) +
+  theme_minimal()
 
 
 
@@ -225,20 +272,32 @@ t.test(total_consumed ~ pycno, data = per_urchin_consumed_total)
 
 # is aount of confetti consumed per time point different between groups (w/size)?
 mix_1 <-
-  lme(consumed ~ pycno + diameter,
+  lme(consumed ~ pycno, # + diameter,
       random = ~ timepoint | ID,
       data = urchin_fear_mix_data)
 mix_1
 anova(mix_1)
 
+# calculate slopes of consumption
+urchin_vals <-  urchin_timeseries %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed))
 
-############### SUBSECTION HERE
+
+############### COLLATED FIGURES
+
+Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, total_consumed_plot, total_box, 
+                         labels = c("A", "B", "C", "D"),
+                         ncol = 2, nrow = 2,
+                         common.legend = TRUE, legend = "right")
+annotate_figure(Figure_1, bottom = text_grob("Figure 1: Calcuated A) urchin test diameter across all trials, B) kelp 'confetti' consumed per urchin per timepoint, \n C) total kelp 'confetti' consumed per urchin across each trial, and D) total kelp 'confetti' consumed across all trials.", size = 10))
+# 
 
 ####
 #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
 
-urchin_fear_pycno <- urchin_fear_pycno %>%
-  filter(treatment != 'bucket') %>%
-  filter(timepoint != '0')
+#urchin_fear_pycno <- urchin_fear_pycno %>%
+#  filter(treatment != 'bucket') %>%
+#  filter(timepoint != '0')
