@@ -1,0 +1,218 @@
+---
+title: "Pycnopodia-Urchin Notebook"
+subtitle: "Experiment and Data"
+author: "Ross Whippo"
+date: 'Created: 2021-06-12  ; (Updated: `r Sys.Date()`)'
+output:
+  html_document:
+    code_folding: hide
+    df_print: kable
+    fig_caption: yes
+    highlight: tango
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: 4
+    toc_float: true
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+  word_document:
+    toc: yes
+    toc_depth: '4'
+
+---
+
+
+
+<style>
+.column-left{
+  float: left;
+  width:48%;
+  text-align: left;
+}
+
+
+.column-right{
+  float: right;
+  width: 48%;
+  text-align: left;
+}
+
+.column-All{
+  float: left;
+  width:100%;
+  text-align: left;
+}
+</style>
+
+
+
+
+```{r setup, include=FALSE}
+
+## Start with tidyverse library, and some default chunk options
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.align = 'center')
+
+
+## use the following to manually set the working directory of RMarkdown documents. Note that this needs to be defined in this 'setup' r code chunk and will not work if placed elsewhere
+
+# knitr::opts_knit$set(root.dir = '//60451-desktop/MRGIS/Biology/2021 Synthesis/Site_Summaries')
+
+```
+
+```{r, echo = FALSE}
+
+## Load Libraries
+
+library(tidyverse)
+library(gt)
+library(viridis)
+library(ggmap)
+library(algaeClassify)
+library(vistime)
+library(plotly)
+library(rmarkdown)
+library(DT)
+
+
+theme_set(theme_classic())
+
+```
+
+```{r}
+# Import all data and manage for analyses/visualizations
+
+urchin_diams <- read_csv("Data/urchin_test_diams.csv", 
+    col_types = cols(bin = col_factor(levels = c("upper", 
+        "lower")), collection_date = col_character(), 
+        treatment = col_character()))
+
+```
+
+<!-- 
+
+TODO: 
+Finish changing notebook from Antarctic Gradients template
+
+NOTES: 
+Created in 2021 for FHL summer data collection
+
+-->
+
+# General Notes
+
+Funded in part by the Richard R. and Megumi F. Strathmann Endowed Fellowship at Friday Harbor Labs.
+
+# Field Notes
+
+## General Field Notes
+
+## Collections
+
+### 2021-06-11
+
+A total of 59 purple sea urchins collected at Dead Man's Island between 10-30 ft around noon. Divers = Ross Whippo, Jessie Masterman, Marco Corrales. Tender = Willem Weertman.
+
+Figure 1: Map of collection site (coordinates extracted from Google Earth 2021-06-12.) 
+```{r}
+# Map of transect sites
+
+urchin_coords <- tibble(longitude = -122.942670, latitude =  48.459141)
+
+deadman <- get_stamenmap(bbox = c(left = -122.988, bottom = 48.442, right = -122.902, top = 48.467), maptype = "watercolor", crop = FALSE, force = FALSE, zoom = 13)
+ggmap(deadman) +
+  geom_point(aes(x = longitude, y = latitude), data = urchin_coords,
+             shape = 21, colour = "black", fill = "red", size = 5, stroke = 3)
+```
+
+
+
+
+
+
+
+
+
+# Experiment Notes
+
+## General Experiment Notes
+
+## Pre-Experiment Urchins
+
+### 2021-06-11
+
+Urchins were put in two flow-through seawater tanks within 1 hour of collection and haphazardly assigned to one of two tanks. Test diameter was measured for all urchins and both tanks were fed Nereocystis luetkeana ad lib..
+
+Table 1: Urchin diameters
+```{r}
+# Raw urchin test diameters
+
+datatable(urchin_diams)
+
+```  
+             
+             
+
+T-test for urchin diameters between bins:             
+```{r}
+# t-test for urchin diameters
+
+t.test(test_diam_mm ~ bin, data = urchin_diams)
+
+```               
+
+
+Figure 2: Urchin diameters
+```{r}
+# boxplot of test diameters
+
+ggplot(urchin_diams, aes(x = bin, y = test_diam_mm, fill = bin)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.7)
+```      
+
+
+Test diameter summary:
+```{r}
+# diameter summary
+
+urchin_diams %>%
+  group_by(bin) %>%
+  summarise(mean=mean(test_diam_mm), sd=sd(test_diam_mm))
+  
+```   
+
+
+
+# Statistical Analysis Notes
+
+
+
+
+
+```{r, echo = FALSE}
+
+## Load Libraries
+
+
+```
+
+
+
+```{r}
+# Import all data and manage for analyses/visualizations
+
+
+
+
+```
+
+
+
+
+<!-- end of document -->

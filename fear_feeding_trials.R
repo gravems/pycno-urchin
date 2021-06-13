@@ -244,13 +244,13 @@ hour_line <- ggplot(
 
 # mean number of confetti consumed per time point per treatment
 
-timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
-  scale_fill_viridis(discrete = TRUE,
-                     begin = 0.3,
-                     end = 0.9) +
-  geom_boxplot() +
-  facet_grid(. ~ timepoint) +
-  theme_minimal()
+  timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
+    scale_fill_viridis(discrete = TRUE,
+                       begin = 0.3,
+                       end = 0.9) +
+    geom_boxplot() +
+    facet_grid(. ~ timepoint) +
+    theme_minimal()
 
 
 
@@ -290,7 +290,7 @@ Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, total_consumed_plot, t
                          labels = c("A", "B", "C", "D"),
                          ncol = 2, nrow = 2,
                          common.legend = TRUE, legend = "right")
-annotate_figure(Figure_1, bottom = text_grob("Figure 1: Calcuated A) urchin test diameter across all trials, B) kelp 'confetti' consumed per urchin per timepoint, \n C) total kelp 'confetti' consumed per urchin across each trial, and D) total kelp 'confetti' consumed across all trials.", size = 10))
+    annotate_figure(Figure_1, bottom = text_grob("Figure 1: Calcuated A) urchin test diameter across all trials, B) kelp 'confetti' consumed per urchin per timepoint, \n C) total kelp 'confetti' consumed per urchin across each trial, and D) total kelp 'confetti' consumed across all trials.", size = 10))
 # 
 
 ####
