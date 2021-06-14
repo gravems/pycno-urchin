@@ -187,6 +187,9 @@ urchin_diams %>%
   
 ```   
 
+### 2021-06-14
+
+Lower tank urchins knocked out stand pipe sometime during the night. Found them at 0700 with no water. Replaced stand pipe to refill tank. Urchins seemed fine.
 
 
 # Statistical Analysis Notes
