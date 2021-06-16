@@ -254,7 +254,7 @@ hour_line <- ggplot(
 
 
 
-# total confetti eaten per treatment
+  # total confetti eaten per treatment
 urchin_fear_pycno %>%
   group_by(treatment) %>%
   summarise(sum(consumed))

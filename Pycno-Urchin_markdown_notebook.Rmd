@@ -160,9 +160,9 @@ datatable(urchin_diams)
 
 T-test for urchin diameters between bins:             
 ```{r}
-# t-test for urchin diameters
+# t-test for urchin diameters 
 
-t.test(test_diam_mm ~ bin, data = urchin_diams)
+  t.test(test_diam_mm ~ bin, data = filter(urchin_diams, status == "alive"))
 
 ```               
 
@@ -171,7 +171,7 @@ Figure 2: Urchin diameters
 ```{r}
 # boxplot of test diameters
 
-ggplot(urchin_diams, aes(x = bin, y = test_diam_mm, fill = bin)) +
+ggplot(filter(urchin_diams, status == 'alive'), aes(x = bin, y = test_diam_mm, fill = bin)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.7)
 ```      
@@ -182,6 +182,7 @@ Test diameter summary:
 # diameter summary
 
 urchin_diams %>%
+  filter(status == 'alive') %>%
   group_by(bin) %>%
   summarise(mean=mean(test_diam_mm), sd=sd(test_diam_mm))
   
@@ -190,6 +191,16 @@ urchin_diams %>%
 ### 2021-06-14
 
 Lower tank urchins knocked out stand pipe sometime during the night. Found them at 0700 with no water. Replaced stand pipe to refill tank. Urchins seemed fine.
+
+Used bricks and concrete cylinders to block in standpipe. 
+
+One urchin in upper tank may be dead (not righting itself, little movement). I'll check tomorrow and remove if necessary.
+
+Fed both tanks a large handful of drift Nereo collected from the docks (~1700)
+
+### 2021-06-15
+
+Removed dead urchin from upper tank (measured at 71mm, added column of 'status' to diameter data to identify dead/alive/sacrificed animals)
 
 
 # Statistical Analysis Notes
