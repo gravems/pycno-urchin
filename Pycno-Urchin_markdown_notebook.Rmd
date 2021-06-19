@@ -202,6 +202,14 @@ Fed both tanks a large handful of drift Nereo collected from the docks (~1700)
 
 Removed dead urchin from upper tank (measured at 71mm, added column of 'status' to diameter data to identify dead/alive/sacrificed animals)
 
+### 2021-06-18
+
+Willem found upper tank part empty as urchins had tilted standpipe. He fixed it.
+
+### 2021-06-19
+
+Put cinder block around standpipe in upper tank and fed all urchins drift Nereo from the docks. 
+
 
 # Statistical Analysis Notes
 
