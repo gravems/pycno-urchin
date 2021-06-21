@@ -202,7 +202,11 @@ Fed both tanks a large handful of drift Nereo collected from the docks (~1700)
 
 Removed dead urchin from upper tank (measured at 71mm, added column of 'status' to diameter data to identify dead/alive/sacrificed animals)
 
+### 2021-06-17
 ### 2021-06-18
+
+Lower tank urchins knocked out stand pipe again, unsure how long they were dry. Replaced cement cylinders with cinder block. All the urchins seemed OK. 
+
 
 Willem found upper tank part empty as urchins had tilted standpipe. He fixed it.
 
