@@ -203,10 +203,10 @@ Fed both tanks a large handful of drift Nereo collected from the docks (~1700)
 Removed dead urchin from upper tank (measured at 71mm, added column of 'status' to diameter data to identify dead/alive/sacrificed animals)
 
 ### 2021-06-17
-### 2021-06-18
 
 Lower tank urchins knocked out stand pipe again, unsure how long they were dry. Replaced cement cylinders with cinder block. All the urchins seemed OK. 
 
+### 2021-06-18
 
 Willem found upper tank part empty as urchins had tilted standpipe. He fixed it.
 
@@ -214,7 +214,17 @@ Willem found upper tank part empty as urchins had tilted standpipe. He fixed it.
 
 Put cinder block around standpipe in upper tank and fed all urchins drift Nereo from the docks. 
 
+### 2021-06-20
 
+Lower tank was drained AGAIN around 2230, and flow was very low. One large urchin was stress spawning. Fixed and refilled.
+
+### 2021-06-21
+
+0800 lower tank was overflowing, readjusted flow coming from adjacent tank, need to get maintenance to clear the flow rate.
+
+1300 lower tank was empty again. Had to fix the standpipe to get it filled. No urchins seemed dead. Sent repair request to maintenance.
+
+  
 # Statistical Analysis Notes
 
 
