@@ -224,6 +224,15 @@ Lower tank was drained AGAIN around 2230, and flow was very low. One large urchi
 
 1300 lower tank was empty again. Had to fix the standpipe to get it filled. No urchins seemed dead. Sent repair request to maintenance.
 
+### 2021-06-23
+
+0945 Removed dead urchin from lower tank, ~81mm diameter, likely the male that spawned the day before.
+
+### 2021-06-24
+
+1830 Fed all urchins lots of Nereo
+
+
   
 # Statistical Analysis Notes
 
