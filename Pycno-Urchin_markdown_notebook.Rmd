@@ -106,7 +106,13 @@ Created in 2021 for FHL summer data collection
 
 # General Notes
 
+## Acknowledgements 
+
 Funded in part by the Richard R. and Megumi F. Strathmann Endowed Fellowship at Friday Harbor Labs.
+Abigail Ames 
+Kayla Hall
+Karly Cohen
+Mo Turner
 
 # Field Notes
 
@@ -130,7 +136,9 @@ ggmap(deadman) +
              shape = 21, colour = "black", fill = "red", size = 5, stroke = 3)
 ```
 
+### 2021-08-03
 
+Pycnopodia collected under the FHL docks at ~4 meters depth on a piling. 
 
 
 
@@ -236,8 +244,31 @@ Lower tank was drained AGAIN around 2230, and flow was very low. One large urchi
 
 Moved top urchins to the bottom left tank. Was getting scummy and gross, think I added too much Nereo. A couple urchins were losing spines. Need to clean tanks more often and/or give less food.
 
+### 2021-07-16
+
+Last day urchin tank on the right was fed. Now only left urchin tank will be fed ad lib Nereo drift. 
+
+### 2021-07-19
+
+One urchin in the left (fed) tank died. Was covered in black lesions and losing its spines. It was 61.98mm test diameter.
+
+### 2021-07-31 I resumed care of the urchins.
+
+### 2021-08-03 Placed collected pycnopodia in upper left tank behind Fernald and covered with tarp material to shade.
+
+### 2021-08-04 Began offering pycnopodia mussels for food ad lib.
+
   
 # Statistical Analysis Notes
+
+## Urchin Data
+
+### 2021-06-23 Added 'status' column to urchin_test_diams.csv to track mortality of urchins pre-experiment. Marked the urchin with test diameter closest to the 81mm urchin as 'dead'
+
+### 2021-08-05 Marked the urchin that died on 2021-07-19 as 'dead' in the status column (urchin nearest recorded diameter in the same treatment group).
+
+
+
 
 
 
