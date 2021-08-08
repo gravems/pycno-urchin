@@ -196,6 +196,10 @@ urchin_diams %>%
   
 ```   
 
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("./images/TankMap.png")
+```
+
 ### 2021-06-14
 
 Lower tank urchins knocked out stand pipe sometime during the night. Found them at 0700 with no water. Replaced stand pipe to refill tank. Urchins seemed fine.
@@ -252,20 +256,42 @@ Last day urchin tank on the right was fed. Now only left urchin tank will be fed
 
 One urchin in the left (fed) tank died. Was covered in black lesions and losing its spines. It was 61.98mm test diameter.
 
-### 2021-07-31 I resumed care of the urchins.
+### 2021-07-31 
 
-### 2021-08-03 Placed collected pycnopodia in upper left tank behind Fernald and covered with tarp material to shade.
+I resumed care of the urchins.
 
-### 2021-08-04 Began offering pycnopodia mussels for food ad lib.
+### 2021-08-03 
+
+Placed collected pycnopodia in upper left tank behind Fernald and covered with tarp material to shade.
+
+### 2021-08-04 
+
+Began offering pycnopodia mussels for food ad lib.
+
+### 2021-08-06 
+
+Offered pycno damaged green sea urchin. Took posession of urchins used by Stephanie Crofts including reds, purples, greens, and whites for CT scanning and placed them in tank F4. Stephanie said they have been fed regularly. 
+
+### 2021-08-08 
+
+Started monitoring water temp, sal, and lux for all tanks on an intermittent basis. Refractometer is labeled ('reads slightly high'), so maybe remove 1ppt per reading? 
+
+Began building PVC flow frames and checked urchin arenas for leaks, tank TF2 is sealed, but TF1 is not. 
+
+Final day of feeding for CT urchins. Plan on scanning at least two of each species, then starving the remaining purples and sampling at one-week intervals to track gonad volume. 
 
   
 # Statistical Analysis Notes
 
 ## Urchin Data
 
-### 2021-06-23 Added 'status' column to urchin_test_diams.csv to track mortality of urchins pre-experiment. Marked the urchin with test diameter closest to the 81mm urchin as 'dead'
+### 2021-06-23 
 
-### 2021-08-05 Marked the urchin that died on 2021-07-19 as 'dead' in the status column (urchin nearest recorded diameter in the same treatment group).
+Added 'status' column to urchin_test_diams.csv to track mortality of urchins pre-experiment. Marked the urchin with test diameter closest to the 81mm urchin as 'dead'
+
+### 2021-08-05 
+
+Marked the urchin that died on 2021-07-19 as 'dead' in the status column (urchin nearest recorded diameter in the same treatment group).
 
 
 
