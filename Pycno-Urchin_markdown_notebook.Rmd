@@ -280,6 +280,19 @@ Began building PVC flow frames and checked urchin arenas for leaks, tank TF2 is 
 
 Final day of feeding for CT urchins. Plan on scanning at least two of each species, then starving the remaining purples and sampling at one-week intervals to track gonad volume. 
 
+# CT Lab Work
+
+### 2021-08-09
+
+Preserved 7 urchins from Stephanie in 70% EtOH (2 red, 2 white, 1 green, 2 purple):
+1. 10 min in 1000ml 7.6% magnesium chloride in seawater
+2. 10 min in 400ml 7.6% magnesium chloride in seawater & 50ml 95% EtOH
+3. 10 min in 232ml seawater & 168ml 95% EtOH
+4. In to 1857ml of 70% EtOH
+
+### 2021-08-10
+
+Added 500ml more 70% EtOH to preserving urchins (total: 2357ml 70% EtOH)
   
 # Statistical Analysis Notes
 
