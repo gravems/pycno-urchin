@@ -87,9 +87,9 @@ theme_set(theme_classic())
 ```{r}
 # Import all data and manage for analyses/visualizations
 
-urchin_diams <- read_csv("Data/urchin_test_diams.csv", 
-    col_types = cols(bin = col_factor(levels = c("upper", 
-        "lower")), collection_date = col_character(), 
+urchin_diams <- read_csv("Data/2021/urchin_test_diams.csv", 
+    col_types = cols(bin = col_factor(levels = c("F1", 
+        "F2")), collection_date = col_character(), 
         treatment = col_character()))
 
 ```
@@ -149,6 +149,24 @@ Pycnopodia collected under the FHL docks at ~4 meters depth on a piling.
 # Experiment Notes
 
 ## General Experiment Notes
+
+### 2021-08-14
+
+Began flow test with fluorescein in seawater to track flow movement. Video taken of each test. 
+
+### 2021-08-15
+
+Pycnopodia moved from holding tank in to experimental header tank at 1245.
+
+First full trial begun.
+
+All flow metrics and water quality information are in datasheets.
+
+### 2021-08-16
+
+Continuous problems with drainage in arenas fixed by shortening the drainage hose to allow water to drain through the standpipe and not flow over the sides of T1. Will try this solution on T2 tomorrow. 
+
+
 
 ## Pre-Experiment Urchins
 
@@ -290,6 +308,12 @@ F2 -> TF11
 
 Moved several small green urchins from lab 8 to tank F1 - may be good for size comparison between urchins?
 
+## Experiment Urchins
+
+### 2021-08-15
+
+Trials begun. 
+
 # CT Lab Work
 
 ### 2021-08-09
@@ -307,6 +331,10 @@ Added 500ml more 70% EtOH to preserving urchins (total: 2357ml 70% EtOH)
 ### 2021-08-12
 
 Replaced EtOH in the urchin jar with 2300ml of fresh 70% EtOH
+
+### 2021-08-16
+
+Moved all test urchins into 70% EtOH with 1% PTA at 1245.
   
 # Statistical Analysis Notes
 
