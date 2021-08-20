@@ -359,3 +359,123 @@ trial,date,tank,flowRate_L-min,signalRate_ml-min,beginTemp_C,endTemp_C,beginSal_
 006,2021-08-17,TF1,2.5,250,14.0,16.0,30,32,starved,S04,63,pycno,nereo,21.33,21.83,12:05,13:05,"put urchin in TF9-X pycno-algae, had to fix drainage a number of times during the trial",58,55,mp,f,st,ex,ni,
 006,2021-08-17,TF1,2.5,250,14.0,16.0,30,32,starved,S04,63,pycno,nereo,21.33,21.83,12:05,13:05,"put urchin in TF9-X pycno-algae, had to fix drainage a number of times during the trial",59,57,ma,f,st,ex,ni,
 006,2021-08-17,TF1,2.5,250,14.0,16.0,30,32,starved,S04,63,pycno,nereo,21.33,21.83,12:05,13:05,"put urchin in TF9-X pycno-algae, had to fix drainage a number of times during the trial",60,60,mp,f,st,ex,ni,pooping
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,1,20,mt,c,st,ex,i,at kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,2,0,st,c,st,ex,i,at kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,3,3 ,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,4,4,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,5,4,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,6,4,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,7,4,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,8,5,st,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,9,6 ,ma,c,st,ex,i,pulling kelp away
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,10,6 ,mt,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,11,4,mt,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,12,5,mp,c,st,ex,i,holding kelp
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,13,6 ,ma,c,st,ex,i,holding kelp by one tube foot
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,14,11,ma,m,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,15,17,ma,m,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,16,24,st,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,17,25,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,18,25,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,19,26,mp,f,st,ex,ni,pooping
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,20,26,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,21,26,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,22,27,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,23,30,ma,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,24,40,ma,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,25,45,ma,f,st,ex,ni,outside donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,26,45,st,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,27,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,28,45,st,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,29,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,30,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,31,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,32,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,33,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,34,43,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,35,43,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,36,43,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,37,40,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,38,40,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,39,40,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,40,40,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,41,40,st,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,42,35,mp,f,st,ex,ni,halfway on donut and HOBO
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,43,36,mp,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,44,35,mt,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,45,37,mp,f,st,ex,ni,outside donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,46,42,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,47,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,48,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,49,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,50,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,51,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,52,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,53,45,st,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,54,45,mp,f,st,ex,ni,
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,55,45,mp,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,56,45,mp,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,57,45,mp,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,58,45,st,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,59,45,mp,f,st,ex,ni,halfway on donut
+007,2021-08-17,TF2,2.5,295,12.3,14.5,31,30,fed,F03,82,control,nereo,18.41,18.56,14:32,15:31,put urchin in TF5-A control-algae,60,45,st,f,st,ex,ni,
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",1,7,mt,c,st,ex,ni,
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",2,2,mt,c,st,ex,i,at kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",3,0,st,c,st,ex,i,on kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",4,0,mp,c,st,ex,i,on kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",5,0,st,c,st,ex,i,on kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",6,0,st,c,mv,ex,i,"on kelp, spines down"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",7,0,st,c,st,ex,i,on kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",8,0,mp,c,st,ex,i,touching kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",9,0,mp,c,st,ex,i,touching kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",10,0,mp,c,st,ex,i,touching kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",11,0,mp,c,st,ex,i,touching kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",12,0,mp,c,st,ex,i,touching kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",13,0,st,c,st,ex,i,"touching kelp, spines still down"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",14,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",15,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",16,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",17,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",18,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",19,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",20,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",21,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",22,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",23,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",24,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",25,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",26,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",27,0,st,c,mv,ex,i,"wrapped in kelp, spines up"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",28,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",29,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",30,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",31,0,st,c,st,ex,i,"wrapped in kelp, eating?"
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",32,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",33,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",34,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",35,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",36,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",37,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",38,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",39,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",40,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",41,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",42,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",43,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",44,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",45,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",46,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",47,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",48,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",49,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",50,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",51,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",52,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",53,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",54,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",55,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",56,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",57,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",58,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",59,0,st,c,st,ex,i,wrapped in kelp
+008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",60,0,st,c,st,ex,i,wrapped in kelp
