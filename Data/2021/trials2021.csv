@@ -479,3 +479,243 @@ trial,date,tank,flowRate_L-min,signalRate_ml-min,beginTemp_C,endTemp_C,beginSal_
 008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",58,0,st,c,st,ex,i,wrapped in kelp
 008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",59,0,st,c,st,ex,i,wrapped in kelp
 008,2021-08-17,TF1,2.5,250,12.8,13.8,31,31,starved,S05,72,control,nereo,15.52,15.33,16:26,17:27,"put urchin in TF9-S control-algae, ate kelp",60,0,st,c,st,ex,i,wrapped in kelp
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,1,6 ,mt,c,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,2,0,mt,c,st,ex,i ,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,3,0,mp,c,st,ex,i,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,4,0,mp,c,st,ex,i,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,5,0,mp,c,st,ex,i,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,6,2,ma,c,st,ex,i,pushed dummy off center
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,7,8,ma,c,st,ex,i,pulled dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,8,15,ma,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,9,21,ma,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,10,24,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,11,25,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,12,30,ma,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,13,43,ma,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,14,45,mp,f,st,ex,ni,outside donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,15,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,16,43,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,17,42,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,18,42,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,19,42,st,f,st,ex,ni,halfway on HOBO
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,20,42,mp,f,st,ex,ni,halfway on HOBO
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,21,44,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,22,42,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,23,40,mt,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,24,22,mt,f,st,ex,ni,inside donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,25,12,mt,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,26,7,mp,c,st,ex,ni,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,27,11,ma,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,28,18,ma,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,29,25,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,30,30,ma,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,31,45,st,f,st,ex,ni,outside donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,32,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,33,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,34,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,35,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,36,43,mp,f,st,ex,ni,on top of HOBO
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,37,44,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,38,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,39,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,40,43,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,41,45,st,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,42,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,43,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,44,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,45,44,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,46,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,47,45,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,48,44,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,49,44,mp,f,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,50,35,mt,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,51,28,mt,f,st,ex,ni,inside donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,52,18,mt,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,53,8,mt,c,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,54,0,mp,c,st,ex,ni,touching dummy and base
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,55,2,mp,c,st,ex,ni,touching dummy
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,56,9,ma,c,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,57,20,ma,m,st,ex,ni,
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,58,26,ma,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,59,38,ma,f,st,ex,ni,halfway on donut
+009,2021-08-18,TF2,2.5,280,13.4,14.3,30,30,fed,F04,79,control,control,NA,NA,08:26,09:26,put urchin in TF5-H control-control,60,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,1,10,ma,c,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,2,15,ma,m,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,3,21,ma,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,4,23,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,5,26,ma,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,6,35,ma,f,st,ex,ni,on top of donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,7,40,ma,f,st,ex,ni,halfway on donut and HOBO
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,8,45,ma,f,st,ex,ni,outside donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,9,45,st,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,10,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,11,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,12,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,13,45,ma,f,st,ex,ni,halfway on wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,14,45,ma,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,15,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,16,45,mp,f,st,ex,ni,halfway on wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,17,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,18,45,mp,f,st,ex,ni,on top of HOBO
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,19,45,mp,f,st,ex,ni,on top of HOBO
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,20,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,21,43,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,22,40,mt,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,23,33,mt,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,24,23,mp,f,st,ex,ni,inside donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,25,23,mp,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,26,24,mp,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,27,33,ma,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,28,43,mp,f,st,ex,ni,outside donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,29,44,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,30,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,31,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,32,45,st,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,33,45,ma,f,st,ex,ni,halfway on donut and wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,34,45,ma,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,35,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,36,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,37,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,38,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,39,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,40,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,41,45,mp,f,st,ex,ni,on wall touching bottom
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,42,45,mp,f,st,ex,ni,halfway on wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,43,45,mt,f,st,ex,ni,halfway on wall and donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,44,45,mp,f,st,ex,ni,halfway on wall and donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,45,45,ma,f,st,ex,ni,halfway on wall and donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,46,45,mp,f,st,ex,ni,halfway on wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,47,45,mp,f,st,ex,ni,halfway on wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,48,48,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,49,45,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,50,43,mp,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,51,40,mt,f,st,ex,ni,on top of donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,52,27,st,f,st,ex,ni,inside donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,53,25,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,54,25,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,55,26,mp,f,st,ex,ni,
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,56,35,ma,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,57,45,st,f,st,ex,ni,halfway on donut
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,58,45,mp,f,st,ex,ni,halfway on donut and wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,59,45,mp,f,st,ex,ni,halfway on donut and wall
+010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,60,45,mp,f,st,ex,ni,halfway on donut and wall
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,1,4,mt,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,2,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,3,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,4,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,5,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,6,1,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,7,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,8,3 ,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,9,4,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,10,3 ,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,11,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,12,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,13,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,14,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,15,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,16,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,17,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,18,4,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,19,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,20,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,21,6 ,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,22,6 ,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,23,6 ,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,24,6 ,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,25,6 ,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,26,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,27,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp, shart?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,28,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,29,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,30,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,31,8,ma,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,32,8,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,33,8,st,c,st,ex,i,"on top of kelp, eating? sharted"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,34,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,35,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,36,7,st,c,st,ex,i,"on top of kelp, eating? sharted, coming from underside"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,37,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,38,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,39,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,40,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,41,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,42,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,43,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,44,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,45,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,46,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,47,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,48,7,st,c,st,ex,i,"on top of kelp, visibly eating"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,49,7,st,c,st,ex,i,"on top of kelp, sharted"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,50,8,ma,c,st,ex,i,"on top of kelp, pulling whole inner ring off center (~4cm)"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,51,8,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,52,8,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,53,8,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,54,8,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,55,8,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,56,6 ,mt,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,57,6 ,mt,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,58,5,mt,c,st,ex,i,"on top of kelp, has dragged cup to 5cm mark"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,59,5,st,c,st,ex,i,on top of kelp 
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,60,5,st,c,st,ex,i,on top of kelp 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,1,17,ma,m,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,2,21,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,3,24,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,4,26,st,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,5,30,ma,f,st,ex,ni,halfway on donut
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,6,29,st,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,7,30,st,f,st,ex,ni,halfway on donut
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,8,33,ma,f,st,ex,ni,halfway on donut
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,9,40,ma,f,st,ex,ni,halfway on donut
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,10,43,st,f,st,ex,ni,halfway on donut
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,11,45,mp,f,st,ex,ni,halfway on donut and wall
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,12,45,mp,f,st,ex,ni,halfway on wall
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,13,45,mp,f,st,ex,ni,halfway on wall
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,14,45,st,f,st,ex,ni,on wall touching bottom
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,15,45,st,f,st,ex,ni,on wall touching bottom
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,16,45,st,f,st,ex,ni,on wall touching bottom
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,17,45,st,f,st,ex,ni,on wall touching bottom
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,18,45,st,f,st,ex,ni,on wall touching bottom
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,19,55,ma,f,st,ex,ni,on wall
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,20,60,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,21,65,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,22,70,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,23,75,ma,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,24,80,ma,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,25,80,mp,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,26,80,mp,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,27,80,mp,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,28,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,29,80,mp,f,st,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,30,80,st,f,st,ex,ni,spines in water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,31,80,mp,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,32,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,33,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,34,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,35,80,st,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,36,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,37,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,38,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,39,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,40,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,41,80,st,f,st,ex,ni,spines in water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,42,80,st,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,43,80,mp,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,44,80,mp,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,45,80,st,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,46,80,st,f,st,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,47,80,st,f,st,ex,ni,spines in water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,48,75,mt,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,49,70,st,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,50,70,mp,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,51,73,mp,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,52,80,ma,f,st,ex,ni,at surface 
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,53,80,st,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,54,80,st,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,55,80,st,f,mv,ex,ni,spines out of water
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,56,75,mt,f,st,ex,ni,beneath surface
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,57,70,mt,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,58,65,mt,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,59,60,mt,f,st,ex,ni,
+012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,60,50,mt,f,st,ex,ni,on wall touching bottom
