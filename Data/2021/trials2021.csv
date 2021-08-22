@@ -719,3 +719,363 @@ trial,date,tank,flowRate_L-min,signalRate_ml-min,beginTemp_C,endTemp_C,beginSal_
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,58,65,mt,f,st,ex,ni,
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,59,60,mt,f,st,ex,ni,
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,60,50,mt,f,st,ex,ni,on wall touching bottom
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,1,4,mt,c,st,ex,i,touching fake kelp
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,2,3 ,mp,c,st,ex,i,touching fake kelp
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,3,7,ma,c,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,4,15,ma,m,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,5,23,ma,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,6,25,ma,f,st,ex,ni,halfway on donut
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,7,29,ma,f,st,ex,ni,halfway on donut
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,8,45,ma,f,st,ex,ni,halfway on donut
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,9,45,st,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,10,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,11,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,12,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,13,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,14,44,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,15,43,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,16,43,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,17,43,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,18,44,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,19,44,st,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,20,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,21,45,mp,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,22,45,st,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,23,45,mp,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,24,45,mp,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,25,45,st,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,26,45,st,f,st,ex,ni,crawling over HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,27,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,28,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,29,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,30,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,31,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,32,45,st,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,33,45,mp,f,st,ex,ni,sitting next to HOBO
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,34,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,35,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,36,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,37,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,38,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,39,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,40,45,mp,f,mv,ex,ni,spines maneuvering around leg
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,41,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,42,45,mp,f,mv,ex,ni,spines maneuvering around leg
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,43,45,st,f,mv,ex,ni,squeezing past leg
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,44,45,st,f,mv,ex,ni,squeezing past leg
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,45,45,mp,f,st,ex,ni,squeezing past leg
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,46,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,47,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,48,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,49,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,50,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,51,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,52,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,53,45,mp,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,54,45,st,f,st,ex,ni,
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,55,45,st,f,st,ex,ni,halfway on wall
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,56,45,st,f,st,ex,ni,halfway on wall
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,57,45,mp,f,st,ex,ni,halfway on wall
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,58,45,st,f,st,ex,ni,halfway on wall
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,59,45,st,f,st,ex,ni,halfway on wall
+013,2021-08-19,TF2,2.5,295,13.5,14.5,30,30,starved,S08,79,control,control,NA,NA,08:19,09:20,put urchin in TF5-G control-control,60,45,st,f,st,ex,ni,halfway on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,1,10,mp,c,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,2,10,mp,c,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,3,10,mp,c,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,4,13,ma,m,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,5,20,ma,m,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,6,24,st,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,7,24,mp,f,st,ex,ni,target looks a little warped
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,8,26,ma,f,st,ex,ni,halfway on donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,9,35,ma,f,st,ex,ni,halfway on donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,10,45,st,f,st,ex,ni,outside donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,11,45,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,12,45,mp,f,st,ex,ni,halfway on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,13,45,mp,f,st,ex,ni,halfway on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,14,45,mp,f,st,ex,ni,on wall touching bottom
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,15,60,ma,f,st,ex,ni,halfway up wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,16,69,ma,f,st,ex,ni,halfway up wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,17,72,ma,f,st,ex,ni,nearing surface
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,18,79,ma,f,st,ex,ni,nearing surface
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,19,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,20,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,21,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,22,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,23,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,24,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,25,76,mt,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,26,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,27,75,mt,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,28,65,mt,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,29,50,mt,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,30,45,mt,f,st,ex,ni,halfway on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,31,43,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,32,43,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,33,43,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,34,40,mp,f,st,ex,ni,halfway on HOBO and donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,35,35,mt,f,st,ex,ni,on top of donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,36,26,mp,f,st,ex,ni,halfway on donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,37,33,ma,f,st,ex,ni,on top of donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,38,44,ma,f,st,ex,ni,outside donut
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,39,45,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,40,45,mp,f,st,ex,ni,
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,41,45,ma,f,st,ex,ni,halfway on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,42,55,ma,f,st,ex,ni,on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,43,65,ma,f,st,ex,ni,halfway up wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,44,69,ma,f,st,ex,ni,halfway up wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,45,77,ma,f,st,ex,ni,nearing surface
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,46,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,47,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,48,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,49,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,50,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,51,80,mp,f,mv,ex,ni,"at surface, surface spines moving"
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,52,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,53,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,54,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,55,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,56,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,57,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,58,80,mp,f,st,ex,ni,at surface 
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,59,65,mt,f,st,ex,ni,on wall
+014,2021-08-19,TF1,2.5,270,15.3,15.5,30,30,fed,F06,72,control,nereo,20.32,20.79,10:16,10:17,put urchin in TF9-T control-algae,60,50,mt,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,1,17,ma,m,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,2,24,ma,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,3,30,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,4,33,ma,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,5,35,ma,f,st,ex,ni,on top of donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,6,45,st,f,st,ex,ni,outside donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,7,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,8,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,9,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,10,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,11,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,12,45,ma,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,13,50,ma,f,st,ex,ni,on wall touching bottom
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,14,50,ma,f,st,ex,ni,on wall touching bottom
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,15,55,ma,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,16,60,ma,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,17,60,mp,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,18,60,mp,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,19,55,mp,f,st,ex,ni,on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,20,50,mp,f,st,ex,ni,on wall touching bottom
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,21,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,22,45,st,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,23,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,24,45,st,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,25,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,26,45,st,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,27,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,28,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,29,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,30,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,31,45,mp,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,32,45,st,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,33,45,st,f,st,ex,ni,halfway on wall
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,34,45,st,f,st,ex,ni, 
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,35,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,36,45,mp,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,37,45,mp,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,38,45,mp,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,39,45,mp,f,st,ex,ni,squeezing past leg
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,40,45,st,f,st,ex,ni,outside donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,41,45,mp,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,42,45,st,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,43,45,mp,f,st,ex,ni,halfway on donut
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,44,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,45,45,st,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,46,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,47,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,48,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,49,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,50,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,51,45,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,52,43,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,53,44,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,54,43,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,55,43,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,56,43,mp,f,st,ex,ni,climbing on HOBO
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,57,43,mp,f,st,ex,ni,climbing on HOBO
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,58,43,mp,f,st,ex,ni,climbing on HOBO
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,59,42,mp,f,st,ex,ni,
+015,2021-08-19,TF2,2.5,260,14.5,14.1,30,31,fed,F07,73,control,nereo,16.95,17.14,12:14,13:14,put urchin in TF5-I control-algae,60,45,ma,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,1,11,mp,m,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,2,16,ma,m,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,3,24,ma,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,4,28,ma,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,5,30,ma,f,st,ex,ni,halfway on donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,6,40,ma,f,st,ex,ni,halfway on donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,7,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,8,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,9,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,10,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,11,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,12,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,13,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,14,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,15,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,16,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,17,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,18,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,19,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,20,46,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,21,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,22,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,23,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,24,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,25,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,26,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,27,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,28,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,29,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,30,42,mp,f,st,ex,ni,crawling on HOBO
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,31,42,mp,f,st,ex,ni,crawling on HOBO
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,32,42,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,33,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,34,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,35,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,36,43,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,37,44,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,38,45,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,39,45,mp,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,40,45,mp,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,41,45,st,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,42,45,st,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,43,45,st,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,44,45,mp,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,45,45,mp,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,46,45,mp,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,47,45,st,f,st,ex,ni,halfway on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,48,45,st,f,st,ex,ni,wedged between wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,49,45,st,f,st,ex,ni,wedged between wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,50,45,st,f,st,ex,ni,wedged between wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,51,45,st,f,st,ex,ni,wedged between wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,52,45,mp,f,st,ex,ni,on wall touching bottom
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,53,50,ma,f,st,ex,ni,on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,54,50,st,f,st,ex,ni,on wall
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,55,50,mp,f,st,ex,ni,halfway on wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,56,45,mp,f,st,ex,ni,halfway on wall and donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,57,44,mt,f,st,ex,ni,halfway on donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,58,38,mt,f,st,ex,ni,halfway on donut
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,59,30,mp,f,st,ex,ni,
+016,2021-08-19,TF1,2.5,290,14.0,15.1,32,31,fed,F08,67,pycno,control,NA,NA,14:07,15:08,put urchin in TF9-P pycno-control,60,23,mp,f,st,ex,ni,
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",1,4,mt,c,st,ex,i,touching kelp
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",2,2,st,c,st,ex,i,rearing up on kelp
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",3,1,st,c,st,ex,i,rearing up on kelp
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",4,0,mt,c,st,ex,i,"on top of kelp, eating?"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",5,0,st,c,st,ex,i,"on top of kelp, eating?"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",6,0,st,c,st,ex,i,"on top of kelp, eating?"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",7,0,mp,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",8,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",9,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",10,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",11,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",12,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",13,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",14,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",15,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",16,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",17,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",18,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",19,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",20,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",21,0,st,c,st,ex,i,"on top of kelp, eating? touching cup"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",22,nd,nd,nd,nd,nd,nd,"pipe broke, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",23,nd,nd,nd,nd,nd,nd,"pipe broke, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",24,nd,nd,nd,nd,nd,nd,"pipe broke, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",25,nd,nd,nd,nd,nd,nd,"pipe broke, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",26,nd,nd,nd,nd,nd,nd,"pipe broke, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",27,0,st,c,st,ex,i,"on top of kelp, eating? touching cup, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",28,0,st,c,st,ex,i,"on top of kelp, eating? touching cup, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",29,0,st,c,st,ex,i,"on top of kelp, eating? touching cup, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",30,0,st,c,st,ex,i,"on top of kelp, eating? touching cup, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",31,0,st,c,st,ex,i,"on kelp, eating? pooping, water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",32,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",33,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",34,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",35,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",36,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",37,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",38,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",39,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",40,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",41,0,st,c,st,ex,i,"on kelp, eating? water off, drilling"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",42,0,st,c,st,ex,i,"on kelp, eating? water off, drilling"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",43,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",44,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",45,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",46,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",47,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",48,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",49,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",50,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",51,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",52,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",53,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",54,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",55,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",56,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",57,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",58,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",59,0,st,c,st,ex,i,"on kelp, eating? water off"
+017,2021-08-20,TF2,2.5,265,13.8,13.8,30,30,starved,S09,54,control,nereo,20.11,20.28,07:36,08:37,"put urchin in TF5-B control-algae, kelp visibly eaten, lost all water flow in middle of trial 0800 turned back on at 0837, signal flow likely continued as water level header tank never dropped below input, cloudy weather",60,0,st,c,st,ex,i,"on kelp, eating? water off"
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",1,7,mt,c,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",2,7,mp,c,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",3,9,mp,c,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",4,14,ma,m,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",5,22,ma,f,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",6,27,st,f,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",7,30,st,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",8,35,ma,f,st,ex,ni,on top of donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",9,45,st,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",10,45,st,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",11,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",12,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",13,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",14,45,st,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",15,45,st,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",16,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",17,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",18,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",19,45,mp,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",20,45,mp,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",21,45,st,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",22,45,mp,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",23,45,mp,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",24,45,st,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",25,45,mp,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",26,45,mp,f,st,ex,ni,halfway on donut and wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",27,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",28,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",29,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",30,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",31,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",32,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",33,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",34,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",35,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",36,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",37,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",38,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",39,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",40,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",41,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",42,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",43,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",44,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",45,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",46,45,st,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",47,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",48,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",49,45,mp,f,st,ex,ni,on wall touching bottom
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",50,45,mp,f,st,ex,ni,halfway on wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",51,45,mp,f,st,ex,ni,halfway on wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",52,45,mp,f,st,ex,ni,halfway on wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",53,45,mp,f,st,ex,ni,halfway on wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",54,45,mp,f,st,ex,ni,halfway on wall
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",55,45,mp,f,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",56,45,st,f,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",57,45,st,f,st,ex,ni,
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",58,43,mt,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",59,27,mt,f,st,ex,ni,halfway on donut
+018,2021-08-20,TF1,2.5,280,13.5,14.1,30,30,fed,F09,77,pycno,control,NA,NA,09:39,10:40,"put urchin in TF9-Q pycno-control, had to adjust drain a lot",60,25,mp,f,st,ex,ni,
