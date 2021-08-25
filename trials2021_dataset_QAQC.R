@@ -53,7 +53,7 @@ trials2021 <- read_csv("Data/2021/trials2021.csv",
                                         pycnoTreat = col_factor(levels = c("pycno", "control")), 
                                         tank = col_factor(levels = c("TF1", "TF2")), 
                                         timeBegin = col_character(), timeEnd = col_character(), 
-                                        urchinGroup = col_factor(levels = c("starved","fed"))))
+                                          urchinGroup = col_factor(levels = c("starved","fed"))))
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # MANIPULATE DATA                                                              ####
