@@ -314,6 +314,12 @@ Moved several small green urchins from lab 8 to tank F1 - may be good for size c
 
 Trials begun. 
 
+# Press Experiment 
+
+### 2021-08-25
+
+Cleaned all urchin tubs at 1700.
+
 # CT Lab Work
 
 ### 2021-08-09
@@ -339,12 +345,21 @@ Moved all test urchins into 70% EtOH with 1% PTA at 1245.
 
 ### 2021-08-25
 
-Fixed urchin S17. MgCl didn't seem to work as fast as before.
++ Fixed urchin S17. MgCl didn't seem to work as fast as before. Spawned in alcohol. Male.
 
 1. 20 min in 2000ml 7.6% MgCl in seawater (it took a longer time than last, the urchin pooped)
 2. 10 min in 10% EtOH in seawater (still alive! Need to double the MgCl in the sedative)
 3. 10 min in 40% EtOH in seawater
 4. put in 70% EtOH
+
++  Fixed urchin F15. Even with double MgCl it still didn't work very well compared to the stock from the classrooms I used in the first test.
+
+1. 10 min in 15.2% MgCl in seawater
++ the rest the same as previous.
+
+### 2021-08-26
+
+Fixed urchin F17, same as F15 at 1020.
   
 # Statistical Analysis Notes
 
