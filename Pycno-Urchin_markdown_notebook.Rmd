@@ -360,6 +360,13 @@ Moved all test urchins into 70% EtOH with 1% PTA at 1245.
 ### 2021-08-26
 
 Fixed urchin F17, same as F15 at 1020.
+
+### 2021-8-28
+
+Fixed urchin F20 as before (a little longer in MgCl). 
+Fixed urchin S19 as before (used fresh EtOH)
+
+Refreshed 70% EtOH in all urchin jars
   
 # Statistical Analysis Notes
 
