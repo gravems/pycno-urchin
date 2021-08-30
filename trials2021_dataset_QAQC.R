@@ -84,12 +84,16 @@ trials2021$interaction <- trials2021$interaction %>%
 
 # is there a difference in mean test diameter between groups?
 
-trials2021 %>%
+diams <- trials2021 %>%
+  select(trial, urchinGroup, urchinDiam_mm) %>%
+  distinct(trial, urchinGroup, urchinDiam_mm)
+
+diams %>%
   ggplot(aes(x = urchinGroup, y = urchinDiam_mm, fill = urchinGroup)) +
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE)
 
-t.test(urchinDiam_mm ~ urchinGroup, data = trials2021)
+t.test(urchinDiam_mm ~ urchinGroup, data = diams)
   
 # Output:
 
