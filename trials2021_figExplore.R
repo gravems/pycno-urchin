@@ -67,7 +67,7 @@ trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv",
 
 # is there a difference in mean test diameter between groups?
 
-diams <- trials2021 %>%
+diams <- trials2021_Q %>%
   select(trial, urchinGroup, urchinDiam_mm) %>%
   distinct(trial, urchinGroup, urchinDiam_mm)
 
@@ -95,7 +95,7 @@ t.test(urchinDiam_mm ~ urchinGroup, data = diams)
 
 # is there a difference in time spent moving among all treatments?
 
-movement <- trials2021 %>%
+movement <- trials2021_Q %>%
   select(trial, urchinGroup, pycnoTreat, algalTreat, movement) %>%
   filter(movement != "st") %>%
   add_column(move = 1) %>%
@@ -111,7 +111,7 @@ movement %>%
 
 # do treatments spend different amounts of time interacting with the signal?
 
-interaction <- trials2021 %>%
+interaction <- trials2021_Q %>%
   select(trial, urchinGroup, pycnoTreat, algalTreat, interaction) %>%
   filter(interaction != "ni") %>%
   add_column(interact = 1) %>%
@@ -127,7 +127,7 @@ interaction %>%
 
 # do urchin spend different amounts of time in distance zones among treatments?
 
-location <- trials2021 %>%
+location <- trials2021_Q %>%
   select(trial, urchinGroup, pycnoTreat, algalTreat, location) %>%
   add_column(locate = 1) %>%
   group_by(trial, urchinGroup, pycnoTreat, algalTreat, location) %>%
