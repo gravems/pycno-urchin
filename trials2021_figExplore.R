@@ -1,11 +1,10 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #                                                                                ##
-# Pycno-Urchin Dataset 2021 QAQC                                                 ##
+# Pycno-Urchin Dataset 2021 Figure Exploration                                   ##
 # Script created 2021-08-31                                                      ##
 # Last updated 2021-08-31                                                        ##
 # Data source: Ross Whippo                                                       ##
 # R code prepared by Ross Whippo                                                 ##
-# Last updated 2021-08-31                                                        ##
 #                                                                                ##
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -18,6 +17,7 @@
 
 # Associated Scripts:
 # trials2021_dataset_QAQC.R
+# trials2021_model1.R
 
 # TO DO 
 
@@ -26,7 +26,7 @@
 #                                                                                 +
 # RECENT CHANGES TO SCRIPT                                                        +
 # LOAD PACKAGES                                                                   +
-# READ IN AND PREPARE DATA                                                        +
+# READ IN DATA                                                                    +
 # MANIPULATE DATA                                                                 +
 #                                                                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -35,7 +35,7 @@
 # RECENT CHANGES TO SCRIPT                                                     ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# 2021-08-19 Script created
+# 2021-08-31 Script created
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
@@ -83,15 +83,15 @@ t.test(urchinDiam_mm ~ urchinGroup, data = diams)
 # Welch Two Sample t-test
 
 # data:  urchinDiam_mm by urchinGroup
-# t = -8.7964, df = 1161.6, p-value < 2.2e-16
+# t = -0.64479, df = 33.574, p-value = 0.5234
 # alternative hypothesis: true difference in means is not equal to 0
 # 95 percent confidence interval:
-#   -3.567221 -2.266112
+#   -4.776229  2.476229
 # sample estimates:
-# mean in group starved     mean in group fed 
-# 71.16667              74.08333 
+#  mean in group starved     mean in group fed 
+# 71.90                 73.05 
 
-# yes, by 4mm
+# NO
 
 # is there a difference in time spent moving among all treatments?
 
@@ -141,6 +141,26 @@ location %>%
   scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
   facet_grid(pycnoTreat ~ algalTreat)
 
+# is there a difference in movement + location?
+
+move_loc <- trials2021_Q %>%
+  select(trial, urchinGroup, pycnoTreat, algalTreat, movement, location) %>%
+  mutate(moves = case_when(movement == "ma" ~ "moving",
+                           movement == "mp" ~ "moving",
+                           movement == "mt" ~ "moving",
+                           movement == "st" ~ "still")) %>%
+  unite(mov_loc, moves, location, sep = "_") %>%
+  add_column(place = 1) %>%
+  group_by(trial, urchinGroup, pycnoTreat, algalTreat, mov_loc) %>%
+  count(place) %>%
+  mutate(time_spent = n/60) 
+move_loc$mov_loc <- factor(move_loc$mov_loc, levels = c("moving_c", "still_c", "moving_m", "still_m", "moving_f", "still_f"))
+
+move_loc %>%
+  ggplot(aes(x = mov_loc, y = time_spent, fill = urchinGroup)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
+  facet_wrap(pycnoTreat ~ algalTreat)
 
 
 ############### SUBSECTION HERE

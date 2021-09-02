@@ -371,6 +371,16 @@ Fixed urchin F20 as before (a little longer in MgCl).
 Fixed urchin S19 as before (used fresh EtOH)
 
 Refreshed 70% EtOH in all urchin jars
+
+### 2021-08-31
+
+Scanned two urchins (green, white), in CT scanner.
+
+### 2021-09-01
+
+Scanned two purple urchins in CT scanner with different settings. Began to reconstruct green and white urchin scans from yesterday. 
+
+Swapped out 70% EtOH in all current control urchin jars for 70% EtOH + 1% PTA from test urchin jar. Placed remaining test urchins in 70% EtOH (will have trace amounts of PTA). 
   
 # Statistical Analysis Notes
 
