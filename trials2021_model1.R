@@ -27,7 +27,7 @@
 # RECENT CHANGES TO SCRIPT                                                        +
 # LOAD PACKAGES                                                                   +
 # READ IN AND PREPARE DATA                                                        +
-# MODEL 1                                                                         +
+# MODEL 1                                                                           +
 #                                                                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -43,6 +43,7 @@
 
 library(tidyverse)
 library(viridis)
+library(lme4)
 
 # set plot theme
 theme_set(theme_classic())
@@ -65,7 +66,17 @@ trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv",
 # MANIPULATE DATA                                                              ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+model1_dat <- trials2021_Q
 
+# create proportion columns for each behavior
+
+model1_dat <- model1_dat %>%
+  select(trial, tank, `signalRate_ml-min`, beginTemp_C, endTemp_C, beginSal_ppt, endSal_ppt, urchinGroup, pycnoTreat, algalTreat, urchinDiam_mm, movement, location, spines, interaction) %>%
+  filter(movement != "st") %>%
+  add_column(move = 1) %>%
+  group_by(trial, urchinGroup, pycnoTreat, algalTreat, move) %>%
+  count(move) %>%
+  mutate(time_moving = n/60)
 
 
 ############### SUBSECTION HERE

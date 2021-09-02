@@ -78,20 +78,18 @@ diams %>%
 
 t.test(urchinDiam_mm ~ urchinGroup, data = diams)
 
-# Output:
-
 # Welch Two Sample t-test
 
 # data:  urchinDiam_mm by urchinGroup
-# t = -0.64479, df = 33.574, p-value = 0.5234
+# t = -1.5407, df = 43.008, p-value = 0.1307
 # alternative hypothesis: true difference in means is not equal to 0
 # 95 percent confidence interval:
-#   -4.776229  2.476229
+#   -5.6760725  0.7594058
 # sample estimates:
-#  mean in group starved     mean in group fed 
-# 71.90                 73.05 
+#   mean in group starved     mean in group fed 
+# 71.20833              73.66667 
 
-# NO
+# NO, 2.46mm average difference
 
 # is there a difference in time spent moving among all treatments?
 
