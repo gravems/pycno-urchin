@@ -2,7 +2,7 @@
 #                                                                                ##
 # Pycno-Urchin Dataset 2021 Figure Exploration                                   ##
 # Script created 2021-08-31                                                      ##
-# Last updated 2021-08-31                                                        ##
+# Last updated 2021-09-04                                                        ##
 # Data source: Ross Whippo                                                       ##
 # R code prepared by Ross Whippo                                                 ##
 #                                                                                ##
@@ -81,15 +81,15 @@ t.test(urchinDiam_mm ~ urchinGroup, data = diams)
 # Welch Two Sample t-test
 
 # data:  urchinDiam_mm by urchinGroup
-# t = -1.5407, df = 43.008, p-value = 0.1307
+# t = -1.7371, df = 44.656, p-value = 0.08927
 # alternative hypothesis: true difference in means is not equal to 0
 # 95 percent confidence interval:
-#   -5.6760725  0.7594058
+#  -5.9320892  0.4387559
 # sample estimates:
-#   mean in group starved     mean in group fed 
-# 71.20833              73.66667 
+#  mean in group starved     mean in group fed 
+# 70.92000              73.66667 
 
-# NO, 2.46mm average difference
+# NO, 2.75mm average difference 
 
 # is there a difference in time spent moving among all treatments?
 

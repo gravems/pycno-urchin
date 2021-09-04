@@ -94,71 +94,71 @@ library(tidyverse)
 # READ IN DATA                                                                 ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-luxtemp_001 <- read_csv("Data/2021/001 2021-08-15 15-42-41 -0700.csv", 
-                                          col_types = cols(`Button Down` = col_skip(), 
-                                                           `Button Up` = col_skip(), 
-                                                           `Date Time, GMT -0700` = col_character(), 
-                                                           EOF = col_skip(), 
-                                                           `Host Connect` = col_skip(), 
-                                                           Stopped = col_skip()), skip = 2)
-
-
-luxtemp_002 <- read_csv("Data/2021/002 2021-08-16 10-03-40 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_003 <- read_csv("Data/2021/003 2021-08-16 14-51-11 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_004 <- read_csv("Data/2021/004 2021-08-16 17-18-06 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_005 <- read_csv("Data/2021/005 2021-08-17 10-28-02 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_006 <- read_csv("Data/2021/006 2021-08-17 13-11-23 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_007 <- read_csv("Data/2021/007 2021-08-17 15-38-50 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
-
-luxtemp_008 <- read_csv("Data/2021/008 2021-08-17 17-33-46 -0700.csv", 
-                        col_types = cols(`Button Down` = col_skip(), 
-                                         `Button Up` = col_skip(), 
-                                         `Date Time, GMT -0700` = col_character(), 
-                                         EOF = col_skip(), 
-                                         `Host Connect` = col_skip(), 
-                                         Stopped = col_skip()), skip = 2)
+  
+  luxtemp_001 <- read_csv("Data/2021/001 2021-08-15 15-42-41 -0700.csv", 
+                                            col_types = cols(`Button Down` = col_skip(), 
+                                                             `Button Up` = col_skip(), 
+                                                             `Date Time, GMT -0700` = col_character(), 
+                                                             EOF = col_skip(), 
+                                                             `Host Connect` = col_skip(), 
+                                                             Stopped = col_skip()), skip = 2)
+  
+  
+  luxtemp_002 <- read_csv("Data/2021/002 2021-08-16 10-03-40 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_003 <- read_csv("Data/2021/003 2021-08-16 14-51-11 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_004 <- read_csv("Data/2021/004 2021-08-16 17-18-06 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_005 <- read_csv("Data/2021/005 2021-08-17 10-28-02 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_006 <- read_csv("Data/2021/006 2021-08-17 13-11-23 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_007 <- read_csv("Data/2021/007 2021-08-17 15-38-50 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
+  
+  luxtemp_008 <- read_csv("Data/2021/008 2021-08-17 17-33-46 -0700.csv", 
+                          col_types = cols(`Button Down` = col_skip(), 
+                                           `Button Up` = col_skip(), 
+                                           `Date Time, GMT -0700` = col_character(), 
+                                           EOF = col_skip(), 
+                                           `Host Connect` = col_skip(), 
+                                           Stopped = col_skip()), skip = 2)
 
 luxtemp_009
 luxtemp_010

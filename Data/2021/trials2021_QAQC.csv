@@ -2879,3 +2879,63 @@ trial,date,tank,flowRate_L-min,signalRate_ml-min,beginTemp_C,endTemp_C,beginSal_
 048,2021-08-30,TF1,2.5,280,14.3,14,31,30,fed,F24,75,control,nereo,25.31,25.7,14:20,15:20,"urchins spines tended to be down, put urchin in F3",58,55,mp,f,st,ex,ni,NA
 048,2021-08-30,TF1,2.5,280,14.3,14,31,30,fed,F24,75,control,nereo,25.31,25.7,14:20,15:20,"urchins spines tended to be down, put urchin in F3",59,50,mt,f,st,ex,ni,on wall touching bottom
 048,2021-08-30,TF1,2.5,280,14.3,14,31,30,fed,F24,75,control,nereo,25.31,25.7,14:20,15:20,"urchins spines tended to be down, put urchin in F3",60,45,mt,f,st,ex,ni,off wall
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",1,5,mt,c,st,ex,i,touching kelp
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",2,3,st,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",3,3,mp,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",4,3,mp,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",5,4,mp,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",6,4,mp,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",7,5,ma,c,st,ex,i,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",8,7,ma,c,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",9,15,ma,m,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",10,23,ma,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",11,27,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",12,29,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",13,31,ma,f,st,ex,ni,halfway on donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",14,42,ma,f,st,ex,ni,halfway on donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",15,45,mp,f,st,ex,ni,outside donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",16,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",17,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",18,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",19,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",20,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",21,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",22,43,mt,f,st,ex,ni,"halfway on donut, pooping"
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",23,39,mt,f,st,ex,ni,on top of donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",24,23,mt,f,st,ex,ni,inside donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",25,17,mt,m,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",26,12,mp,m,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",27,15,ma,m,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",28,17,ma,m,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",29,24,ma,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",30,28,mp,f,st,ex,ni,pooping
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",31,31,ma,f,st,ex,ni,halfway on donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",32,42,ma,f,st,ex,ni,halfway on donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",33,44,mp,f,st,ex,ni,outside donut
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",34,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",35,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",36,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",37,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",38,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",39,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",40,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",41,44,st,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",42,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",43,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",44,44,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",45,45,st,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",46,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",47,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",48,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",49,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",50,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",51,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",52,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",53,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",54,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",55,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",56,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",57,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",58,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",59,45,mp,f,st,ex,ni,NA
+049,2021-09-04,TF2,2.5,290,14.5,14.8,30,30,starved,S25,64,control,nereo,30.92,31.46,10:40,11:41,"no kelp eaten, put urchin in F2",60,45,mp,f,st,ex,ni,NA
