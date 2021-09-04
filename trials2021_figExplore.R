@@ -160,6 +160,23 @@ move_loc %>%
   scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
   facet_wrap(pycnoTreat ~ algalTreat)
 
+# What does movment look like over the course of an hour for each treatment?
+
+time_move <- trials2021_Q %>%
+  select(trial, urchinGroup, pycnoTreat, algalTreat, timePoint_min, distance_cm) %>%
+  group_by(trial) %>%
+  unite(treatment, pycnoTreat, algalTreat, sep = "_") %>%
+  mutate(treatment = factor(treatment))
+
+
+time_move %>%
+  ggplot(aes(x = timePoint_min, y = distance_cm, fill = treatment, group = treatment)) +
+  geom_point() +
+  geom_smooth(method = "loess") +
+  scale_fill_viridis(discrete = TRUE) +
+  facet_wrap(.~ urchinGroup)
+
+  
 
 ############### SUBSECTION HERE
 
