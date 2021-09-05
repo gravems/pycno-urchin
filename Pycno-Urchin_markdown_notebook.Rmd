@@ -381,6 +381,13 @@ Scanned two urchins (green, white), in CT scanner.
 Scanned two purple urchins in CT scanner with different settings. Began to reconstruct green and white urchin scans from yesterday. 
 
 Swapped out 70% EtOH in all current control urchin jars for 70% EtOH + 1% PTA from test urchin jar. Placed remaining test urchins in 70% EtOH (will have trace amounts of PTA). 
+
+### 2021-09-05
+
+Preserved urchin S01 (pycno, nereo) in 70% EtOH and 1% PTA. Estimate ~85 more mg of PTA needed to stain all urchins.
+Language for methods:
+
+"urchins in 15.4% MgCl2 for 20-30 minutes, until unresponsive to being flipped."
   
 # Statistical Analysis Notes
 
