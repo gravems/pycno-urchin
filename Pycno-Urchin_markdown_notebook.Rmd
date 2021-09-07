@@ -380,7 +380,15 @@ Scanned two urchins (green, white), in CT scanner.
 
 Scanned two purple urchins in CT scanner with different settings. Began to reconstruct green and white urchin scans from yesterday. 
 
+Settings for purples: 
+
++ exposure: 720
++ volt kV: 100
++ current uA: 80
+
 Swapped out 70% EtOH in all current control urchin jars for 70% EtOH + 1% PTA from test urchin jar. Placed remaining test urchins in 70% EtOH (will have trace amounts of PTA). 
+
+Note: after reviewing, the settings listed for the purples above are the best settings.
 
 ### 2021-09-05
 
@@ -388,6 +396,38 @@ Preserved urchin S01 (pycno, nereo) in 70% EtOH and 1% PTA. Estimate ~85 more mg
 Language for methods:
 
 "urchins in 15.4% MgCl2 for 20-30 minutes, until unresponsive to being flipped."
+
+### 2021-09-07
+
+Added 1% PTA to preserved urchins: S02, S03, and F01
+
+All PTA urchins have spent at least 2 days on a laboratory rotator to diffuse the dye faster.
+
+Sampled urchins: F02, S05, X, and X
+
+F02:
++ 30 min in 15.4% MgCl2
++ 10 min in 40% EtOH 
+tried to kill it faster, but it still spawned
+
+S04:
++ 80 min in 15.4% MgCl2
++ 10 min in 40% EtOH
+did not spawn
+
+F03:
++ 70 min in 15.4% MgCl2
++ 25 min in 40% EtOH
+did not spawn
+
+S05:
++ 75 min in 15.4% MgCl2
++ 10 min in 15.4% MgCl2
+slight trace of spawn, female
+
+
+
+
   
 # Statistical Analysis Notes
 
