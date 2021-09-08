@@ -425,7 +425,22 @@ S05:
 + 10 min in 15.4% MgCl2
 slight trace of spawn, female
 
+### 2021-09-08
 
+F04:
++ 85 min in 15.4% MgCl2
++ 15 min in 40% EtOH
++ put into 70% EtOH w/ ~0.7% PTA
+
+S06:
++ 90 minutes in 15.4% MgCl2
++ 30 minutes in 40% EtOH
++ put in 70% EtOH
+
+S07:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
 
 
   
