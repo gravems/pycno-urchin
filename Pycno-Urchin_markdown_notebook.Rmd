@@ -442,6 +442,54 @@ S07:
 + 10 minutes in 40% EtOH
 + put in 70% EtOH
 
+### 2021-09-09
+
+S08:
++ 85 minutes in 15.4% MgCl2
++ 20 minutes in 40% EtOH
++ put in 70% EtOH
+
+F06:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F07:
++ 110 minutes in 15.4% MgCl2
++ 10 in in 40% EtOH
++ lightly spawned, male
++ put in 70% EtOH
+
+F08:
++ 100 minutes in 15.4% MgCl2
++ 10 in in 40% EtOH
++ put in 70% EtOH
+
+
+Scanned 4 urchins: S01 (4 days staining), F01 (3 days staining), S17 (8 days staining), F15 (8 days staining) to see if stain time was sufficient. It wasn't for any of them. 8 day samples may have had traces of stained gonad, but barely. Compared to non-experimental test urchins 15 days staining was required (and probably could have gone longer too). [Scanner set on 'Standard' resolution, saved _Rec files to Fang cloud.]
+
+### 2021-09-10
+
+S09:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F09:
++ 90 minutes in 15.4% MgCl2
++ 15 minutes in 40% EtOH
++ put in 70% EtOH
+
+F10:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F11:
++ 80 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
 
   
 # Statistical Analysis Notes
