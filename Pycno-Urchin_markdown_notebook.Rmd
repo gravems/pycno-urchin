@@ -490,6 +490,20 @@ F11:
 + 10 minutes in 40% EtOH
 + put in 70% EtOH
 
+### 2021-09-11
+
+F12:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+S10:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+
++ TF-5 HOBO removed at 10:00
 
   
 # Statistical Analysis Notes
