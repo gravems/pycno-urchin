@@ -324,6 +324,11 @@ Scrubbed TF-7 $ 11 to remove diatoms
 
 Cleaned all urchin tubs at 1700.
 
+### 2021-09-11
+
+Table TF-5 contained press urchins A-L
+Table TF-9 contained press urchins M-X
+
 # CT Lab Work
 
 ### 2021-08-09
@@ -502,8 +507,19 @@ S10:
 + 10 minutes in 40% EtOH
 + put in 70% EtOH
 
+S11:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+S12:
++ 90 minutes in 15.4% MgCl2
++ 20 minutes in 40% EtOH
++ put in 70% EtOH w/ small red urchin
+
 
 + TF-5 HOBO removed at 10:00
++ TF-9 HOBO removed at 11:30
 
   
 # Statistical Analysis Notes
