@@ -27,7 +27,7 @@
 # RECENT CHANGES TO SCRIPT                                                        +
 # LOAD PACKAGES                                                                   +
 # READ IN AND PREPARE DATA                                                        +
-# MODEL 1                                                                           +
+# MODEL 1                                                                         +
 #                                                                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -66,11 +66,11 @@ trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv",
 # MANIPULATE DATA                                                              ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-model1_dat <- trials2021_Q
+model_dat <- trials2021_Q
 
 # create proportion columns for each behavior
 
-model1_dat <- model1_dat %>%
+model1_dat <- model_dat %>%
   select(trial, tank, `signalRate_ml-min`, beginTemp_C, endTemp_C, beginSal_ppt, endSal_ppt, urchinGroup, pycnoTreat, algalTreat, urchinDiam_mm, movement, location, spines, interaction) %>%
   filter(movement != "st") %>%
   add_column(move = 1) %>%
@@ -78,7 +78,21 @@ model1_dat <- model1_dat %>%
   count(move) %>%
   mutate(time_moving = n/60)
 
+# Did urchins in each group and treatment move more or less from each other?
 
+model2_dat <- model_dat %>%
+  select(trial, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+  mutate(moves = case_when(movement == "ma" ~ 1,
+                           movement == "mp" ~ 1,
+                           movement == "mt" ~ 1,
+                           movement == "st" ~ 0)) 
+
+move1_mod <- glmer(moves ~ urchinGroup*pycnoTreat*algalTreat + (1|trial), data=model2_dat, family=binomial(link=logit))
+
+summary(move1_mod)
+
+plot(move,male,data=data,ylab=”sex”,xlab=”temperature”)
+lines(data$temp,mod3$fitted.values,lty=1,lwd=2)
 ############### SUBSECTION HERE
 
 ####

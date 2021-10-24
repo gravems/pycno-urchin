@@ -521,6 +521,13 @@ S12:
 + TF-5 HOBO removed at 10:00
 + TF-9 HOBO removed at 11:30
 
+### 2021-10-24
+
+Moved some remaining urchins into PTA (see spreadsheet in OSF).
+
+put 25g PTA into ~2400ml of current EtOH from urchin jars + ~300ml of 0.7% PTA EtOH from one urchin jar. 
+Mixed and refilled jars. 
+
   
 # Statistical Analysis Notes
 
