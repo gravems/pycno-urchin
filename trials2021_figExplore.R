@@ -176,6 +176,33 @@ time_move %>%
   scale_fill_viridis(discrete = TRUE) +
   facet_wrap(.~ urchinGroup)
 
+# direct comparison to Belleza et al 2021 Figure 2
+
+NMIOdata <- trials2021_Q %>%
+  select(trial, urchinGroup, pycnoTreat, algalTreat, movement, location, interaction) %>%
+  pivot_longer(cols = c(movement, location, interaction),
+               names_to = "behavior",
+               values_to = "value") %>%
+  mutate(recode(value, 'i' = 1,
+         'ma' = 1,
+         'mt' = 1,
+         'mp' = 1,
+         'c' = 1,
+         'm' = 1,
+         'ni' = 0,
+         'f' = 0,
+         'st' = 0)) %>%
+  rename('count' = 'recode(...)') %>%
+  group_by(trial, urchinGroup, pycnoTreat, algalTreat, behavior) %>%
+  summarise(sum(`count`)) %>%
+  rename('count' = 'sum(count)') %>%
+  unite('treatment', pycnoTreat, algalTreat, sep = "-")
+  
+
+ggplot(NMIOdata, aes(x = behavior, y = count, fill = urchinGroup)) +
+  geom_boxplot() +
+  facet_grid(treatment~.)
+  
   
 
 ############### SUBSECTION HERE
