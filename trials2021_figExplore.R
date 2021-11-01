@@ -180,7 +180,15 @@ time_move %>%
 
 NMIOdata <- trials2021_Q %>%
   select(trial, urchinGroup, pycnoTreat, algalTreat, movement, location, interaction) %>%
-  pivot_longer(cols = c(movement, location, interaction),
+  mutate(still = movement) %>%
+  mutate(recode(still, 'st' = 1,
+                'ma' = 0,
+                'mt' = 0,
+                'mp' = 0), 
+         .keep = 'unused') %>%
+  rename('still' = 'recode(still, st = 1, ma = 0, mt = 0, mp = 0)') %>%
+  mutate(still = as.character(still)) %>%
+  pivot_longer(cols = c(movement, location, interaction, still),
                names_to = "behavior",
                values_to = "value") %>%
   mutate(recode(value, 'i' = 1,
@@ -191,7 +199,9 @@ NMIOdata <- trials2021_Q %>%
          'm' = 1,
          'ni' = 0,
          'f' = 0,
-         'st' = 0)) %>%
+         'st' = 0,
+         '0' = 0,
+         '1' = 1)) %>%
   rename('count' = 'recode(...)') %>%
   group_by(trial, urchinGroup, pycnoTreat, algalTreat, behavior) %>%
   summarise(sum(`count`)) %>%
@@ -201,6 +211,8 @@ NMIOdata <- trials2021_Q %>%
 
 ggplot(NMIOdata, aes(x = behavior, y = count, fill = urchinGroup)) +
   geom_boxplot() +
+  theme_linedraw() +
+  scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.8) +
   facet_grid(treatment~.)
   
   
