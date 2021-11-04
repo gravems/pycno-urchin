@@ -180,15 +180,15 @@ time_move %>%
 
 NMIOdata <- trials2021_Q %>%
   select(trial, urchinGroup, pycnoTreat, algalTreat, movement, location, interaction) %>%
-  mutate(still = movement) %>%
-  mutate(recode(still, 'st' = 1,
-                'ma' = 0,
-                'mt' = 0,
-                'mp' = 0), 
-         .keep = 'unused') %>%
-  rename('still' = 'recode(still, st = 1, ma = 0, mt = 0, mp = 0)') %>%
-  mutate(still = as.character(still)) %>%
-  pivot_longer(cols = c(movement, location, interaction, still),
+#  mutate(still = movement) %>%
+#  mutate(recode(still, 'st' = 1,
+#                'ma' = 0,
+#                'mt' = 0,
+#                'mp' = 0), 
+#         .keep = 'unused') %>%
+#  rename('still' = 'recode(still, st = 1, ma = 0, mt = 0, mp = 0)') %>%
+#  mutate(still = as.character(still)) %>%
+  pivot_longer(cols = c(movement, location, interaction),
                names_to = "behavior",
                values_to = "value") %>%
   mutate(recode(value, 'i' = 1,
@@ -199,9 +199,9 @@ NMIOdata <- trials2021_Q %>%
          'm' = 1,
          'ni' = 0,
          'f' = 0,
-         'st' = 0,
-         '0' = 0,
-         '1' = 1)) %>%
+         'st' = 0)) %>%
+        # '0' = 0,
+        # '1' = 1)) %>%
   rename('count' = 'recode(...)') %>%
   group_by(trial, urchinGroup, pycnoTreat, algalTreat, behavior) %>%
   summarise(sum(`count`)) %>%
@@ -213,8 +213,37 @@ ggplot(NMIOdata, aes(x = behavior, y = count, fill = urchinGroup)) +
   geom_boxplot() +
   theme_linedraw() +
   scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.8) +
-  facet_grid(treatment~.)
+  facet_grid(treatment~.) +
+  labs(y = "minutes") + 
+  scale_x_discrete(labels = c("interacting", "ROI", "moving"))
   
+# numerical values
+
+# algae only interaction times
+
+NMIOdata %>%
+  filter(behavior == "interaction") %>%
+  filter(treatment == "control-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(count), median(count), sd(count))
+NMIOdata %>%
+  filter(behavior == "interaction") %>%
+  filter(treatment == "control-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(sd(count)/sqrt(length(count)))
+
+# algae pycno interaction times
+
+NMIOdata %>%
+  filter(behavior == "interaction") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(count), median(count), sd(count))
+NMIOdata %>%
+  filter(behavior == "interaction") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(sd(count)/sqrt(length(count)))
   
 
 ############### SUBSECTION HERE
