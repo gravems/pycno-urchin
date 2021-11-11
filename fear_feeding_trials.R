@@ -50,7 +50,7 @@ library(ggpubr)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 urchin_fear_pycno <-
-  read_csv('Data/urchin_fear_feeding_pycno-trial-1.csv')
+  read_csv('Data/2020/urchin_fear_feeding_pycno-trial-1.csv')
 # dataset with bucket treatment removed:
 #urchin_fear_pycno <- urchin_fear_pycno %>%
 #  filter(treatment != 'bucket')

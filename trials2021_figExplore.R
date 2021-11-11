@@ -245,8 +245,47 @@ NMIOdata %>%
   group_by(urchinGroup) %>%
   summarise(sd(count)/sqrt(length(count)))
   
+# time spent in ROI algae only
 
-############### SUBSECTION HERE
+NMIOdata %>%
+  filter(behavior == "location") %>%
+  filter(treatment == "control-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(count), median(count), sd(count))
+NMIOdata %>%
+  filter(behavior == "location") %>%
+  filter(treatment == "control-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(sd(count)/sqrt(length(count)))
+
+# time spent in ROI algae and pycno
+
+NMIOdata %>%
+  filter(behavior == "location") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(count), median(count), sd(count))
+NMIOdata %>%
+  filter(behavior == "location") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(sd(count)/sqrt(length(count)))
+
+# time spent moving algae and pycno
+
+NMIOdata %>%
+  filter(behavior == "movement") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(count), median(count), sd(count))
+NMIOdata %>%
+  filter(behavior == "movement") %>%
+  filter(treatment == "pycno-nereo") %>%
+  group_by(urchinGroup) %>%
+  summarise(sd(count)/sqrt(length(count)))
+
+
+  ############### SUBSECTION HERE
 
 ####
 #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
