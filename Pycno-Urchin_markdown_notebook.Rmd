@@ -1,0 +1,571 @@
+---
+title: "Pycnopodia-Urchin Notebook"
+subtitle: "Experiment and Data"
+author: "Ross Whippo"
+date: 'Created: 2021-06-12  ; (Updated: `r Sys.Date()`)'
+output:
+  html_document:
+    code_folding: hide
+    df_print: kable
+    fig_caption: yes
+    highlight: tango
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: 4
+    toc_float: true
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+  word_document:
+    toc: yes
+    toc_depth: '4'
+
+---
+
+
+
+<style>
+.column-left{
+  float: left;
+  width:48%;
+  text-align: left;
+}
+
+
+.column-right{
+  float: right;
+  width: 48%;
+  text-align: left;
+}
+
+.column-All{
+  float: left;
+  width:100%;
+  text-align: left;
+}
+</style>
+
+
+
+
+```{r setup, include=FALSE}
+
+## Start with tidyverse library, and some default chunk options
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.align = 'center')
+
+
+## use the following to manually set the working directory of RMarkdown documents. Note that this needs to be defined in this 'setup' r code chunk and will not work if placed elsewhere
+
+# knitr::opts_knit$set(root.dir = '//60451-desktop/MRGIS/Biology/2021 Synthesis/Site_Summaries')
+
+```
+
+```{r, echo = FALSE}
+
+## Load Libraries
+
+library(tidyverse)
+library(gt)
+library(viridis)
+library(ggmap)
+library(algaeClassify)
+library(vistime)
+library(plotly)
+library(rmarkdown)
+library(DT)
+
+
+theme_set(theme_classic())
+
+```
+
+```{r}
+# Import all data and manage for analyses/visualizations
+
+urchin_diams <- read_csv("Data/2021/urchin_test_diams.csv", 
+    col_types = cols(bin = col_factor(levels = c("F1", 
+        "F2")), collection_date = col_character(), 
+        treatment = col_character()))
+
+```
+
+<!-- 
+
+TODO: 
+Finish changing notebook from Antarctic Gradients template
+
+NOTES: 
+Created in 2021 for FHL summer data collection
+
+-->
+
+# General Notes
+
+## Acknowledgements 
+
+Funded in part by the Richard R. and Megumi F. Strathmann Endowed Fellowship at Friday Harbor Labs.
+Abigail Ames 
+Kayla Hall
+Karly Cohen
+Mo Turner
+
+# Field Notes
+
+## General Field Notes
+
+## Collections
+
+### 2021-06-11
+
+A total of 59 purple sea urchins collected at Dead Man's Island between 10-30 ft around noon. Divers = Ross Whippo, Jessie Masterman, Marco Corrales. Tender = Willem Weertman.
+
+Figure 1: Map of collection site (coordinates extracted from Google Earth 2021-06-12.) 
+```{r}
+# Map of transect sites
+
+urchin_coords <- tibble(longitude = -122.942670, latitude =  48.459141)
+
+deadman <- get_stamenmap(bbox = c(left = -122.988, bottom = 48.442, right = -122.902, top = 48.467), maptype = "watercolor", crop = FALSE, force = FALSE, zoom = 13)
+ggmap(deadman) +
+  geom_point(aes(x = longitude, y = latitude), data = urchin_coords,
+             shape = 21, colour = "black", fill = "red", size = 5, stroke = 3)
+```
+
+### 2021-08-03
+
+Pycnopodia collected under the FHL docks at ~4 meters depth on a piling. 
+
+
+
+
+
+
+
+# Experiment Notes
+
+## General Experiment Notes
+
+### 2021-08-14
+
+Began flow test with fluorescein in seawater to track flow movement. Video taken of each test. 
+
+### 2021-08-15
+
+Pycnopodia moved from holding tank in to experimental header tank at 1245.
+
+First full trial begun.
+
+All flow metrics and water quality information are in datasheets.
+
+### 2021-08-16
+
+Continuous problems with drainage in arenas fixed by shortening the drainage hose to allow water to drain through the standpipe and not flow over the sides of T1. Will try this solution on T2 tomorrow. 
+
+
+
+## Pre-Experiment Urchins
+
+### 2021-06-11
+
+Urchins were put in two flow-through seawater tanks within 1 hour of collection and haphazardly assigned to one of two tanks. Test diameter was measured for all urchins and both tanks were fed Nereocystis luetkeana ad lib..
+
+Table 1: Urchin diameters
+```{r}
+# Raw urchin test diameters
+
+datatable(urchin_diams)
+
+```  
+             
+             
+
+T-test for urchin diameters between bins:             
+```{r}
+# t-test for urchin diameters 
+
+  t.test(test_diam_mm ~ bin, data = filter(urchin_diams, status == "alive"))
+
+```               
+
+
+Figure 2: Urchin diameters
+```{r}
+# boxplot of test diameters
+
+ggplot(filter(urchin_diams, status == 'alive'), aes(x = bin, y = test_diam_mm, fill = bin)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.7)
+```      
+
+
+Test diameter summary:
+```{r}
+# diameter summary
+
+urchin_diams %>%
+  filter(status == 'alive') %>%
+  group_by(bin) %>%
+  summarise(mean=mean(test_diam_mm), sd=sd(test_diam_mm))
+  
+```   
+
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("./images/TankMap.png")
+```
+
+### 2021-06-14
+
+Lower tank urchins knocked out stand pipe sometime during the night. Found them at 0700 with no water. Replaced stand pipe to refill tank. Urchins seemed fine.
+
+Used bricks and concrete cylinders to block in standpipe. 
+
+One urchin in upper tank may be dead (not righting itself, little movement). I'll check tomorrow and remove if necessary.
+
+Fed both tanks a large handful of drift Nereo collected from the docks (~1700)
+
+### 2021-06-15
+
+Removed dead urchin from upper tank (measured at 71mm, added column of 'status' to diameter data to identify dead/alive/sacrificed animals)
+
+### 2021-06-17
+
+Lower tank urchins knocked out stand pipe again, unsure how long they were dry. Replaced cement cylinders with cinder block. All the urchins seemed OK. 
+
+### 2021-06-18
+
+Willem found upper tank part empty as urchins had tilted standpipe. He fixed it.
+
+### 2021-06-19
+
+Put cinder block around standpipe in upper tank and fed all urchins drift Nereo from the docks. 
+
+### 2021-06-20
+
+Lower tank was drained AGAIN around 2230, and flow was very low. One large urchin was stress spawning. Fixed and refilled.
+
+### 2021-06-21
+
+0800 lower tank was overflowing, readjusted flow coming from adjacent tank, need to get maintenance to clear the flow rate.
+
+1300 lower tank was empty again. Had to fix the standpipe to get it filled. No urchins seemed dead. Sent repair request to maintenance.
+
+### 2021-06-23
+
+0945 Removed dead urchin from lower tank, ~81mm diameter, likely the male that spawned the day before.
+
+### 2021-06-24
+
+1830 Fed all urchins lots of Nereo
+
+### 2021-07-03
+
+Moved top urchins to the bottom left tank. Was getting scummy and gross, think I added too much Nereo. A couple urchins were losing spines. Need to clean tanks more often and/or give less food.
+
+### 2021-07-16
+
+Last day urchin tank on the right was fed. Now only left urchin tank will be fed ad lib Nereo drift. 
+
+### 2021-07-19
+
+One urchin in the left (fed) tank died. Was covered in black lesions and losing its spines. It was 61.98mm test diameter.
+
+### 2021-07-31 
+
+I resumed care of the urchins.
+
+### 2021-08-03 
+
+Placed collected pycnopodia in upper left tank behind Fernald and covered with tarp material to shade.
+
+### 2021-08-04 
+
+Began offering pycnopodia mussels for food ad lib.
+
+### 2021-08-06 
+
+Offered pycno damaged green sea urchin. Took posession of urchins used by Stephanie Crofts including reds, purples, greens, and whites for CT scanning and placed them in tank F4. Stephanie said they have been fed regularly. 
+
+### 2021-08-08 
+
+Started monitoring water temp, sal, and lux for all tanks on an intermittent basis. Refractometer is labeled ('reads slightly high'), so maybe remove 1ppt per reading? 
+
+Began building PVC flow frames and checked urchin arenas for leaks, tank TF2 is sealed, but TF1 is not. 
+
+Final day of feeding for CT urchins. Plan on scanning at least two of each species, then starving the remaining purples and sampling at one-week intervals to track gonad volume. 
+
+### 2021-08-12
+
+All urchins from Fernald tanks were moved to Urchin Palace tanks at ~1200
+F1 -> TF7
+F2 -> TF11
+
+### 2021-08-13
+
+Moved several small green urchins from lab 8 to tank F1 - may be good for size comparison between urchins?
+
+## Experiment Urchins
+
+### 2021-08-15
+
+Trials begun. 
+
+### 2021-08-28
+
+Scrubbed TF-7 $ 11 to remove diatoms
+
+# Press Experiment 
+
+### 2021-08-25
+
+Cleaned all urchin tubs at 1700.
+
+### 2021-09-11
+
+Table TF-5 contained press urchins A-L
+Table TF-9 contained press urchins M-X
+
+# CT Lab Work
+
+### 2021-08-09
+
+Preserved 7 urchins from Stephanie in 70% EtOH (2 red, 2 white, 1 green, 2 purple):
+
+  1. 10 min in 1000ml 7.6% magnesium chloride in seawater
+2. 10 min in 400ml 7.6% magnesium chloride in seawater & 50ml 95% EtOH
+3. 10 min in 232ml seawater & 168ml 95% EtOH
+4. In to 1857ml of 70% EtOH
+
+### 2021-08-10
+
+Added 500ml more 70% EtOH to preserving urchins (total: 2357ml 70% EtOH)
+
+### 2021-08-12
+
+Replaced EtOH in the urchin jar with 2300ml of fresh 70% EtOH
+
+### 2021-08-16
+
+Moved all test urchins into 70% EtOH with 1% PTA at 1245.
+
+### 2021-08-25
+
++ Fixed urchin S17. MgCl didn't seem to work as fast as before. Spawned in alcohol. Male.
+
+1. 20 min in 2000ml 7.6% MgCl in seawater (it took a longer time than last, the urchin pooped)
+2. 10 min in 10% EtOH in seawater (still alive! Need to double the MgCl in the sedative)
+3. 10 min in 40% EtOH in seawater
+4. put in 70% EtOH
+
++  Fixed urchin F15. Even with double MgCl it still didn't work very well compared to the stock from the classrooms I used in the first test.
+
+1. 10 min in 15.2% MgCl in seawater
++ the rest the same as previous.
+
+### 2021-08-26
+
+Fixed urchin F17, same as F15 at 1020.
+
+### 2021-8-28
+
+Fixed urchin F20 as before (a little longer in MgCl). 
+Fixed urchin S19 as before (used fresh EtOH)
+
+Refreshed 70% EtOH in all urchin jars
+
+### 2021-08-31
+
+Scanned two urchins (green, white), in CT scanner.
+
+### 2021-09-01
+
+Scanned two purple urchins in CT scanner with different settings. Began to reconstruct green and white urchin scans from yesterday. 
+
+Settings for purples: 
+
++ exposure: 720
++ volt kV: 100
++ current uA: 80
+
+Swapped out 70% EtOH in all current control urchin jars for 70% EtOH + 1% PTA from test urchin jar. Placed remaining test urchins in 70% EtOH (will have trace amounts of PTA). 
+
+Note: after reviewing, the settings listed for the purples above are the best settings.
+
+### 2021-09-05
+
+Preserved urchin S01 (pycno, nereo) in 70% EtOH and 1% PTA. Estimate ~85 more mg of PTA needed to stain all urchins.
+Language for methods:
+
+"urchins in 15.4% MgCl2 for 20-30 minutes, until unresponsive to being flipped."
+
+### 2021-09-07
+
+Added 1% PTA to preserved urchins: S02, S03, and F01
+
+All PTA urchins have spent at least 2 days on a laboratory rotator to diffuse the dye faster.
+
+Sampled urchins: F02, S05, X, and X
+
+F02:
++ 30 min in 15.4% MgCl2
++ 10 min in 40% EtOH 
+tried to kill it faster, but it still spawned
+
+S04:
++ 80 min in 15.4% MgCl2
++ 10 min in 40% EtOH
+did not spawn
+
+F03:
++ 70 min in 15.4% MgCl2
++ 25 min in 40% EtOH
+did not spawn
+
+S05:
++ 75 min in 15.4% MgCl2
++ 10 min in 15.4% MgCl2
+slight trace of spawn, female
+
+### 2021-09-08
+
+F04:
++ 85 min in 15.4% MgCl2
++ 15 min in 40% EtOH
++ put into 70% EtOH w/ ~0.7% PTA
+
+S06:
++ 90 minutes in 15.4% MgCl2
++ 30 minutes in 40% EtOH
++ put in 70% EtOH
+
+S07:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+### 2021-09-09
+
+S08:
++ 85 minutes in 15.4% MgCl2
++ 20 minutes in 40% EtOH
++ put in 70% EtOH
+
+F06:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F07:
++ 110 minutes in 15.4% MgCl2
++ 10 in in 40% EtOH
++ lightly spawned, male
++ put in 70% EtOH
+
+F08:
++ 100 minutes in 15.4% MgCl2
++ 10 in in 40% EtOH
++ put in 70% EtOH
+
+
+Scanned 4 urchins: S01 (4 days staining), F01 (3 days staining), S17 (8 days staining), F15 (8 days staining) to see if stain time was sufficient. It wasn't for any of them. 8 day samples may have had traces of stained gonad, but barely. Compared to non-experimental test urchins 15 days staining was required (and probably could have gone longer too). [Scanner set on 'Standard' resolution, saved _Rec files to Fang cloud.]
+
+### 2021-09-10
+
+S09:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F09:
++ 90 minutes in 15.4% MgCl2
++ 15 minutes in 40% EtOH
++ put in 70% EtOH
+
+F10:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+F11:
++ 80 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+### 2021-09-11
+
+F12:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+S10:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+S11:
++ 90 minutes in 15.4% MgCl2
++ 10 minutes in 40% EtOH
++ put in 70% EtOH
+
+S12:
++ 90 minutes in 15.4% MgCl2
++ 20 minutes in 40% EtOH
++ put in 70% EtOH w/ small red urchin
+
+
++ TF-5 HOBO removed at 10:00
++ TF-9 HOBO removed at 11:30
+
+### 2021-10-24
+
+Moved some remaining urchins into PTA (see spreadsheet in OSF).
+
+put 25g PTA into ~2400ml of current EtOH from urchin jars + ~300ml of 0.7% PTA EtOH from one urchin jar. 
+Mixed and refilled jars. 
+
+  
+# Statistical Analysis Notes
+
+## Urchin Data
+
+### 2021-06-23 
+
+Added 'status' column to urchin_test_diams.csv to track mortality of urchins pre-experiment. Marked the urchin with test diameter closest to the 81mm urchin as 'dead'
+
+### 2021-08-05 
+
+Marked the urchin that died on 2021-07-19 as 'dead' in the status column (urchin nearest recorded diameter in the same treatment group).
+
+
+
+
+
+
+
+
+```{r, echo = FALSE}
+
+## Load Libraries
+
+
+```
+
+
+
+```{r}
+# Import all data and manage for analyses/visualizations
+
+
+
+
+```
+
+
+
+
+<!-- end of document -->
