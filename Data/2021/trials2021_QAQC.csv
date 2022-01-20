@@ -599,66 +599,66 @@ trial,date,tank,flowRate_L-min,signalRate_ml-min,beginTemp_C,endTemp_C,beginSal_
 010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,58,45,mp,f,st,ex,ni,halfway on donut and wall
 010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,59,45,mp,f,st,ex,ni,halfway on donut and wall
 010,2021-08-18,TF1,2.5,280,14.4,15.3,30,30,fed,F05,74,control,control,NA,NA,10:33,11:33,put urchin in TF9-U control-control,60,45,mp,f,st,ex,ni,halfway on donut and wall
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,1,4,mt,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,2,2,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,3,2,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,4,2,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,5,2,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,6,1,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,7,2,st,c,st,ex,i,touching kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,8,3,st,c,st,ex,i,"rearing up on kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,9,4,st,c,st,ex,i,"rearing up on kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,10,3,st,c,st,ex,i,"rearing up on kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,11,1,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,12,1,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,13,1,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,14,2,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,15,1,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,16,2,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,17,2,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,18,4,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,19,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,20,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,21,6,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,22,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,23,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,24,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,25,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,26,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,27,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp, shart?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,28,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,29,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,30,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,31,8,ma,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,32,8,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,33,8,st,c,st,ex,i,"on top of kelp, eating? sharted"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,34,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,35,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,36,7,st,c,st,ex,i,"on top of kelp, eating? sharted, coming from underside"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,37,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,38,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,39,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,40,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,41,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,42,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,43,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,44,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,45,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,46,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,47,7,st,c,st,ex,i,"on top of kelp, eating?"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,48,7,st,c,st,ex,i,"on top of kelp, visibly eating"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,49,7,st,c,st,ex,i,"on top of kelp, sharted"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,50,8,ma,c,st,ex,i,"on top of kelp, pulling whole inner ring off center (~4cm)"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,51,8,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,52,8,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,53,8,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,54,8,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,55,8,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,56,6,mt,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,57,6,mt,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,58,5,mt,c,st,ex,i,"on top of kelp, has dragged cup to 5cm mark"
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,59,5,st,c,st,ex,i,on top of kelp
-011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,put urchin in TF5-L pycno-algae,60,5,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",1,4,mt,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",2,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",3,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",4,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",5,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",6,1,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",7,2,st,c,st,ex,i,touching kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",8,3,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",9,4,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",10,3,st,c,st,ex,i,"rearing up on kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",11,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",12,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",13,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",14,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",15,1,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",16,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",17,2,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",18,4,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",19,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",20,5,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",21,6,ma,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",22,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",23,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",24,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",25,6,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",26,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",27,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp, shart?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",28,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",29,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",30,7,st,c,st,ex,i,"on top of kelp, eating? pulling kelp"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",31,8,ma,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",32,8,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",33,8,st,c,st,ex,i,"on top of kelp, eating? sharted"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",34,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",35,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",36,7,st,c,st,ex,i,"on top of kelp, eating? sharted, coming from underside"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",37,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",38,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",39,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",40,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",41,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",42,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",43,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",44,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",45,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",46,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",47,7,st,c,st,ex,i,"on top of kelp, eating?"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",48,7,st,c,st,ex,i,"on top of kelp, visibly eating"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",49,7,st,c,st,ex,i,"on top of kelp, sharted"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",50,8,ma,c,st,ex,i,"on top of kelp, pulling whole inner ring off center (~4cm)"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",51,8,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",52,8,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",53,8,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",54,8,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",55,8,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",56,6,mt,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",57,6,mt,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",58,5,mt,c,st,ex,i,"on top of kelp, has dragged cup to 5cm mark"
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",59,5,st,c,st,ex,i,on top of kelp
+011,2021-08-18,TF2,2.5,250,14.5,14.1,30,31,starved,S06,68,pycno,nereo,21.56,21.05,12:50,13:50,"lux/temp taken from adjacent freshwater arena, put urchin in TF5-L pycno-algae",60,5,st,c,st,ex,i,on top of kelp
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,1,17,ma,m,st,ex,ni,NA
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,2,21,ma,f,st,ex,ni,NA
 012,2021-08-18,TF1,2.5,280,13.5,14.4,31,31,starved,S07,64,control,control,NA,NA,14:42,15:43,put urchin in TF9-W control-control,3,24,ma,f,st,ex,ni,NA
