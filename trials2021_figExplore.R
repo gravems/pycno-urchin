@@ -208,15 +208,43 @@ NMIOdata <- trials2021_Q %>%
   rename('count' = 'sum(count)') %>%
   unite('treatment', pycnoTreat, algalTreat, sep = "-")
   
+# IRM Figure after existing movement literature
 
 ggplot(NMIOdata, aes(x = behavior, y = count, fill = urchinGroup)) +
   geom_boxplot() +
   theme_linedraw() +
   scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.8) +
-  facet_grid(treatment~.) +
+  facet_grid(.~treatment) +
   labs(y = "minutes") + 
   scale_x_discrete(labels = c("interacting", "ROI", "moving"))
+
+# reorganized IRM figure from grad student feedback
+
+# New facet label names for treatment variable
+treat_labs <- c(
+  'control-control' = "control",
+  'control-nereo' = "nereo",
+  'pycno-control' = "pycno",
+  'pycno-nereo' = "nereo + pycno")
+
+# standard error function 
+MinMeanSEMMax <- function(x) {
+  v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
+  names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
+  v
+}
+
+ggplot(NMIOdata, aes(y = count, fill = urchinGroup)) +
+  geom_boxplot() +
+  theme_linedraw() +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()) +
+  scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.8) +
+  facet_grid(behavior~treatment, labeller = labeller(treatment = treat_labs)) +
+  labs(y = "percent time") + 
+  scale_y_continuous(breaks = seq(0, 60, len = 3), labels = function(x) paste0((x/60)*100, "%")) 
   
+
 # numerical values
 
 # algae only interaction times
