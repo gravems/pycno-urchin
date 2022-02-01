@@ -113,6 +113,12 @@ Abigail Ames
 Kayla Hall
 Karly Cohen
 Mo Turner
+Ethan Porter-Hughes
+Jessie Masterman
+Marco Corrales
+Willem Weertman
+Aubrey
+Julia
 
 # Field Notes
 
@@ -541,7 +547,20 @@ Added 'status' column to urchin_test_diams.csv to track mortality of urchins pre
 
 Marked the urchin that died on 2021-07-19 as 'dead' in the status column (urchin nearest recorded diameter in the same treatment group).
 
+### 2022-01-13
 
+Review of pubs with "pycnopodia" in Web of Science searc
+
+```{r}
+# plot of pubs with pycno in search
+
+Pycno_pubs <- read_csv("Data/2021/Pycno_pubs.csv")
+
+ggplot(Pycno_pubs, aes(x = year, y = count, fill = topic)) +
+  theme_classic() +
+  geom_col() +
+  scale_fill_viridis(discrete = TRUE)
+```     
 
 
 
