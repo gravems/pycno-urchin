@@ -36,6 +36,7 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 2021-09-01 Script created
+# 2022-02-10 started anayses suggested by Sarah Gravem
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
@@ -65,6 +66,19 @@ trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv",
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # MANIPULATE DATA                                                              ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# NOTES: run all models with tank & date as random factors first, if they are not significant,
+# remove them
+# break up data into 5 minute increments, create column of time (5, 10, 15, etc),
+# to make it a continuous variable.
+# models to be made:
+#   1. proportion of time interacting - binomial glm
+#   2. proportion of time spines moving - binomial glm
+#   3. average distance from signal - (lmer for rand effects) linear if normal, use Poisson dist
+#   4. cumulative distance traveled - (lmer for rand effects) linear if normal, use Poisson dist
+#   5. movement categories: 0 = mt, 0.5 = mp, 0.5 = st, 1 = ma - binomial glm
+
+
 
 model_dat <- trials2021_Q
 
