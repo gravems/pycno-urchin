@@ -79,8 +79,63 @@ trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv",
 #   5. movement categories: 0 = mt, 0.5 = mp, 0.5 = st, 1 = ma - binomial glm
 
 
+model_1_dat <- trials2021_Q
+model_1_dat <- model_1_dat %>%
+  select(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, interaction) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat) %>%
+  mutate(interacting = case_when(interaction == "ni" ~ 0,
+                           interaction == "i" ~ 1)) 
+model_1_dat_60 <- model_1_dat %>%
+  summarise(interacting = mean(interacting))
+model_1_datetank_60 <- glm(interacting ~ date + tank, family = binomial, data = model_1_dat_60)
+summary(model_1_datetank_60)
+model_1_60 <- glm(interacting ~ urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_60)
+summary(model_1_60)
 
-model_dat <- trials2021_Q
+# is there a correlation between tank and one of the other factors?
+# Create a table with the needed variables.
+tank_dat = table(model_1_dat_60$urchinGroup, model_1_dat_60$tank) 
+print(tank_dat)
+# Perform the Chi-Square test.
+print(chisq.test(tank_dat))
+
+
+# 5 minute increments
+
+model_1_dat_5 <- model_1_dat %>%
+  mutate(minutes = c(rep(5, 5), rep(10, 5), rep(15, 5), rep(20, 5), rep(25, 5), rep(30, 5), rep(35, 5), rep(40, 5), rep(45, 5), rep(50, 5), rep(55, 5), rep(60, 5))) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, minutes) %>%
+  summarise(interacting = mean(interacting))
+model_1_datetank_5 <- glm(interacting ~ date + tank, family = binomial, data = model_1_dat_5)
+summary(model_1_datetank_5)
+model_1_5 <- glm(interacting ~ tank + urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_5)
+summary(model_1_5)
+
+# is there a correlation between tank and one of the other factors?
+# Create a table with the needed variables.
+tank_dat = table(model_1_dat_5$algalTreat, model_1_dat_5$tank) 
+print(tank_dat)
+# Perform the Chi-Square test.
+print(chisq.test(tank_dat))
+
+# 10 minute increments
+
+model_1_dat_10 <- model_1_dat %>%
+  mutate(minutes = c(rep(10, 10), rep(20, 10), rep(30, 10), rep(40, 10), rep(50, 10), rep(60, 10))) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, minutes) %>%
+  summarise(interacting = mean(interacting))
+model_1_datetank_10 <- glm(interacting ~ date + tank, family = binomial, data = model_1_dat_10)
+summary(model_1_datetank_10)
+model_1_10 <- glm(interacting ~ tank + urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_5)
+summary(model_1_10)
+
+# is there a correlation between tank and one of the other factors?
+# Create a table with the needed variables.
+tank_dat = table(model_1_dat_5$algalTreat, model_1_dat_5$tank) 
+print(tank_dat)
+# Perform the Chi-Square test.
+print(chisq.test(tank_dat))
+
 
 # create proportion columns for each behavior
 
