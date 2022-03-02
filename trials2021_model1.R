@@ -36,7 +36,7 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 2021-09-01 Script created
-# 2022-02-10 started anayses suggested by Sarah Gravem
+# 2022-02-10 started analyses suggested by Sarah Gravem
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
@@ -45,6 +45,8 @@
 library(tidyverse)
 library(viridis)
 library(lme4)
+library(ggpubr)
+library(systemfonts)
 
 # set plot theme
 theme_set(theme_classic())
@@ -111,9 +113,36 @@ summary(model_1_datetank_5)
 model_1_5 <- glm(interacting ~ tank + urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_5)
 summary(model_1_5)
 
+# figure of time spent interaction based on all the factors
+
+model_1_plotdat_5 <- model_1_dat_5 %>%
+  unite(Treatment, pycnoTreat, algalTreat, sep = "/" ) %>%
+  mutate(Treatment = case_when(Treatment == "pycno/control" ~ "Pycno",
+                            Treatment == "control/nereo" ~ "Nereo",
+                            Treatment == "control/control" ~ "Control",
+                            Treatment == "pycno/nereo" ~ "Pycno/Nereo"))
+  
+theme_set(theme_light(base_size = 18, base_family = "Poppins"))
+
+model_1_plotdat_5 %>%
+  ggplot(aes(x = interacting, y = Treatment, color = urchinGroup)) +
+  scale_color_viridis(discrete = TRUE, begin = 0.2, end = 0.7) +
+  theme(
+    #legend.position = "none",
+    axis.title = element_text(size = 16),
+  #  axis.text.x = element_text(family = "Roboto Mono", size = 12),
+    panel.grid = element_blank()
+  ) +
+  geom_jitter(size = 2, alpha = 0.25, width = 0.2)
+
 # is there a correlation between tank and one of the other factors?
 # Create a table with the needed variables.
 tank_dat = table(model_1_dat_5$algalTreat, model_1_dat_5$tank) 
+print(tank_dat)
+# Perform the Chi-Square test.
+print(chisq.test(tank_dat))
+
+tank_dat = table(model_1_dat_5$urchinGroup, model_1_dat_5$tank) 
 print(tank_dat)
 # Perform the Chi-Square test.
 print(chisq.test(tank_dat))
@@ -147,21 +176,96 @@ model1_dat <- model_dat %>%
   count(move) %>%
   mutate(time_moving = n/60)
 
-# Did urchins in each group and treatment move more or less from each other?
+# Did urchins in each group and treatment towards, away, or neither the most?
 
-model2_dat <- model_dat %>%
-  select(trial, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+model_2_dat_5 <- trials2021_Q %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat) %>%
+  select(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+  mutate(minutes = c(rep(5, 5), rep(10, 5), rep(15, 5), rep(20, 5), rep(25, 5), rep(30, 5), rep(35, 5), rep(40, 5), rep(45, 5), rep(50, 5), rep(55, 5), rep(60, 5))) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, minutes) %>%
   mutate(moves = case_when(movement == "ma" ~ 1,
-                           movement == "mp" ~ 1,
-                           movement == "mt" ~ 1,
-                           movement == "st" ~ 0)) 
+                           movement == "mp" ~ 0.5,
+                           movement == "mt" ~ 0,
+                           movement == "st" ~ 0.5)) %>%
+  summarise(moves = mean(moves))
 
-move1_mod <- glmer(moves ~ urchinGroup*pycnoTreat*algalTreat + (1|trial), data=model2_dat, family=binomial(link=logit))
+model_2_datetank_5 <- glm(moves ~ date + tank, family = binomial, data = model_2_dat_5)
+summary(model_2_datetank_5)
+#NO TANK OR DATE EFFECT
 
-summary(move1_mod)
+model_2_5 <- glm(moves ~ urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_2_dat_5)
+summary(model_2_5)
 
-plot(move,male,data=data,ylab=”sex”,xlab=”temperature”)
-lines(data$temp,mod3$fitted.values,lty=1,lwd=2)
+
+# did urchins have a difference in average distance from the signal in the tank?
+
+model_3_dat_5 <- trials2021_Q %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat) %>%
+  select(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, distance_cm) %>%
+  mutate(minutes = c(rep(5, 5), rep(10, 5), rep(15, 5), rep(20, 5), rep(25, 5), rep(30, 5), rep(35, 5), rep(40, 5), rep(45, 5), rep(50, 5), rep(55, 5), rep(60, 5))) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, minutes) %>%
+  summarise(dist = mean(distance_cm))
+
+# testing for normality
+library("ggpubr")
+ggdensity(model_3_dat_5$dist, 
+          main = "Density plot of dist",
+          xlab = "distance_cm")
+ggqqplot(model_3_dat_5$dist)
+# NOT NORMAL
+
+# transforming for normality ROOT
+model_3_dat_5 <- model_3_dat_5 %>%
+  mutate(dist_root = sqrt(dist +1))
+# testing transformed for normality
+library("ggpubr")
+ggdensity(model_3_dat_5$dist_root, 
+          main = "Density plot of dist",
+          xlab = "distance (root+1)")
+ggqqplot(model_3_dat_5$dist_root)
+# NOT NORMAL
+
+# transforming for normality LOG
+model_3_dat_5 <- model_3_dat_5 %>%
+  mutate(dist_log = log(dist +1))
+# testing transformed for normality
+library("ggpubr")
+ggdensity(model_3_dat_5$dist_log, 
+          main = "Density plot of dist",
+          xlab = "distance (log+1)")
+ggqqplot(model_3_dat_5$dist_log)
+# NOT NORMAL
+
+# transforming for normality LOG10
+model_3_dat_5 <- model_3_dat_5 %>%
+  mutate(dist_10 = log10(dist +1))
+# testing transformed for normality
+library("ggpubr")
+ggdensity(model_3_dat_5$dist_10, 
+          main = "Density plot of dist",
+          xlab = "distance (log10+1)")
+ggqqplot(model_3_dat_5$dist_10)
+# NOT NORMAL
+
+# transforming for normality CUBED ROOT
+model_3_dat_5 <- model_3_dat_5 %>%
+  mutate(dist_cube = 10^(log10(dist+1)/3))
+# testing transformed for normality
+library("ggpubr")
+ggdensity(model_3_dat_5$dist_cube, 
+          main = "Density plot of dist",
+          xlab = "distance (cube root+1)")
+ggqqplot(model_3_dat_5$dist_cube)
+# NOT NORMAL
+
+model_3_datetank_5 <- glm(dist ~ date + tank, family = binomial, data = model_2_dat_5)
+summary(model_2_datetank_5)
+
+
+model_2_5 <- glm(moves ~ urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_2_dat_5)
+summary(model_2_5)
+
+
 ############### SUBSECTION HERE
 
 ####
