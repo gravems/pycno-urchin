@@ -122,18 +122,34 @@ model_1_plotdat_5 <- model_1_dat_5 %>%
                             Treatment == "control/control" ~ "Control",
                             Treatment == "pycno/nereo" ~ "Pycno/Nereo"))
   
-theme_set(theme_light(base_size = 18, base_family = "Poppins"))
+theme_set(theme_light(base_size = 18))
+
+control_avg <- 
+  model_1_plotdat_5 %>%
+  ungroup() %>%
+  filter(Treatment == "Control") %>%
+  summarize(avg = mean(interacting)) %>%
+  pull(avg)
+
 
 model_1_plotdat_5 %>%
-  ggplot(aes(x = interacting, y = Treatment, color = urchinGroup)) +
-  scale_color_viridis(discrete = TRUE, begin = 0.2, end = 0.7) +
+  ggplot(aes(y = interacting, x = Treatment, color = urchinGroup)) +
+  geom_hline(aes(yintercept = control_avg), color = "gray70", size = 0.6) +
+  geom_jitter(position = position_jitter(seed = 227, width = 0.2), size = 2, alpha = 0.20) +
+  stat_summary(fun = mean, geom = "point", size = 5, position = position_jitter(seed = 227)) +
+  coord_flip() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.5) +
+  labs(color = "Urchin Group") +
+  labs(y = "Proportion Time Interacting", x = NULL) +
   theme(
-    #legend.position = "none",
     axis.title = element_text(size = 16),
-  #  axis.text.x = element_text(family = "Roboto Mono", size = 12),
+   axis.text.x = element_text(size = 12),
     panel.grid = element_blank()
-  ) +
-  geom_jitter(size = 2, alpha = 0.25, width = 0.2)
+  ) 
+  
+  
+
+
 
 # is there a correlation between tank and one of the other factors?
 # Create a table with the needed variables.
