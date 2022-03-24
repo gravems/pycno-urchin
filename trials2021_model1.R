@@ -153,7 +153,7 @@ model_1_plotdat_5 %>%
   ggplot(aes(y = interacting, x = Treatment, color = urchinGroup)) +
   geom_hline(aes(yintercept = control_avg), color = "gray70", size = 0.6) +
   geom_jitter(position = position_jitter(seed = 227, width = 0.2), size = 2, alpha = 0.20) +
-  stat_summary(fun = mean, geom = "point", size = 5, position = position_jitter(seed = 227)) +
+  stat_summary(fun = mean, geom = "point", size = 5, pch = 17, position = position_jitter(seed = 227)) +
   scale_y_continuous(
     limits = c(-0.1, 1.1), expand = c(0.005, 0.005)) +
   coord_flip() +

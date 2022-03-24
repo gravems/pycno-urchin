@@ -161,8 +161,7 @@ urchin_time <- urchin_timeseries %>%
 # TOTAL CONSUMED overall BOXPLOT
 theme_set(theme_light(base_size = 18))
 
-  total_box
-    
+
 urchin_time %>%
     ggplot(aes(x = pycno, y = tot_consumed, fill = pycno)
   ) +
@@ -178,7 +177,28 @@ urchin_time %>%
   summarise(total = sum(consumed)) %>%
   summarise(mean(total))
   
-  
+# ALGAE CONSUMED USING BIOMASS MEASUREMENTS CONFETTI WEIGHTS
+
+# Algal consumption plots
+
+# based on field notes from 2020-09-13 - confetti diameter = 21mm
+
+# > pi*((2.1/2)^2)
+# [1] 3.463606
+
+# > confetti_weights %>%
+#  +   summarise(mean(weight_mg))
+#  A tibble: 1 x 1
+# `mean(weight_mg)`
+# <dbl>
+#   1              339.
+
+# > 339/3.463606
+# [1] 97.87487 mg per square cm
+# each piece of confetti ~ 339mg
+
+
+
   
   
     
@@ -278,14 +298,18 @@ mod_1
 
 
   # mean number of confetti consumed per time point per treatment
-  
-  timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
+
+theme_set(theme_light(base_size = 18))    
+
+ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
     scale_fill_viridis(discrete = TRUE,
-                       begin = 0.3,
-                       end = 0.9) +
+                       begin = 0.5,
+                       end = 0.9,
+                       option = "magma") +
     geom_boxplot() +
-    facet_grid(. ~ timepoint) +
-    theme_minimal()
+    facet_grid(. ~ hours) +
+  scale_y_continuous(name = "Pieces of Kelp Consumed") +
+  theme(axis.text.x=element_blank())
   
   
   
