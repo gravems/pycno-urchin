@@ -42,6 +42,7 @@
 library(tidyverse)
 library(viridis)
 library(nlme)
+library(lme4)
 library(vegan)
 library(ggpubr)
 
@@ -50,7 +51,7 @@ library(ggpubr)
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 urchin_fear_pycno <-
-  read_csv('Data/urchin_fear_feeding_pycno-trial-1.csv')
+  read_csv('Data/2020/urchin_fear_feeding_pycno-trial-1.csv')
 # dataset with bucket treatment removed:
 #urchin_fear_pycno <- urchin_fear_pycno %>%
 #  filter(treatment != 'bucket')
@@ -72,11 +73,11 @@ urchin_fear_pycno <-
         remove = FALSE)
 
 per_urchin_consumed_total <- urchin_fear_pycno %>%
-  group_by(ID, pycno) %>%
-  summarise(sum(consumed))
+  group_by(trial, bin, tank, ID, pycno) %>%
+  summarise(`total consumed` = sum(consumed)) %>%
+  ungroup()
 
-names(per_urchin_consumed_total)[names(per_urchin_consumed_total) ==
-                                   "sum(consumed)"] <- "total_consumed"
+
 
 # urchin sizes
 urchin_size <- urchin_fear_pycno %>%
@@ -93,25 +94,24 @@ size_plot <- ggplot(
 summary(urchin_size$diameter)
 
 # total consumed by each urchin across all trials
-total_consumed_plot <- ggplot(per_urchin_consumed_total,
-       aes(x = pycno, y = total_consumed, fill = pycno)) +
+
+per_urchin_consumed_total %>%
+  ggplot(aes(x = pycno, y = `total consumed`, fill = pycno)) +
   geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE,
-                     begin = 0.2,
-                     end = 0.9) +
+  scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
   theme_minimal()
 
 t.test(diameter ~ pycno, data = urchin_size)
 
 per_trial_pycno <- per_urchin_consumed_total %>%
   filter(pycno == "yes")
-summary(per_trial_pycno$total_consumed)
-sd(per_trial_pycno$total_consumed)
+summary(per_trial_pycno$`total consumed`)
+sd(per_trial_pycno$`total consumed`)
 
 per_trial_empty <- per_urchin_consumed_total %>%
   filter(pycno == "no")
-summary(per_trial_empty$total_consumed)
-sd(per_trial_empty$total_consumed)
+summary(per_trial_empty$`total consumed`)
+sd(per_trial_empty$`total consumed`)
 
 # amount consumed per timepoint
 timepoint_consumed_plot <- ggplot(urchin_fear_pycno, aes(x = pycno, y = consumed, fill = pycno)) +
@@ -154,24 +154,54 @@ timeseries_bar <- ggplot(urchin_timeseries, aes(
 urchin_time <- urchin_timeseries %>%
   group_by(trial, pycno) %>%
   mutate(tot_consumed = sum(consumed))
-
-total_box <- ggplot(
-  urchin_timeseries %>%
-    group_by(trial, pycno) %>%
-    mutate(tot_consumed = sum(consumed))
   
-  total_box <- ggplot(
-    urchin_timeseries %>%
-      group_by(trial, pycno) %>%
-      mutate(tot_consumed = sum(consumed)),
-    aes(x = pycno, y = tot_consumed, fill = factor(pycno))
+
+
+
+# TOTAL CONSUMED overall BOXPLOT
+theme_set(theme_light(base_size = 18))
+
+
+urchin_time %>%
+    ggplot(aes(x = pycno, y = tot_consumed, fill = pycno)
   ) +
     geom_boxplot() +
     scale_fill_viridis(discrete = TRUE,
-                       begin = 0.2,
-                       end = 0.9) +
-    theme_minimal()
+                       begin = 0.5,
+                       end = 0.9,
+                       option = "magma") +
+    labs(y = "Pieces of Kelp Consumed")
   
+urchin_time %>%
+  group_by(pycno, trial) %>%
+  summarise(total = sum(consumed)) %>%
+  summarise(mean(total))
+  
+# ALGAE CONSUMED USING BIOMASS MEASUREMENTS CONFETTI WEIGHTS
+
+# Algal consumption plots
+
+# based on field notes from 2020-09-13 - confetti diameter = 21mm
+
+# > pi*((2.1/2)^2)
+# [1] 3.463606
+
+# > confetti_weights %>%
+#  +   summarise(mean(weight_mg))
+#  A tibble: 1 x 1
+# `mean(weight_mg)`
+# <dbl>
+#   1              339.
+
+# > 339/3.463606
+# [1] 97.87487 mg per square cm
+# each piece of confetti ~ 339mg
+
+
+
+  
+  
+    
   per_exp_pycno <- urchin_time %>%
     select(-datetime) %>%
     filter(pycno == "yes")
@@ -182,13 +212,15 @@ total_box <- ggplot(
     select(-datetime) %>%
     filter(pycno == "no")
   summary(per_exp_empty$tot_consumed)
-  sd(per_exp_empty$tot_consumed)
+  sd(per_exp_pycno$tot_consumed)
   
   
   # change unknown diameters to 61
   
   urchin_timeseries$diameter <- urchin_timeseries$diameter %>%
     recode("nd" = "61")
+  
+  theme_set(theme_light(base_size = 18))
   
   ggplot(
     urchin_timeseries %>%
@@ -226,36 +258,58 @@ total_box <- ggplot(
       '9' = 69
     )
   
-  hour_line <- ggplot(
+
+  
+  hour_line 
+
+  
+  
+  
+  
+# THIS IS THE CUMULATIVE CONFETTI FIGURE:
+theme_set(theme_light(base_size = 18))  
+  
+ggplot(
     urchin_timeseries %>%
       group_by(pycno, ID) %>%
       mutate(cc = cumsum(consumed)),
     aes(
       x = hours, # as.POSIXct(datetime),
       y = cc,
-      color = factor(pycno)
+      color = pycno
     )
   ) +
     scale_color_viridis(discrete = TRUE,
-                        begin = 0.3,
-                        end = 0.8) +
-    geom_point(aes(size = log(as.numeric(
-      urchin_timeseries$diameter
-    )) * 2), alpha = 0.7) +
+                        begin = 0.5,
+                        end = 0.9,
+                        option = "magma") +
+    geom_point(size = 5) +
     geom_line(aes(group = ID), alpha = 0.25) +
-    geom_smooth(method = "lm") +
-    theme_minimal() +
-    scale_y_continuous(name = "Cumulative Confetti Consumed (linear)")
+    geom_smooth(method = "lm", size = 2) +
+    scale_y_continuous(name = "Pieces of Kelp Consumed")
   
+# a model based on this data:
+
+mod_1 <- lm(`total consumed` ~ pycno, data = per_urchin_consumed_total)
+summary(mod_1)
+mod_1
+
+
+
+
   # mean number of confetti consumed per time point per treatment
-  
-  timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
+
+theme_set(theme_light(base_size = 18))    
+
+ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
     scale_fill_viridis(discrete = TRUE,
-                       begin = 0.3,
-                       end = 0.9) +
+                       begin = 0.5,
+                       end = 0.9,
+                       option = "magma") +
     geom_boxplot() +
-    facet_grid(. ~ timepoint) +
-    theme_minimal()
+    facet_grid(. ~ hours) +
+  scale_y_continuous(name = "Pieces of Kelp Consumed") +
+  theme(axis.text.x=element_blank())
   
   
   
@@ -273,7 +327,7 @@ total_box <- ggplot(
     filter(timepoint != '0')
   
   # is total amount of confetti consumed per trial different between groups?
-  t.test(total_consumed ~ pycno, data = per_urchin_consumed_total)
+  t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
   
   # is aount of confetti consumed per time point different between groups (w/size)?
   mix_1 <-
@@ -291,7 +345,7 @@ total_box <- ggplot(
   
   ############### COLLATED FIGURES
   
-  Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, total_consumed_plot, total_box, 
+  Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, total_consumed_plot, total_box,
                            labels = c("A", "B", "C", "D"),
                            ncol = 2, nrow = 2,
                            common.legend = TRUE, legend = "right")
@@ -369,7 +423,7 @@ urchin_fear_mix_data <- urchin_fear_pycno %>%
   filter(timepoint != '0')
 
 # is total amount of confetti consumed per trial different between groups?
-t.test(total_consumed ~ pycno, data = per_urchin_consumed_total)
+t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
 
 # is aount of confetti consumed per time point different between groups (w/size)?
 mix_1 <-
@@ -387,7 +441,7 @@ urchin_vals <-  urchin_timeseries %>%
 
 ############### COLLATED FIGURES
 
-Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, total_consumed_plot, total_box, 
+Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, `total consumed`_plot, total_box, 
                          labels = c("A", "B", "C", "D"),
                          ncol = 2, nrow = 2,
                          common.legend = TRUE, legend = "right")
