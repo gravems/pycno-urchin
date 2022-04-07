@@ -122,6 +122,9 @@ summary(model_1_datetank_5)
 model_1_5 <- glm(interacting ~ tank + urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_5)
 summary(model_1_5)
 
+# output to new csv for other scripts to access:
+write_csv(model_1_dat_5, "model_1_dat_5.csv")
+
 # figure of time spent interaction based on all the factors
 
 theme_set(theme_light(base_size = 18))
