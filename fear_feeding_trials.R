@@ -329,7 +329,7 @@ ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
   # is total amount of confetti consumed per trial different between groups?
   t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
   
-  # is aount of confetti consumed per time point different between groups (w/size)?
+  # is amount of confetti consumed per time point different between groups (w/size)?
   mix_1 <-
     lme(consumed ~ pycno, # + diameter,
         random = ~ timepoint | ID,
