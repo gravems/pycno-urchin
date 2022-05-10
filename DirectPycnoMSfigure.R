@@ -47,6 +47,7 @@ library(tidyverse)
 library(viridis)
 library(maps)
 library(scatterpie)
+library(data.table)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # READ IN AND PREPARE DATA                                                     ####
@@ -59,12 +60,97 @@ PycnoDensity <- read_csv("~/Git/pycno-urchin/Data/DirectMS/PycnoDensity.csv",
 PycnoDensity[is.na(PycnoDensity)] <- 0
 
 PycnoDiet <- read_csv("Data/DirectMS/PycnoDiet.csv")
+# create less groupings
+PycnoDiet_step1 <- PycnoDiet %>%
+  mutate(item = case_when(Item == "Balanus spp." ~ "Barnacles",
+                          Item == "Barnacles" ~ "Barnacles",
+                          Item == "Bivalves" ~ "Bivalves",
+                          Item == "Bryozoans" ~ "Other",
+                          Item == "Chitons" ~ "Other Molluscs",
+                          Item == "Crabs" ~ "Crustaceans",
+                          Item == "Crustaceans" ~ "Crustaceans",
+                          Item == "Echinoderms" ~ "Other Echinoderms",
+                          Item == "Fishes" ~ "Other",
+                          Item == "Gastropods" ~ "Gastropods",
+                          Item == "Holothurians" ~ "Other Echinoderms",
+                          Item == "Hydroids" ~ "Other",
+                          Item == "Molluscs Cephalopods" ~ "Other Molluscs",
+                          Item == "Molluscs Gastropods" ~ "Gastropods",
+                          Item == "Molluscs Pelecypoda" ~ "Bivalves",
+                          Item == "Mytilus edulis" ~ "Bivalves",
+                          Item == "Ophiuroids" ~ "Other Echinoderms",
+                          Item == "Other" ~ "Other",
+                          Item == "Other Echinoderms" ~ "Other Echinoderms",
+                          Item == "Polychaetes" ~ "Other",
+                          Item == "Salps" ~ "Other",
+                          Item == "Sipunculids" ~ "Other",
+                          Item == "Sponges" ~ "Other",
+                          Item == "Unidentified" ~ "Other",
+                          Item == "Urchins" ~ "Urchins"))
+# create unique sample ID to parse sub- inter-tidal
+PycnoDiet_step2 <- PycnoDiet_step1 %>%
+  unite("sampleID", Location, Depth, sep = "_") %>%
+  group_by(sampleID)
+# add urchin in Bamfield samples to the exposed site
+PycnoDiet_step2$sampleID <- PycnoDiet_step2$sampleID %>%
+  recode("Bamfield_Subtidal" = "Bamfield_Subtidal Exposed")
+# bring Bamfield values up to 100 percent with 'Other'
+PycnoDiet_step2 <- ungroup(PycnoDiet_step2) %>%
+  add_row(Region = c("British Columbia", "British Columbia", "British Columbia"),
+          sampleID = c("Bamfield_Subtidal Exposed", "Bamfield_Subtidal Intermediate", "Bamfield_Subtidal Protected"),
+          Lat = c(48.8262097, 48.8262097, 48.8262097),
+          Lon = c(-125.1359127, -125.1359127, -125.1359127),
+          item = c("Other", "Other", "Other"),
+          value = c(27.2, 43.1, 42.3))
+  # adjust lat long to plot pies seperately
+PycnoDiet_step3 <- PycnoDiet_step2 %>%
+  mutate(new_long = case_when(sampleID == "Torch Bay_Subtidal" ~ Lon - 1.5,
+                              sampleID == "Torch Bay_Intertidal" ~ Lon + 1.2,
+                              sampleID == "Pacific Grove_Subtidal" ~ Lon - 3,
+                              sampleID == "Bamfield_Subtidal Exposed" ~ Lon - 5,
+                              sampleID == "Bamfield_Subtidal Intermediate" ~ Lon - 4.5,
+                              sampleID == "Bamfield_Subtidal Protected" ~ Lon - 4,
+                              sampleID == "Gabriola Island_Subtidal" ~ Lon - 1,
+                              sampleID == "Prince William Sound_Intertidal" ~ Lon + 1.5,
+                              sampleID == "Prince William Sound_Subtidal" ~ Lon - 1.5,
+                              sampleID == "San Juan Islands_Subtidal Vadas" ~ Lon + 2,
+                              sampleID == "San Juan Islands_Subtidal Mauzey" ~ Lon + 2.5,
+                              sampleID == "Outer Coast_Intertidal Paine" ~ Lon - 3,
+                              sampleID == "Outer Coast_Intertidal Dayton" ~ Lon - 1.5))
+PycnoDiet_step4 <- PycnoDiet_step3 %>%
+  mutate(new_lat = case_when(sampleID == "Torch Bay_Subtidal" ~ Lat - 2,
+                             sampleID == "Torch Bay_Intertidal" ~ Lat - 3.5,
+                             sampleID == "Pacific Grove_Subtidal" ~ Lat,
+                             sampleID == "Bamfield_Subtidal Exposed" ~ Lat + 3.5,
+                             sampleID == "Bamfield_Subtidal Intermediate" ~ Lat + 0.5,
+                             sampleID == "Bamfield_Subtidal Protected" ~ Lat - 2.5,
+                             sampleID == "Gabriola Island_Subtidal" ~ Lat + 2,
+                             sampleID == "Prince William Sound_Intertidal" ~ Lat - 2,
+                             sampleID == "Prince William Sound_Subtidal" ~ Lat - 2,
+                             sampleID == "San Juan Islands_Subtidal Vadas" ~ Lat + 1.5,
+                             sampleID == "San Juan Islands_Subtidal Mauzey" ~ Lat - 1.5,
+                             sampleID == "Outer Coast_Intertidal Paine" ~ Lat - 5,
+                             sampleID == "Outer Coast_Intertidal Dayton" ~ Lat - 7.5))
+# summarise totals of each prey type per site 
+PycnoDiet_step5 <- PycnoDiet_step4 %>%
+  group_by(sampleID, item, new_lat, new_long, Lat, Lon, N) %>%
+  summarise(value = sum(value))
+# standardize all prey values to percent of total
+PycnoDiet_step6 <- PycnoDiet_step5 %>%
+  group_by(sampleID) %>%
+  summarise(total = sum(value))
+PycnoDiet_step7 <- PycnoDiet_step5 %>%
+  left_join(PycnoDiet_step6, by = "sampleID")
+PycnoDiet_step8 <- PycnoDiet_step7 %>%
+  mutate(value = 100 * (value / total))
+# round value column to 2 digits
+PycnoDiet_step8$value <- round(PycnoDiet_step8$value, digits = 2)
+# create subtidal intertidal column
+PycnoDiet_step9 <- PycnoDiet_step8 %>%
+  mutate(Depth = ifelse(sampleID %like% "Subtidal", "Subtidal", "Intertidal"))
 
-dietWide <- PycnoDiet %>%
-  select(-Notes) %>%
-  pivot_wider(names_from = "Item", values_from = "Value")
-dietWide[is.na(dietWide)] <- 0
 
+  
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # DENSITY FIGURE                                                               ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -101,21 +187,45 @@ PycnoDensity %>%
 # DIET FIGURE                                                                  ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+# set for 1600 x 1450
+
+# create values of N to add to the plot
+annotations <- data.frame (N  = c("72", "425", "311", "162", "67", "120", "45", "7", "24", "102", "51", "93", "41"),
+                           Lat = c(56.1, 56.1, 53.8, 52.3, 52.5, 49, 46, 53.7, 50, 47, 43, 40.5, 36.8),
+                           Lon = c(-149, -146, -138.5, -135.8, -132.8, -132.7, -132, -125, -118, -117.5, -130.1, -129, -127.8))
+
+
 world <- map_data("world")
 NorthAm <- world %>%
   filter(region %in% c("USA", "Canada", "Mexico")) %>%
-  filter(-155 < long & long < -110) %>%
+  filter(-158 < long & long < -110) %>%
   filter(25 < lat & lat < 75)
 ggplot(NorthAm, aes(long, lat)) +
   geom_map(map=NorthAm, aes(map_id=region), fill="grey97", color="grey") +
-  ylim(c(30,70)) +
-  xlim(c(-150, -115)) +
-  coord_fixed() +
+  ylim(c(33,65)) +
+  xlim(c(-153, -115)) +
   theme_bw() +
-  geom_scatterpie(data = filter(dietWide, Depth == "Subtidal"),
-                  aes(Lon, Lat, r = 1.5),
-                  cols = c("Urchins", "Gastropods", "Bivalves", "Crustaceans", "Other Echinoderms", "Echinoderms")) +
-  scale_fill_viridis(discrete = TRUE, option = "H", begin = 0.2)
+  geom_segment(data = PycnoDiet_step9,
+               mapping = aes(x = new_long, xend = Lon, y = new_lat, yend = Lat),
+               color = "black",
+               size = 1) +
+  geom_point(data = PycnoDiet_step9, aes(new_long, new_lat, color = Depth), size = 40) +
+  guides(color = guide_legend(override.aes = list(size = 15))) +
+  geom_scatterpie(data = PycnoDiet_step9,
+                  aes(new_long, new_lat, r = 1.45),
+                  cols = "item", long_format= TRUE) +
+  scale_color_viridis(discrete = TRUE, begin = 0.2, end = 0.9, direction = -1) +
+  scale_fill_viridis(discrete = TRUE, option = "H", begin = 0.2, name = "Prey Item") +
+  theme(legend.key.size = unit(1, 'cm'),
+        legend.title = element_text(size=20),
+        legend.text = element_text(size=16)) +
+  geom_text(data = annotations, aes(x = Lon, y = Lat, label = N), size = 10) +
+  annotate("text", x = -120, y = 63, label = "N", size = 8) +
+  annotate("segment", x = -120, xend = -120, y = 59, yend = 62, arrow=arrow(length=unit(0.2,"cm"))) +
+  labs(x = "Longitude", y = "Latitude") +
+  theme(axis.text=element_text(size=14),
+        axis.title = element_text(size=16)) +
+  coord_fixed()
 
 ############### SUBSECTION HERE
 
@@ -123,3 +233,6 @@ ggplot(NorthAm, aes(long, lat)) +
 #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
+
+test <- PycnoDiet_step8 %>%
+  filter(sampleID %in% c("Prince William Sound_Subtidal", "Prince William Sound_Intertidal"))

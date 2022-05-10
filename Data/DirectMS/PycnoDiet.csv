@@ -1,4 +1,4 @@
-Region,Location,N,Depth,Item,Value,Unit,Year,Measurement,Lat,Lon,Ref,Notes
+Region,Location,N,Depth,Item,value,Unit,Year,Measurement,Lat,Lon,Ref,Notes
 Alaska,Torch Bay,311,Subtidal,Urchins,66,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Alaska,Torch Bay,162,Intertidal,Urchins,2,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Alaska,Torch Bay,311,Subtidal,Gastropods,5,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
@@ -23,13 +23,13 @@ Alaska,Torch Bay,311,Subtidal,Balanus spp.,2,percent,1977,feeding observation,58
 Alaska,Torch Bay,162,Intertidal,Balanus spp.,6,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Alaska,Torch Bay,311,Subtidal,Chitons,2,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Alaska,Torch Bay,162,Intertidal,Chitons,2,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
-Alaska,Torch Bay,311,Subtidal,Other,4,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
+Alaska,Torch Bay,311,Subtidal,Other,3,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Alaska,Torch Bay,162,Intertidal,Other,2,percent,1977,feeding observation,58.3257493,-136.791801,Duggins 1983,
 Central California,Pacific Grove,41,Subtidal,Gastropods,79,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Crustaceans,13.6,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Other Echinoderms,1.7,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Urchins,1.1,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
-Central California,Pacific Grove,41,Subtidal,Bilvalves,1.4,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
+Central California,Pacific Grove,41,Subtidal,Bivalves,1.4,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Polychaetes,0.8,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Bryozoans,0.6,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
 Central California,Pacific Grove,41,Subtidal,Fishes,0.6,percent,1980,gut contents,36.6254128,-121.9417286,Herrlinger 1983,condensed higher-resolutions taxa
