@@ -70,7 +70,7 @@ knitr::opts_chunk$set(echo = TRUE,
 ## Load Libraries
 
 library(tidyverse)
-library(gt)
+#library(gt)
 library(viridis)
 library(ggmap)
 library(algaeClassify)
