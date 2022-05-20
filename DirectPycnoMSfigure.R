@@ -48,6 +48,7 @@ library(viridis)
 library(maps)
 library(scatterpie)
 library(data.table)
+library(ggpubr)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # READ IN AND PREPARE DATA                                                     ####
@@ -158,7 +159,23 @@ PycnoDiet_step9 <- PycnoDiet_step8 %>%
 # make a shiny app that shows the expected state for historic and current values
 # with a slider that changes urchin recruitment
 
-PycnoDensity %>%
+# calculate mean of means (SE = SD of the dist? Right?)
+
+PycnoDensity_step1 <- PycnoDensity %>%
+  group_by(populationPhase) %>%
+  bind_rows(summarise(.,
+                      across(where(is.numeric), mean),
+                      across(where(is.character), ~"Overall Mean"))) %>%
+  ungroup()
+PycnoDensity_step1[PycnoDensity_step1 == "0"] <- 1 
+PycnoDensity_step1[25:26, 6] <- 0
+PycnoDensity_step1[4,4] <- 7
+PycnoDensity_step1[16, 4] <- 7
+PycnoDensity_step1[22, 4] <- 7
+PycnoDensity_step1[24, 4] <- 7
+
+
+PycnoHistCurrPlot <- PycnoDensity_step1 %>%
   mutate(across(populationPhase, factor, levels=c("Historic", "Current"))) %>% 
   mutate(across(Region, factor, levels=c("Aleutians",
                                          "West Gulf of Alaska", 
@@ -171,17 +188,79 @@ PycnoDensity %>%
                                          "Northern California",
                                          "Central California",
                                          "Southern California",
-                                         "Baja California"))) %>% 
-  ggplot(aes(Region, meanDensityM2, color = populationPhase)) +
-  geom_pointrange(size = 1, aes(ymin = meanDensityM2-SEDensityM2, ymax = meanDensityM2+SEDensityM2), 
+                                         "Baja California",
+                                         "Overall Mean"))) %>% 
+  ggplot(aes(Region, meanDensityKM2/100, color = populationPhase)) +
+  geom_rect(xmin = 12.5, xmax = 13.5, ymin = -Inf, ymax = Inf, fill = "grey90") +
+  geom_hline(yintercept = 0.07, color = "dark grey", linetype = "solid", size = 1) +
+  geom_pointrange(size = 1, aes(ymin = (meanDensityKM2/100)-(SEDensityKM2/100), ymax = (meanDensityKM2/100)+(SEDensityKM2/100)), 
                   position=position_jitter(width=0.2), 
                   linetype='solid') +
-  geom_hline(yintercept = 0.06, color = "red", linetype = "dotted", size = 1) +
+  geom_hline(yintercept = 6, color = "red", linetype = "dotted", size = 1) +
+  geom_hline(yintercept = 0.1, color = "red", linetype = "dotted", size = 1) +
   scale_color_viridis(name = "Population Phase", discrete = TRUE, begin = 0.3, end = 0.7, option = "F") +
-  theme_minimal() +
+  theme_bw() +
+  theme(legend.position = "top") +
+  scale_y_continuous(trans= "log10", position = "right", breaks= c(seq(0.1,0.9, by = 0.1), seq(1,6, by = 1), seq(60,1400, by = 250)))+
   theme(axis.text.x = element_text(angle = 270, hjust=0, vjust = 0)) +
-  labs(y = "Mean Pycnopodia Density (m^-1)") +
-  theme(axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0)))
+  ylab(expression(paste("Mean Pycnopodia Density (no. 100 ", m^-2, ")"))) +
+  xlab(label = NULL) +
+  theme(axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0))); PycnoHistCurrPlot 
+
+
+
+#### DAN'S DENSITY FIGURE (2022-05-17)
+
+library(fields)
+library(metR)
+
+### read in output
+
+out <- read.csv("~/Git/Pycno_Purps/Output/initial_runs.csv")
+
+### generate the figure
+dens_plot <- ggplot(aes(urch_rec,pycno_dens*100, fill= urch_dens),data= out)+geom_tile()+
+  scale_y_continuous(trans= "log10",expand= c(0,0), breaks= c(seq(0.1,0.9, by = 0.1), seq(1,6, by = 1)))+
+  scale_fill_viridis(option = "H",trans= "sqrt",breaks= seq(0,30,by =5), 
+                       name= expression(paste("Urchin Density (", m^-2, ")")))+
+  ylab(expression(paste(italic("Pycnopodia"), " density (no. 100", m^-2, ")")))+
+  theme_bw()+
+  theme(legend.position= "top",
+        legend.key.width = unit(2,"cm"),
+        panel.background= element_blank(),
+        plot.background= element_blank())+
+  metR::geom_contour2(aes(z = urch_dens, label = stat(level)),breaks= seq(2,4,by =1),skip=0)+
+  metR::geom_contour2(aes(z = urch_dens, label = stat(level)),breaks= seq(0,30,by =5),skip= 0)+
+  guides(fill= guide_colourbar(title.position="top",title.hjust= 0.5))+
+  xlab(expression(paste("Recruitment (no. ", yr^-1, m^-2,")")))+
+  scale_x_continuous(expand= c(0,0))+
+  annotation_logticks(sides = "l",base= 10,colour= "white") +
+  geom_hline(yintercept = as.numeric(PycnoDensity_step1[14,4]*0.01), color = "White", linetype = "dashed", size = 1) +
+  geom_hline(yintercept = as.numeric(PycnoDensity_step1[18,4]*0.01), color = "White", linetype = "dashed", size = 1) +
+  geom_hline(yintercept = as.numeric(PycnoDensity_step1[20,4]*0.01), color = "White", linetype = "dashed", size = 1) +
+  annotate("text", x = 0.5, y = 3.3, color = "White", label = "WA Coast") +
+  annotate("text", x = 1, y = 2.5, color = "white", label = "North CA") +
+  annotate("text", x = 1.5, y = 2, color = "white", label = "Central CA"); dens_plot
+
+# PUT THEM TOGETHER
+
+# create lines across plots:
+insetlines <- tibble(y = c(0.2, 9.1, 2.15, 5.27),
+                     x = c(0, 0, 5, 5), 
+                     z = c("A", "B", "A", "B"))
+lineplot <- insetlines %>%
+  ggplot(aes(x, y, group = z)) +
+  geom_point(size = 1, color = "red") +
+  geom_line(linetype = "dotted", color = "red", size = 1) +
+  scale_x_continuous(limits = c(0,5)) +
+  scale_y_continuous(limits = c(0, 10)) +
+  theme_void()
+
+Figure1 <- ggarrange(dens_plot, lineplot, PycnoHistCurrPlot, 
+                     nrow = 1, widths = c(1, 0.2, 1),
+                     labels = c("A", "", "B"))
+Figure1
+# best size: ~1800x850
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # DIET FIGURE                                                                  ####
@@ -201,7 +280,7 @@ NorthAm <- world %>%
   filter(-158 < long & long < -110) %>%
   filter(25 < lat & lat < 75)
 ggplot(NorthAm, aes(long, lat)) +
-  geom_map(map=NorthAm, aes(map_id=region), fill="grey97", color="grey") +
+  geom_map(map=NorthAm, aes(map_id=region), fill="grey80", color="grey25") +
   ylim(c(33,65)) +
   xlim(c(-153, -115)) +
   theme_bw() +
