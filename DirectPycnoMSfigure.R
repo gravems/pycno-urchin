@@ -54,9 +54,12 @@ library(ggpubr)
 # READ IN AND PREPARE DATA                                                     ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+# read, filter old groupings out, add zeros to NA
 PycnoDensity <- read_csv("~/Git/pycno-urchin/Data/DirectMS/PycnoDensity.csv", 
                          col_types = cols(meanDensityKM2 = col_number(), 
                                           SDDensityKM2 = col_number(), SEDensityKM2 = col_number()))
+PycnoDensity <- PycnoDensity %>%
+  filter(populationPhase != "Current" | Range != "full")
 
 PycnoDensity[is.na(PycnoDensity)] <- 0
 
@@ -167,12 +170,12 @@ PycnoDensity_step1 <- PycnoDensity %>%
                       across(where(is.numeric), mean),
                       across(where(is.character), ~"Overall Mean"))) %>%
   ungroup()
-PycnoDensity_step1[PycnoDensity_step1 == "0"] <- 1 
-PycnoDensity_step1[25:26, 6] <- 0
-PycnoDensity_step1[4,4] <- 7
-PycnoDensity_step1[16, 4] <- 7
-PycnoDensity_step1[22, 4] <- 7
-PycnoDensity_step1[24, 4] <- 7
+PycnoDensity_step1[PycnoDensity_step1 == "0"] <- 0.000005 
+PycnoDensity_step1[24:25, 9] <- 0
+PycnoDensity_step1[14,9] <- 0.0000001
+PycnoDensity_step1[18, 9] <- 0.0000001
+PycnoDensity_step1[22, 9] <- 0.0000001
+PycnoDensity_step1[13, 9] <- 0.0000001
 
 
 PycnoHistCurrPlot <- PycnoDensity_step1 %>%
@@ -190,10 +193,10 @@ PycnoHistCurrPlot <- PycnoDensity_step1 %>%
                                          "Southern California",
                                          "Baja California",
                                          "Overall Mean"))) %>% 
-  ggplot(aes(Region, meanDensityKM2/100, color = populationPhase)) +
+  ggplot(aes(Region, meanDensityM2*10000, color = populationPhase)) +
   geom_rect(xmin = 12.5, xmax = 13.5, ymin = -Inf, ymax = Inf, fill = "grey90") +
-  geom_hline(yintercept = 0.07, color = "dark grey", linetype = "solid", size = 1) +
-  geom_pointrange(size = 1, aes(ymin = (meanDensityKM2/100)-(SEDensityKM2/100), ymax = (meanDensityKM2/100)+(SEDensityKM2/100)), 
+  geom_hline(yintercept = 0.05, color = "dark grey", linetype = "solid", size = 1) +
+  geom_pointrange(size = 1, aes(ymin = (meanDensityM2*10000)-(SEDensityM2*10000), ymax = (meanDensityM2*10000)+(SEDensityM2*10000)), 
                   position=position_jitter(width=0.2), 
                   linetype='solid') +
   geom_hline(yintercept = 6, color = "red", linetype = "dotted", size = 1) +
@@ -206,7 +209,6 @@ PycnoHistCurrPlot <- PycnoDensity_step1 %>%
   ylab(expression(paste("Mean Pycnopodia Density (no. 100 ", m^-2, ")"))) +
   xlab(label = NULL) +
   theme(axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 0))); PycnoHistCurrPlot 
-
 
 
 #### DAN'S DENSITY FIGURE (2022-05-17)
@@ -235,30 +237,32 @@ dens_plot <- ggplot(aes(urch_rec,pycno_dens*100, fill= urch_dens),data= out)+geo
   xlab(expression(paste("Recruitment (no. ", yr^-1, m^-2,")")))+
   scale_x_continuous(expand= c(0,0))+
   annotation_logticks(sides = "l",base= 10,colour= "white") +
-  geom_hline(yintercept = as.numeric(PycnoDensity_step1[14,4]*0.01), color = "White", linetype = "dashed", size = 1) +
-  geom_hline(yintercept = as.numeric(PycnoDensity_step1[18,4]*0.01), color = "White", linetype = "dashed", size = 1) +
-  geom_hline(yintercept = as.numeric(PycnoDensity_step1[20,4]*0.01), color = "White", linetype = "dashed", size = 1) +
-  annotate("text", x = 0.5, y = 3.3, color = "White", label = "WA Coast") +
-  annotate("text", x = 1, y = 2.5, color = "white", label = "North CA") +
-  annotate("text", x = 1.5, y = 2, color = "white", label = "Central CA"); dens_plot
+  geom_hline(yintercept = as.numeric(PycnoDensity_step1[16,7]*10000), color = "White", linetype = "dashed", size = 1) +
+  geom_hline(yintercept = as.numeric(PycnoDensity_step1[23,7]*10000), color = "White", linetype = "dashed", size = 1) +
+  annotate("text", x = 0.5, y = 5, color = "White", label = "WA Coast") +
+  annotate("text", x = 1, y = 3, color = "white", label = "Central CA"); dens_plot
+
+
 
 # PUT THEM TOGETHER
 
 # create lines across plots:
-insetlines <- tibble(y = c(0.2, 9.1, 2.15, 5.27),
-                     x = c(0, 0, 5, 5), 
-                     z = c("A", "B", "A", "B"))
+insetlines <- tibble(y = c(0.2, 9.1, 2.2, 5.27, 6, 1.8, 7.5, 1.5),
+                     x = c(0, 0, 5, 5, 2.7, 3.3, 1.5, 1.7), 
+                     z = c("A", "B", "A", "B", "B", "A", "B", "A"))
 lineplot <- insetlines %>%
   ggplot(aes(x, y, group = z)) +
-  geom_point(size = 1, color = "red") +
-  geom_line(linetype = "dotted", color = "red", size = 1) +
+  geom_point(size = 0.1, color = "white") +
+  geom_smooth(method = 'lm', formula = y ~ poly(x, degree = 2), se = FALSE, 
+              linetype = "dotted", color = "red", size = 1) +
+  #geom_line(linetype = "dotted", color = "red", size = 1) +
   scale_x_continuous(limits = c(0,5)) +
   scale_y_continuous(limits = c(0, 10)) +
-  theme_void()
+  theme_void(); lineplot
 
 Figure1 <- ggarrange(dens_plot, lineplot, PycnoHistCurrPlot, 
-                     nrow = 1, widths = c(1, 0.2, 1),
-                     labels = c("A", "", "B"))
+                     nrow = 1, widths = c(1, 0.1, 1),
+                     labels = c("a", "", "b"))
 Figure1
 # best size: ~1800x850
 
