@@ -4,7 +4,7 @@
 # Data are current as of 2020-09-18                                              ##
 # Data source: Ross Whippo - UO/OIMB                                             ##
 # R code prepared by Ross Whippo                                                 ##
-# Last updated 2020-09-18                                                        ##
+# Last updated 2022-06-15                                                       ##
 #                                                                                ##
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -18,6 +18,8 @@
 # NA
 
 # TO DO
+
+# split change in consumption analysis into first half/second half
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # TABLE OF CONTENTS                                                            ####
@@ -34,6 +36,7 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # 2020-09-15 Script created
+# 2022-06-15 Added change in consumption analysis
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
@@ -294,7 +297,7 @@ mod_1 <- lm(`total consumed` ~ pycno, data = per_urchin_consumed_total)
 summary(mod_1)
 mod_1
 
-
+t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
 
 
   # mean number of confetti consumed per time point per treatment
@@ -318,12 +321,55 @@ ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
     group_by(treatment) %>%
     summarise(sum(consumed))
   
-  #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# calculating total change in consumption across trials
+  timepoint_consumption_change <- urchin_fear_pycno %>%
+    group_by(ID, pycno) %>%
+    summarise(change = diff(consumed))      
+# average change per treatment
+  timepoint_consumption_change %>%
+    group_by(pycno) %>%
+    summarise(mean_change = mean(change))
+
+# t.test for mean increase in consumption across timepoints by treatment
+  t.test(change ~ pycno, data = timepoint_consumption_change)
+  
+  
+  
+  
+  
+  # DUMMY DATA
+ID <- c(rep("A",7), rep("B", 7))
+timepoint <- c(rep(seq(from = 0, to = 6),2))
+set.seed(1234)
+consumed <- sample.int(n = 6,
+                       size = 14,
+                       replace = TRUE)
+df <- tibble(ID, timepoint, consumed)
+df[1,3] <- 0
+df[8,3] <- 0    
+df    
+
+df %>%
+  group_by(ID) %>%
+  summarise(diff(consumed))
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   # MANIPULATE DATA - STATS                                                      ####
   #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
   urchin_fear_mix_data <- urchin_fear_pycno %>%
-    filter(treatment != 'bucket') %>%
     filter(timepoint != '0')
   
   # is total amount of confetti consumed per trial different between groups?
@@ -354,105 +400,7 @@ ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
   
   ####
   #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
-  
-  # SCRATCH PAD ####
-  
-  #urchin_fear_pycno <- urchin_fear_pycno %>%
-  #  filter(treatment != 'bucket') %>%
-  #  filter(timepoint != '0')
-
-# with scaled time points
-urchin_timeseries$hours <- urchin_timeseries$timepoint %>%
-  recode(
-    '0' = 0,
-    '1' = 3,
-    '2' = 9,
-    '3' = 21,
-    '4' = 27,
-    '5' = 33,
-    '6' = 45,
-    '7' = 51,
-    '8' = 57,
-    '9' = 69
-  )
-
-hour_line <- ggplot(
-  urchin_timeseries %>%
-    group_by(pycno, ID) %>%
-    mutate(cc = cumsum(consumed)),
-  aes(
-    x = hours, # as.POSIXct(datetime),
-    y = cc,
-    color = factor(pycno)
-  )
-) +
-  scale_color_viridis(discrete = TRUE,
-                      begin = 0.3,
-                      end = 0.8) +
-  geom_point(aes(size = log(as.numeric(
-    urchin_timeseries$diameter
-  )) * 2), alpha = 0.7) +
-  geom_line(aes(group = ID), alpha = 0.25) +
-  geom_smooth(method = "lm") +
-  theme_minimal() +
-  scale_y_continuous(name = "Cumulative Confetti Consumed (linear)")
-
-# mean number of confetti consumed per time point per treatment
-
-timepoint_box <- ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
-  scale_fill_viridis(discrete = TRUE,
-                     begin = 0.3,
-                     end = 0.9) +
-  geom_boxplot() +
-  facet_grid(. ~ timepoint) +
-  theme_minimal()
-
-
-
-# total confetti eaten per treatment
-urchin_fear_pycno %>%
-  group_by(treatment) %>%
-  summarise(sum(consumed))
-
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# MANIPULATE DATA - STATS                                                      ####
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-urchin_fear_mix_data <- urchin_fear_pycno %>%
-  filter(treatment != 'bucket') %>%
-  filter(timepoint != '0')
-
-# is total amount of confetti consumed per trial different between groups?
-t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
-
-# is aount of confetti consumed per time point different between groups (w/size)?
-mix_1 <-
-  lme(consumed ~ pycno, # + diameter,
-      random = ~ timepoint | ID,
-      data = urchin_fear_mix_data)
-mix_1
-anova(mix_1)
-
-# calculate slopes of consumption
-urchin_vals <-  urchin_timeseries %>%
-  group_by(pycno, ID) %>%
-  mutate(cc = cumsum(consumed))
-
-
-############### COLLATED FIGURES
-
-Figure_1 <- ggarrange(size_plot, timepoint_consumed_plot, `total consumed`_plot, total_box, 
-                         labels = c("A", "B", "C", "D"),
-                         ncol = 2, nrow = 2,
-                         common.legend = TRUE, legend = "right")
-annotate_figure(Figure_1, bottom = text_grob("Figure 1: Calcuated A) urchin test diameter across all trials, B) kelp 'confetti' consumed per urchin per timepoint, \n C) total kelp 'confetti' consumed per urchin across each trial, and D) total kelp 'confetti' consumed across all trials.", size = 10))
-# 
-
-####
-#<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
 
-#urchin_fear_pycno <- urchin_fear_pycno %>%
-#  filter(treatment != 'bucket') %>%
-#  filter(timepoint != '0')
+
