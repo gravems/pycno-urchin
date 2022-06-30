@@ -92,9 +92,10 @@ size_plot <- ggplot(
   scale_fill_viridis(discrete = TRUE,
                      begin = 0.2,
                      end = 0.9) +
-  theme_minimal()
+  theme_minimal(); size_plot
 
 summary(urchin_size$diameter)
+t.test(diameter ~ pycno, data = urchin_size)
 
 # total consumed by each urchin across all trials
 
@@ -104,7 +105,7 @@ per_urchin_consumed_total %>%
   scale_fill_viridis(discrete = TRUE, begin = 0.2, end = 0.9) +
   theme_minimal()
 
-t.test(diameter ~ pycno, data = urchin_size)
+
 
 per_trial_pycno <- per_urchin_consumed_total %>%
   filter(pycno == "yes")
@@ -189,8 +190,26 @@ urchin_time %>%
 # > pi*((2.1/2)^2)
 # [1] 3.463606
 
-# > confetti_weights %>%
-#  +   summarise(mean(weight_mg))
+confetti_weights <- read_csv("Data/2020/confetti_weights.csv", 
+                             col_types = cols(trial = col_character()))
+confetti_weights <- confetti_weights %>%
+  rename("beforeafter" = "before-after")
+
+# is weight different before and after? 
+weightmix <- lme(weight_mg ~ beforeafter, random = ~1|trial/tank, data = confetti_weights)
+summary(weightmix)
+weightmix
+anova(weightmix)
+
+
+confetti_weights %>%
+  filter(beforeafter == "before") %>%
+  summarise(mean(weight_mg))
+
+confetti_weights %>%
+  filter(beforeafter == "after") %>%
+  summarise(mean(weight_mg))
+
 #  A tibble: 1 x 1
 # `mean(weight_mg)`
 # <dbl>
@@ -200,7 +219,7 @@ urchin_time %>%
 # [1] 97.87487 mg per square cm
 # each piece of confetti ~ 339mg
 
-
+mean(confetti_weights$weight_mg)
 
   
   
