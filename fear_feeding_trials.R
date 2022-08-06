@@ -106,6 +106,31 @@ per_urchin_consumed_total %>%
   theme_minimal()
 
 
+# FOR FHL TALK
+# total consumed per urchin across all trials with standard error
+per_urchin_consumed_total %>%
+  mutate(`total consumed` = `total consumed` * 0.339) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  ggplot(aes(x = Treatment, y = `total consumed`, color = Treatment)) + 
+  geom_point(col = "grey") +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "magma") +
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 3,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se") +
+  ylim(0, 30) +
+  labs(y = "Amount of kelp consumed (g)", x = "Treatment") +
+  theme_minimal() +
+  theme(axis.title.y = element_text(vjust = 3)) +
+  theme(legend.position = "none") 
+
+
 
 per_trial_pycno <- per_urchin_consumed_total %>%
   filter(pycno == "yes")
@@ -217,7 +242,7 @@ confetti_weights %>%
 
 # > 339/3.463606
 # [1] 97.87487 mg per square cm
-# each piece of confetti ~ 339mg
+# each piece of confetti ~ 339mg or .339 g
 
 mean(confetti_weights$weight_mg)
 
@@ -309,6 +334,35 @@ ggplot(
     geom_line(aes(group = ID), alpha = 0.25) +
     geom_smooth(method = "lm", size = 2) +
     scale_y_continuous(name = "Pieces of Kelp Consumed")
+
+# cumulative confetti with mean per time point
+
+# FOR FHL TALK
+
+urchin_timeseries %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed) * 0.339) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  ggplot(aes(x = hours, y = cc, color = Treatment)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "magma") +
+  geom_line(aes(group = ID), alpha = 0.3) +
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 3,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se") +
+  scale_y_continuous(name = "Amount of kelp consumed (g)") + 
+  theme_minimal() +
+  theme(legend.position = "top") 
+
+
+
+
   
 # a model based on this data:
 
@@ -339,6 +393,32 @@ ggplot(urchin_timeseries, aes(x = pycno, y = consumed, fill = pycno)) +
   urchin_fear_pycno %>%
     group_by(treatment) %>%
     summarise(sum(consumed))
+  
+  # total confetti eaten per urchin per treatment and plot
+  perurchin <- urchin_fear_pycno %>%
+    group_by(pycno, ID) %>%
+    summarise(total = sum(consumed))
+  
+  theme_set(theme_light(base_size = 18))
+  
+  # function to make SE in boxplot
+  MinMeanSEMMax <- function(x) {
+    v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
+    names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
+    v
+  }
+  
+  
+  
+ perurchin %>%
+    ggplot(aes(x = pycno, y = total*341, fill = pycno)
+    ) +
+   stat_summary(fun.data=MinMeanSEMMax, geom="boxplot") + 
+    scale_fill_viridis(discrete = TRUE,
+                       begin = 0.5,
+                       end = 0.9,
+                       option = "magma") +
+    labs(y = "Estimated Kelp Consumed (mg)")
   
 # calculating total change in consumption across trials
   timepoint_consumption_change <- urchin_fear_pycno %>%
