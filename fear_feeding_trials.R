@@ -112,7 +112,7 @@ per_urchin_consumed_total %>%
   mutate(`total consumed` = `total consumed` * 0.339) %>%
   mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
   ggplot(aes(x = Treatment, y = `total consumed`, color = Treatment)) + 
-  geom_point(col = "grey") +
+  geom_point(col = "grey", size = 3) +
   scale_color_viridis(discrete = TRUE,
                       begin = 0.3,
                       end = 0.7,
@@ -120,13 +120,13 @@ per_urchin_consumed_total %>%
   stat_summary(
     geom = "point",
     fun = "mean",
-    size = 3,
+    size = 6,
     shape = 19
   ) +
-  geom_errorbar(stat="summary", fun.data="mean_se") +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   ylim(0, 30) +
   labs(y = "Amount of kelp consumed (g)", x = "Treatment") +
-  theme_minimal() +
+  theme_minimal(base_size = 15) +
   theme(axis.title.y = element_text(vjust = 3)) +
   theme(legend.position = "none") 
 
@@ -352,12 +352,12 @@ urchin_timeseries %>%
   stat_summary(
     geom = "point",
     fun = "mean",
-    size = 3,
+    size = 4,
     shape = 19
   ) +
-  geom_errorbar(stat="summary", fun.data="mean_se") +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   scale_y_continuous(name = "Amount of kelp consumed (g)") + 
-  theme_minimal() +
+  theme_minimal(base_size = 15) +
   theme(legend.position = "top") 
 
 

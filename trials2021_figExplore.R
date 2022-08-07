@@ -107,6 +107,55 @@ movement %>%
   scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
   facet_grid(pycnoTreat ~ algalTreat)
 
+# FHL Talk Figure (starved urchins always moved less)
+
+movement %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  unite("Treatment", pycnoTreat:algalTreat, sep = " + ") %>%
+  mutate(`Percent of time moving` = time_moving*100) %>%
+  ggplot(aes(x = Treatment, y = `Percent of time moving`, color = `Urchin Treatment`)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "viridis") +
+    stat_summary(
+      geom = "point",
+      fun = "mean",
+      size = 4,
+      shape = 19
+    ) +
+    geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  scale_y_continuous(limits = c(0,100)) +
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") 
+
+
+urchin_timeseries %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed) * 0.339) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  ggplot(aes(x = hours, y = cc, color = Treatment)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "magma") +
+  geom_line(aes(group = ID), alpha = 0.3) +
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 4,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  scale_y_continuous(name = "Amount of kelp consumed (g)") + 
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") 
+
+
+
+
 # do treatments spend different amounts of time interacting with the signal?
 
 interaction <- trials2021_Q %>%
@@ -122,6 +171,55 @@ interaction %>%
   geom_boxplot() +
   scale_fill_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
   facet_grid(pycnoTreat ~ algalTreat)
+
+# FHL Talk Figure
+
+interaction %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  unite("Treatment", pycnoTreat:algalTreat, sep = " + ") %>%
+  filter(Treatment %in% c("No Pycno + Algae", "Pycno + Algae")) %>%
+  mutate(`Percent of time interacting` = time_interacting*100) %>%
+  ggplot(aes(x = Treatment, y = `Percent of time interacting`, color = `Urchin Treatment`)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "viridis") +
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 4,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  scale_y_continuous(limits = c(0,100)) +
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") 
+  
+
+movement %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  unite("Treatment", pycnoTreat:algalTreat, sep = " + ") %>%
+  mutate(`Percent of time moving` = time_moving*100) %>%
+  ggplot(aes(x = Treatment, y = `Percent of time moving`, color = `Urchin Treatment`)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "viridis") +
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 4,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  scale_y_continuous(limits = c(0,100)) +
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") 
+
 
 # do urchin spend different amounts of time in distance zones among treatments?
 
