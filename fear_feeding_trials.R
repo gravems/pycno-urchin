@@ -125,10 +125,11 @@ per_urchin_consumed_total %>%
   ) +
   geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   ylim(0, 30) +
-  labs(y = "Amount of kelp consumed (g)", x = "Treatment") +
+  labs(y = "Kelp consumed (g)", x = "Treatment") +
   theme_minimal(base_size = 15) +
   theme(axis.title.y = element_text(vjust = 3)) +
-  theme(legend.position = "none") 
+  theme(legend.position = "none") +
+  annotate("text", label = "p = 0.015", x = 2.3, y = 29, size = 5)
 
 
 
@@ -291,7 +292,7 @@ mean(confetti_weights$weight_mg)
     scale_y_continuous(name = "Cumulative Confetti Consumed (linear)")
   
   # with scaled time points
-  urchin_timeseries$hours <- urchin_timeseries$timepoint %>%
+  urchin_timeseries$Hours <- urchin_timeseries$timepoint %>%
     recode(
       '0' = 0,
       '1' = 3,
@@ -360,9 +361,31 @@ urchin_timeseries %>%
   theme_minimal(base_size = 15) +
   theme(legend.position = "top") 
 
+# new timeseries using slope and talk aesthetics
 
+label1 <- paste("R^2 == ", round(summary(mod_2)$r.squared,3))
 
+urchin_timeseries %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed) * 0.339) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  ggplot(aes(x = Hours, y = cc, color = Treatment)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "magma") +
+  geom_line(aes(group = ID), alpha = 0.15) +
+  geom_point(size = 2, position = "jitter", alpha = 0.15) +
+  geom_smooth(method = "lm", size = 2) +
+  scale_y_continuous(name = "Kelp consumed (g)") + 
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") +
+  annotate("text", label = label1, x = 10, y = 25, size = 5, parse = TRUE)
 
+urchin_timeseries_lm <- urchin_timeseries%>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed) * 0.339) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) 
   
 # a model based on this data:
 
@@ -371,6 +394,19 @@ summary(mod_1)
 mod_1
 
 t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
+
+
+# This finds the correlation coefficient 1 and -1 = strong relationship
+coefficient <- cor.test(urchin_timeseries_lm$cc, urchin_timeseries_lm$Hours)
+coefficient$estimate
+
+# look for outliers
+urchin_timeseries_lm %>%
+  ggplot(aes(cc, pycno)) +
+  geom_boxplot()
+
+mod_2 <- lm(`cc` ~ pycno, data = urchin_timeseries_lm)
+summary(mod_2)
 
 
   # mean number of confetti consumed per time point per treatment
