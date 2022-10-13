@@ -196,6 +196,13 @@ interaction %>%
   scale_y_continuous(limits = c(0,100)) +
   theme_minimal(base_size = 15) +
   theme(legend.position = "top") 
+
+# percent time urchins spent interacting
+interact_percent <- interaction %>%
+  unite(treats, algalTreat, pycnoTreat, sep = "_") %>%
+  filter(treats == 'nereo_pycno') %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(time_interacting)) 
   
 
 movement %>%

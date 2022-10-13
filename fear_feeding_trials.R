@@ -37,6 +37,7 @@
 
 # 2020-09-15 Script created
 # 2022-06-15 Added change in consumption analysis
+# 2022-10-12 Size by consumption
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
@@ -185,6 +186,22 @@ urchin_time <- urchin_timeseries %>%
   group_by(trial, pycno) %>%
   mutate(tot_consumed = sum(consumed))
   
+
+# AMOUNT CONSUMED BY URCHIN SIZE
+
+per_urchin_consumed_total_size <- urchin_fear_pycno %>%
+  group_by(trial, bin, tank, ID, pycno, diameter) %>%
+  summarise(`total consumed` = sum(consumed)) %>%
+  ungroup()
+
+ggplot(per_urchin_consumed_total_size, aes(x = as.numeric(diameter), y = `total consumed`, color = pycno)) +
+  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8) +
+  theme_minimal() +
+  geom_point() +
+  geom_smooth(method = "nls", formula = y ~ a * x + b, se = F,
+              method.args = list(start = list(a = 0.1, b = 0.1)))
+
+
 
 
 
@@ -539,3 +556,13 @@ df %>%
 # SCRATCH PAD ####
 
 
+  # combine trial and bin to prevent combining urchins across trials
+  urchin_fear_pycno <-
+    unite(urchin_fear_pycno,
+          'ID',
+          trial,
+          bin,
+          sep = "_",
+          remove = FALSE)
+  
+         
