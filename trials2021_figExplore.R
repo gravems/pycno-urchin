@@ -132,6 +132,34 @@ movement %>%
   theme(legend.position = "top") 
 
 
+# WSN Figure, urchin movement (used w/ treatment table icons)
+movement %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  unite("Treatment", urchinGroup:algalTreat, sep = " + ") %>%
+  mutate(Treatment = as.factor(Treatment)) %>%
+  mutate(Treatment =  factor(Treatment, levels = c("starved + No Pycno + No Algae",
+                                                   "starved + No Pycno + Algae",
+                                                   "starved + Pycno + No Algae",
+                                                   "starved + Pycno + Algae",
+                                                   "fed + No Pycno + No Algae",
+                                                   "fed + No Pycno + Algae",
+                                                   "fed + Pycno + No Algae",
+                                                   "fed + Pycno + Algae"))) %>%
+  mutate(`Percent of time moving` = time_moving*100) %>%
+  ggplot(aes(x = `Percent of time moving`, y = Treatment)) + 
+  stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 4,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  theme_minimal()
+  
+
+
 urchin_timeseries %>%
   group_by(pycno, ID) %>%
   mutate(cc = cumsum(consumed) * 0.339) %>%
@@ -196,6 +224,31 @@ interaction %>%
   scale_y_continuous(limits = c(0,100)) +
   theme_minimal(base_size = 15) +
   theme(legend.position = "top") 
+
+# WSN percent interaction figure
+interaction %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  filter(algalTreat == "Algae") %>%
+  unite("Treatment", urchinGroup:algalTreat, sep = " + ") %>%
+  mutate(`Percent of time interacting` = time_interacting*100) %>%
+  mutate(Treatment =  factor(Treatment, levels = c("starved + No Pycno + Algae",
+                                                   "starved + Pycno + Algae",
+                                                   "fed + No Pycno + Algae",
+                                                   "fed + Pycno + Algae"))) %>%
+  ggplot(aes(x = `Percent of time interacting`, y = Treatment)) +
+ stat_summary(
+    geom = "point",
+    fun = "mean",
+    size = 4,
+    shape = 19
+  ) +
+  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
+  scale_x_continuous(limits = c(0,100)) +
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top") 
+
 
 # percent time urchins spent interacting
 interact_percent <- interaction %>%
@@ -424,3 +477,21 @@ NMIOdata %>%
 #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
+
+test <- movement %>%
+  mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
+  mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
+  mutate(`Urchin Treatment` = urchinGroup) %>%
+  unite("Treatment", urchinGroup:algalTreat, sep = " + ") %>%
+  mutate(Treatment = as.factor(Treatment)) %>%
+  mutate(Treatment =  factor(Treatment, levels = c("fed + Pycno + Algae",
+                                         "fed + Pycno + No Algae",
+                                         "fed + No Pycno + Algae",
+                                         "fed + No Pycno + No Algae",
+                                         "starved + Pycno + Algae",
+                                         "starved + Pycno + No Algae",
+                                         "starved + No Pycno + Algae",
+                                         "starved + No Pycno + No Algae")))
+
+
+str(test)
