@@ -43,6 +43,7 @@
 
 library(tidyverse)
 library(viridis)
+library(lmerTest)
 
 # set plot theme
 theme_set(theme_classic())
@@ -94,10 +95,10 @@ t.test(urchinDiam_mm ~ urchinGroup, data = diams)
 # is there a difference in time spent moving among all treatments?
 
 movement <- trials2021_Q %>%
-  select(trial, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+  dplyr::select(trial, tank, urchinGroup, pycnoTreat, algalTreat, movement) %>%
   filter(movement != "st") %>%
   add_column(move = 1) %>%
-  group_by(trial, urchinGroup, pycnoTreat, algalTreat, move) %>%
+  group_by(trial, urchinGroup, pycnoTreat, algalTreat, move, tank) %>%
   count(move) %>%
   mutate(time_moving = n/60)
 
@@ -158,6 +159,14 @@ movement %>%
   geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   theme_minimal()
   
+#### WSN Movement stats
+
+summary(lmer(n ~ pycnoTreat + algalTreat + urchinGroup + (1 | tank), data = movement))
+
+
+
+
+
 
 
 urchin_timeseries %>%
@@ -187,10 +196,10 @@ urchin_timeseries %>%
 # do treatments spend different amounts of time interacting with the signal?
 
 interaction <- trials2021_Q %>%
-  select(trial, urchinGroup, pycnoTreat, algalTreat, interaction) %>%
+  dplyr::select(trial, tank, urchinGroup, pycnoTreat, algalTreat, interaction) %>%
   filter(interaction != "ni") %>%
   add_column(interact = 1) %>%
-  group_by(trial, urchinGroup, pycnoTreat, algalTreat, interact) %>%
+  group_by(trial, tank, urchinGroup, pycnoTreat, algalTreat, interact) %>%
   count(interact) %>%
   mutate(time_interacting = n/60)
 
@@ -247,7 +256,20 @@ interaction %>%
   geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   scale_x_continuous(limits = c(0,100)) +
   theme_minimal(base_size = 15) +
-  theme(legend.position = "top") 
+  theme(legend.position = "top") +
+  xlab(label = "Percent of time interacting with kelp")
+
+# WSN Interaction stats
+
+# all treatments
+summary(lmer(n ~ pycnoTreat + algalTreat + urchinGroup + (1 | tank), data = interaction))
+# algae only
+summary(lmer(n ~ pycnoTreat + urchinGroup + (1 | tank), data = filter(interaction, algalTreat == "nereo")))
+# values of percent time spent interacting
+interaction %>%
+  group_by(urchinGroup) %>%
+  summarise(mean(time_interacting))
+
 
 
 # percent time urchins spent interacting

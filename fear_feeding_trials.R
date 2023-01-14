@@ -49,6 +49,9 @@ library(nlme)
 library(lme4)
 library(vegan)
 library(ggpubr)
+library(pscl) # zero inflated poisson models (zero consumption of confetti)
+library(boot)
+library(lmerTest)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # READ IN AND PREPARE DATA                                                     ####
@@ -339,7 +342,7 @@ ggplot(
       group_by(pycno, ID) %>%
       mutate(cc = cumsum(consumed)),
     aes(
-      x = hours, # as.POSIXct(datetime),
+      x = Hours, # as.POSIXct(datetime),
       y = cc,
       color = pycno
     )
@@ -361,12 +364,12 @@ urchin_timeseries %>%
   group_by(pycno, ID) %>%
   mutate(cc = cumsum(consumed) * 0.339) %>%
   mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
-  ggplot(aes(x = hours, y = cc, color = Treatment)) +
+  ggplot(aes(x = Hours, y = cc, color = Treatment)) +
   scale_color_viridis(discrete = TRUE,
                       begin = 0.3,
                       end = 0.7,
                       option = "magma") +
-  geom_line(aes(group = ID), alpha = 0.3) +
+  geom_line(aes(group = ID), alpha = 0.25, lwd = 1) +
   stat_summary(
     geom = "point",
     fun = "mean",
@@ -411,6 +414,57 @@ summary(mod_1)
 mod_1
 
 t.test(`total consumed` ~ pycno, data = per_urchin_consumed_total)
+
+
+
+
+
+###### WSN STATS using lmerTest for repeated measures and p values
+
+
+# repeated measures
+# need to create dataset with cumulative consumption at each timepoint per urchin
+cum_per_urchin <- urchin_fear_pycno %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  group_by(ID) %>%
+  mutate("Cumulative Consumption" = cumsum(consumed)) %>%
+  mutate(ID = as.factor(ID),
+         tank = as.factor(tank),
+         pycno = as.factor(pycno)) %>%
+  ungroup()
+# remove timepoint zero
+cum_nozero <- cum_per_urchin %>%
+  filter(timepoint != 0)
+str(cum_nozero)
+cum_nozero <- cum_nozero %>%
+  mutate(Cumulative = `Cumulative Consumption`)
+cum_nozero <- cum_nozero %>%
+    mutate(non_zero = ifelse(Cumulative > 0, 1, 0))
+
+
+100*sum(cum_nozero$non_zero == 0)/nrow(cum_nozero)
+
+sum(cum_nozero$non_zero != 0)
+max(cum_nozero$Cumulative)
+
+ # check for normal response
+ggplot(cum_nozero, aes(Cumulative)) + geom_histogram(bins = 145) # data are right skewed (need ZIP model)
+# cube root the consumption
+cum_nozero$`Cumulative Consumption` <- (1 + cum_nozero$`Cumulative Consumption`)^(1/3)
+
+
+summary(lmer(Cumulative ~ pycno + timepoint + (1 + timepoint | ID), data=cum_nozero))
+
+
+
+
+
+
+
+
+
+
+
 
 
 # This finds the correlation coefficient 1 and -1 = strong relationship

@@ -1,26 +1,25 @@
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #                                                                                ##
-# Urchin-Pycno tracker data analysis                                             ##
-# Data are current as of 2022-05-24                                              ##
-# Data source: Ross Whippo, Ethan Porter-Hughes - UO/OIMB                        ##
+# Pycno-Urchin Tracker Dataset 2021 QAQC                                         ##
+# Script created 2023-01-13                                                      ##
+# Last updated 2023-01-13                                                        ##
+# Data source: Ross Whippo                                                       ##
 # R code prepared by Ross Whippo                                                 ##
-# Last updated 2022-10-30                                                        ##
+# Last updated 2023-01-13                                                        ##
 #                                                                                ##
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # SUMMARY:
-# Script to analyse Tracker software coordinate data taken from gopro video of 
-# sea urchin response to pycnopodia cue. Trials are 1 hour long. 
+# A script to QAQC and parse the 2021 tracker pycno-urchin dataset.
 
 
 # Required Files (check that script is loading latest version):
-# All files in Data>2021>Tracker Data
+# All files in Data>2021>Tracker Data (001:049)
 
 # Associated Scripts:
-# NA
+# Indirect_Urchin_MS.R
 
-# TO DO
-
+# TO DO 
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # TABLE OF CONTENTS                                                            ####
@@ -36,27 +35,27 @@
 # RECENT CHANGES TO SCRIPT                                                     ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# 2022-10-30 Script created
+# 2023-01-13 Script created
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 library(tidyverse)
-library(viridis)
-library(adehabitatLT)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# READ IN AND PREPARE DATA                                                     ####
+# READ IN DATA                                                                 ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ##
 X001 <- read_csv("Data/2021/Tracker Data/001_PycAlg_S01_20210815.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X001$id <- "PycAlg_S01"
 X001$distance <- NA
 X001$distance[2:nrow(X001)] <- sqrt((X001$x[2:nrow(X001)] - X001$x[1:nrow(X001)-1]) ^ 2 + 
-                                        (X001$y[2:nrow(X001)] - X001$y[1:nrow(X001)-1]) ^ 2)
+                                      (X001$y[2:nrow(X001)] - X001$y[1:nrow(X001)-1]) ^ 2)
 time <- X001[nrow(X001), 1]/60
 distance <- X001 %>%
   summarise(distance = sum(distance, na.rm = TRUE))
@@ -68,7 +67,8 @@ Tracker_summary <- tibble(time, distance, Alg, Pyc, Urchin, ID)
 
 ##
 X002 <- read_csv("Data/2021/Tracker Data/002_ConAlg_S02_20210816.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X002$L <- NA
 X002$id <- "ConAlg_S02"
 X002$distance <- NA
@@ -86,7 +86,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X003 <- read_csv("Data/2021/Tracker Data/003_PycCon_S03_20210816.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X003$id <- "PycCon_S03"
 X003$distance <- NA
 X003$distance[2:nrow(X003)] <- sqrt((X003$x[2:nrow(X003)] - X003$x[1:nrow(X003)-1]) ^ 2 + 
@@ -103,7 +104,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X004 <- read_csv("Data/2021/Tracker Data/004__ConCon_F01_20210816.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X004$id <- "ConCon_F01"
 X004$distance <- NA
 X004$distance[2:nrow(X004)] <- sqrt((X004$x[2:nrow(X004)] - X004$x[1:nrow(X004)-1]) ^ 2 + 
@@ -120,7 +122,9 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X005 <- read_csv("Data/2021/Tracker Data/005_PycAlg_F02_20210817.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
+X005$id <- "PycAlg_F02"
 X005$distance <- NA
 X005$distance[2:nrow(X005)] <- sqrt((X005$x[2:nrow(X005)] - X005$x[1:nrow(X005)-1]) ^ 2 + 
                                       (X005$y[2:nrow(X005)] - X005$y[1:nrow(X005)-1]) ^ 2)
@@ -136,7 +140,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X006 <- read_csv("Data/2021/Tracker Data/006_PycAlg_S04_20210816.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X006$distance <- NA
 X006$distance[2:nrow(X006)] <- sqrt((X006$x[2:nrow(X006)] - X006$x[1:nrow(X006)-1]) ^ 2 + 
                                       (X006$y[2:nrow(X006)] - X006$y[1:nrow(X006)-1]) ^ 2)
@@ -152,7 +157,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X007 <- read_csv("Data/2021/Tracker Data/007_ConAlg_F03_20210817.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X007$distance <- NA
 X007$distance[2:nrow(X007)] <- sqrt((X007$x[2:nrow(X007)] - X007$x[1:nrow(X007)-1]) ^ 2 + 
                                       (X007$y[2:nrow(X007)] - X007$y[1:nrow(X007)-1]) ^ 2)
@@ -168,7 +174,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X008 <- read_csv("Data/2021/Tracker Data/008_ConAlg_S05_20210817.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X008$distance <- NA
 X008$distance[2:nrow(X008)] <- sqrt((X008$x[2:nrow(X008)] - X008$x[1:nrow(X008)-1]) ^ 2 + 
                                       (X008$y[2:nrow(X008)] - X008$y[1:nrow(X008)-1]) ^ 2)
@@ -184,7 +191,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X009 <- read_csv("Data/2021/Tracker Data/009_ConCon_F04_20210818.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X009$distance <- NA
 X009$distance[2:nrow(X009)] <- sqrt((X009$x[2:nrow(X009)] - X009$x[1:nrow(X009)-1]) ^ 2 + 
                                       (X009$y[2:nrow(X009)] - X009$y[1:nrow(X009)-1]) ^ 2)
@@ -200,7 +208,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X010 <- read_csv("Data/2021/Tracker Data/010_ConCon_F05_20210818.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X010$distance <- NA
 X010$distance[2:nrow(X010)] <- sqrt((X010$x[2:nrow(X010)] - X010$x[1:nrow(X010)-1]) ^ 2 + 
                                       (X010$y[2:nrow(X010)] - X010$y[1:nrow(X010)-1]) ^ 2)
@@ -216,7 +225,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X011 <- read_csv("Data/2021/Tracker Data/011_PycAlg_S06_20210818.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X011$distance <- NA
 X011$distance[2:nrow(X011)] <- sqrt((X011$x[2:nrow(X011)] - X011$x[1:nrow(X011)-1]) ^ 2 + 
                                       (X011$y[2:nrow(X011)] - X011$y[1:nrow(X011)-1]) ^ 2)
@@ -232,7 +242,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X012 <- read_csv("Data/2021/Tracker Data/012_ConCon_S07_20210818.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X012$distance <- NA
 X012$distance[2:nrow(X012)] <- sqrt((X012$x[2:nrow(X012)] - X012$x[1:nrow(X012)-1]) ^ 2 + 
                                       (X012$y[2:nrow(X012)] - X012$y[1:nrow(X012)-1]) ^ 2)
@@ -248,7 +259,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X013 <- read_csv("Data/2021/Tracker Data/013_ConCon_S08_20210819.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X013$distance <- NA
 X013$distance[2:nrow(X013)] <- sqrt((X013$x[2:nrow(X013)] - X013$x[1:nrow(X013)-1]) ^ 2 + 
                                       (X013$y[2:nrow(X013)] - X013$y[1:nrow(X013)-1]) ^ 2)
@@ -264,7 +276,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X014 <- read_csv("Data/2021/Tracker Data/014_ConAlg_F06_20210819.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X014$distance <- NA
 X014$distance[2:nrow(X014)] <- sqrt((X014$x[2:nrow(X014)] - X014$x[1:nrow(X014)-1]) ^ 2 + 
                                       (X014$y[2:nrow(X014)] - X014$y[1:nrow(X014)-1]) ^ 2)
@@ -280,7 +293,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X015 <- read_csv("Data/2021/Tracker Data/015_ConAlg_F07_20210819.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X015$distance <- NA
 X015$distance[2:nrow(X015)] <- sqrt((X015$x[2:nrow(X015)] - X015$x[1:nrow(X015)-1]) ^ 2 + 
                                       (X015$y[2:nrow(X015)] - X015$y[1:nrow(X015)-1]) ^ 2)
@@ -296,7 +310,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X016 <- read_csv("Data/2021/Tracker Data/016_PycCon_F08_20210819.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X016$distance <- NA
 X016$distance[2:nrow(X016)] <- sqrt((X016$x[2:nrow(X016)] - X016$x[1:nrow(X016)-1]) ^ 2 + 
                                       (X016$y[2:nrow(X016)] - X016$y[1:nrow(X016)-1]) ^ 2)
@@ -312,7 +327,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X017 <- read_csv("Data/2021/Tracker Data/017_ConAlg_S09_20210820.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X017$distance <- NA
 X017$distance[2:nrow(X017)] <- sqrt((X017$x[2:nrow(X017)] - X017$x[1:nrow(X017)-1]) ^ 2 + 
                                       (X017$y[2:nrow(X017)] - X017$y[1:nrow(X017)-1]) ^ 2)
@@ -328,7 +344,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X018 <- read_csv("Data/2021/Tracker Data/018_PycCon_F09_20210820.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X018$distance <- NA
 X018$distance[2:nrow(X018)] <- sqrt((X018$x[2:nrow(X018)] - X018$x[1:nrow(X018)-1]) ^ 2 + 
                                       (X018$y[2:nrow(X018)] - X018$y[1:nrow(X018)-1]) ^ 2)
@@ -344,7 +361,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X019 <- read_csv("Data/2021/Tracker Data/019_PycAlg_F10_20210820.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X019$distance <- NA
 X019$distance[2:nrow(X019)] <- sqrt((X019$x[2:nrow(X019)] - X019$x[1:nrow(X019)-1]) ^ 2 + 
                                       (X019$y[2:nrow(X019)] - X019$y[1:nrow(X019)-1]) ^ 2)
@@ -360,7 +378,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X020 <- read_csv("Data/2021/Tracker Data/020_PycAlg_F11_20210820.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X020$distance <- NA
 X020$distance[2:nrow(X020)] <- sqrt((X020$x[2:nrow(X020)] - X020$x[1:nrow(X020)-1]) ^ 2 + 
                                       (X020$y[2:nrow(X020)] - X020$y[1:nrow(X020)-1]) ^ 2)
@@ -376,7 +395,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X021 <- read_csv("Data/2021/Tracker Data/021_PycCon_F12_20210821.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X021$distance <- NA
 X021$distance[2:nrow(X021)] <- sqrt((X021$x[2:nrow(X021)] - X021$x[1:nrow(X021)-1]) ^ 2 + 
                                       (X021$y[2:nrow(X021)] - X021$y[1:nrow(X021)-1]) ^ 2)
@@ -392,7 +412,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X022 <- read_csv("Data/2021/Tracker Data/022_PycCon_S10_20210821.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X022$distance <- NA
 X022$distance[2:nrow(X022)] <- sqrt((X022$x[2:nrow(X022)] - X022$x[1:nrow(X022)-1]) ^ 2 + 
                                       (X022$y[2:nrow(X022)] - X022$y[1:nrow(X022)-1]) ^ 2)
@@ -408,7 +429,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X023 <- read_csv("Data/2021/Tracker Data/023_ConCon_S11_20210821.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X023$distance <- NA
 X023$distance[2:nrow(X023)] <- sqrt((X023$x[2:nrow(X023)] - X023$x[1:nrow(X023)-1]) ^ 2 + 
                                       (X023$y[2:nrow(X023)] - X023$y[1:nrow(X023)-1]) ^ 2)
@@ -424,7 +446,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X024 <- read_csv("Data/2021/Tracker Data/024_PycCon_S12_20210821.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X024$distance <- NA
 X024$distance[2:nrow(X024)] <- sqrt((X024$x[2:nrow(X024)] - X024$x[1:nrow(X024)-1]) ^ 2 + 
                                       (X024$y[2:nrow(X024)] - X024$y[1:nrow(X024)-1]) ^ 2)
@@ -440,7 +463,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X025 <- read_csv("Data/2021/Tracker Data/025_PycAlg_S13_20210822.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X025$distance <- NA
 X025$distance[2:nrow(X025)] <- sqrt((X025$x[2:nrow(X025)] - X025$x[1:nrow(X025)-1]) ^ 2 + 
                                       (X025$y[2:nrow(X025)] - X025$y[1:nrow(X025)-1]) ^ 2)
@@ -456,7 +480,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X026 <- read_csv("Data/2021/Tracker Data/026_ConAlg_F13_20210822.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X026$distance <- NA
 X026$distance[2:nrow(X026)] <- sqrt((X026$x[2:nrow(X026)] - X026$x[1:nrow(X026)-1]) ^ 2 + 
                                       (X026$y[2:nrow(X026)] - X026$y[1:nrow(X026)-1]) ^ 2)
@@ -472,7 +497,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X027 <- read_csv("Data/2021/Tracker Data/027_PycAlg_S14_20210823.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X027$distance <- NA
 X027$distance[2:nrow(X027)] <- sqrt((X027$x[2:nrow(X027)] - X027$x[1:nrow(X027)-1]) ^ 2 + 
                                       (X027$y[2:nrow(X027)] - X027$y[1:nrow(X027)-1]) ^ 2)
@@ -488,7 +514,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X028 <- read_csv("Data/2021/Tracker Data/028_ConAlg_S14_20210823.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X028$distance <- NA
 X028$distance[2:nrow(X028)] <- sqrt((X028$x[2:nrow(X028)] - X028$x[1:nrow(X028)-1]) ^ 2 + 
                                       (X028$y[2:nrow(X028)] - X028$y[1:nrow(X028)-1]) ^ 2)
@@ -504,7 +531,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X029 <- read_csv("Data/2021/Tracker Data/029_ConAlg_S16_20210824.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X029$distance <- NA
 X029$distance[2:nrow(X029)] <- sqrt((X029$x[2:nrow(X029)] - X029$x[1:nrow(X029)-1]) ^ 2 + 
                                       (X029$y[2:nrow(X029)] - X029$y[1:nrow(X029)-1]) ^ 2)
@@ -520,7 +548,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X030 <- read_csv("Data/2021/Tracker Data/030_ConAlg_F14_20210824.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X030$distance <- NA
 X030$distance[2:nrow(X030)] <- sqrt((X030$x[2:nrow(X030)] - X030$x[1:nrow(X030)-1]) ^ 2 + 
                                       (X030$y[2:nrow(X030)] - X030$y[1:nrow(X030)-1]) ^ 2)
@@ -536,7 +565,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X031 <- read_csv("Data/2021/Tracker Data/031_ConCon_S17_20210825.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X031$distance <- NA
 X031$distance[2:nrow(X031)] <- sqrt((X031$x[2:nrow(X031)] - X031$x[1:nrow(X031)-1]) ^ 2 + 
                                       (X031$y[2:nrow(X031)] - X031$y[1:nrow(X031)-1]) ^ 2)
@@ -552,7 +582,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 #
 X032 <- read_csv("Data/2021/Tracker Data/032_ConCon_F15_20210825.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X032$distance <- NA
 X032$distance[2:nrow(X032)] <- sqrt((X032$x[2:nrow(X032)] - X032$x[1:nrow(X032)-1]) ^ 2 + 
                                       (X032$y[2:nrow(X032)] - X032$y[1:nrow(X032)-1]) ^ 2)
@@ -568,7 +599,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X033 <- read_csv("Data/2021/Tracker Data/033_PycCon_F16_20210826.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X033$distance <- NA
 X033$distance[2:nrow(X033)] <- sqrt((X033$x[2:nrow(X033)] - X033$x[1:nrow(X033)-1]) ^ 2 + 
                                       (X033$y[2:nrow(X033)] - X033$y[1:nrow(X033)-1]) ^ 2)
@@ -584,7 +616,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X034 <- read_csv("Data/2021/Tracker Data/034_ConCon_F17_20210826.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X034$distance <- NA
 X034$distance[2:nrow(X034)] <- sqrt((X034$x[2:nrow(X034)] - X034$x[1:nrow(X034)-1]) ^ 2 + 
                                       (X034$y[2:nrow(X034)] - X034$y[1:nrow(X034)-1]) ^ 2)
@@ -601,7 +634,8 @@ Tracker_summary <- bind_rows(Tracker_summary, summary)
 
 ##
 X035 <- read_csv("Data/2021/Tracker Data/035_PycAlg_S18_20210827.csv", 
-                col_types = cols(x = col_number(), y = col_number(),          X1 = col_number()), skip = 1)
+                 col_types = cols(x = col_number(), y = col_number(),          
+                                  X1 = col_number()), skip = 1)
 X035$distance <- NA
 X035$distance[2:nrow(X035)] <- sqrt((X035$x[2:nrow(X035)] - X035$x[1:nrow(X035)-1]) ^ 2 + 
                                       (X035$y[2:nrow(X035)] - X035$y[1:nrow(X035)-1]) ^ 2)
@@ -853,6 +887,13 @@ ID <- "S25"
 summary <- tibble(time, distance, Alg, Pyc, Urchin, ID)
 Tracker_summary <- bind_rows(Tracker_summary, summary)
 
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# MANIPULATE DATA                                                              ####
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 # remove 20 min replicate
 Tracker_summary <- Tracker_summary %>%
   filter(ID != "S02")
@@ -887,101 +928,19 @@ Tracker_summary <- Tracker_summary %>%
 
 
 
-All_move <- bind_rows(X001, X002, X003, X004)
+All_move <- do.call(rbind, mget(ls(pattern = "X0")))
 
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# MANIPULATE DATA - CARTESIAN PLOT OF MOVEMENT                                 ####
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-ggplot(X001, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X002, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X003, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
   
-ggplot(X004, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X005, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X006, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X007, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X008, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
-
-ggplot(X009, aes(x = x, y = y)) +
-  geom_path(lineend = "butt", linejoin = "round", linemitre = 1) +
-  theme_minimal() +
-  coord_cartesian(xlim = c(-60, 60), ylim = c(-60, 60))
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# MANIPULATE DATA - create adehabitatLT objects                                ####
+# EXPORT DATA                                                                  ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-M001 <- as.ltraj(xy = All_move[, c('x','y')], typeII = FALSE, id = All_move$id)
-plot(M001)
+write_csv(trials2020, "Data/2020/trials2020_QAQC.csv")
 
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# MANIPULATE DATA - create adehabitatLT objects                                ####
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+############### SUBSECTION HERE
 
-# Figures and stats for total distance travelled
-
-Tracker_summary %>%
-  unite("Treatment", Alg:Urchin, sep = " + ") %>%
-  mutate(Treatment =  factor(Treatment, levels = c("No Algae + No Pycno + Starved",
-                                                   "Algae + No Pycno + Starved",
-                                                   "No Algae + Pycno + Starved",
-                                                   "Algae + Pycno + Starved",
-                                                   "No Algae + No Pycno + Fed",
-                                                   "Algae + No Pycno + Fed",
-                                                   "No Algae + Pycno + Fed",
-                                                   "Algae + Pycno + Fed"))) %>%
-  ggplot(aes(x = distance, y = Treatment)) +
-  stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 4,
-    shape = 19
-  ) +
-  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
-  theme_minimal(base_size = 15) +
-  theme(legend.position = "top") +
-  xlab(label = "distance (cm)")
-
-# MODEL FOR WSN TALK STATS
-
-summary(lmer(distance ~ Pyc + Alg + Urchin + (1 | tank), data = Tracker_summary))
-
-  ############### 
-  
-  ####
-  #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
+####
+#<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
-
-         
