@@ -58,6 +58,13 @@ library(adehabitatLT) # tracker movement analyses
 library(tidyverse) # data manipulation, tidying
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# LOAD FUNCTIONS                                                               ####
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# fuction for "%notin^%
+`%notin%` <- Negate(`%in%`)
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # READ IN DATA                                                     ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -129,7 +136,7 @@ summary(lme(cc ~ pycno, random = ~1|trial/tank, data = per_urchin_consumed_total
 
 per_urchin_consumed_total %>%
   group_by(pycno) %>%
-  summarise(mean_total = mean(`total consumed`)) 
+  summarise(mean_total = mean(cc)) 
 
 # difference between pycno and no pycno total consumption
 7.37-4.36
@@ -160,138 +167,63 @@ per_urchin_consumed_total %>%
   theme_minimal(base_size = 15) +
   theme(axis.title.y = element_text(vjust = 3)) +
   theme(legend.position = "none") +
-  annotate("text", label = "p = 0.014", x = 2.3, y = 29, size = 5)
+  annotate("text", label = "p = 0.0395", x = 2.3, y = 29, size = 5)
 
 
 
 
-# timeseries per timepoint MIGHT NEED TO CUT THIS
-
-urchin_timeseries <- trials2020_Q %>%
-  unite("datetime", date:time, sep = " ")
-
-urchin_timeseries$datetime <-
-  as.POSIXlt(urchin_timeseries$datetime)
-
-# with scaled time points
-urchin_timeseries$hours <- urchin_timeseries$timepoint %>%
-  recode(
-    '0' = 0,
-    '1' = 3,
-    '2' = 9,
-    '3' = 21,
-    '4' = 27,
-    '5' = 33,
-    '6' = 45,
-    '7' = 51,
-    '8' = 57,
-    '9' = 69
-  )
-
-urchin_timeseries <- urchin_timeseries %>%
-  group_by(pycno, ID) %>%
-  mutate(cc = cumsum(consumed * 0.341))
+# QUANTITY CONSUMED
 
 
+# test amount fed for assumptions of repeated measures two-way ANOVA
 
+# calculate biomass, remove 0 timepoint
+urchin_timeseries_assumptions <- trials2020_Q %>%
+  mutate(g_consumed = consumed * 0.341) %>%
+  filter(timepoint != 0)
 
-
-
-
-
-
-
-urchin_timeseries_lm <- urchin_timeseries%>%
-  group_by(pycno, ID) %>%
-  filter(timepoint != 0) %>%
-  mutate(g_consumed =  consumed * 0.341) %>%
-  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) 
-urchin_timeseries_lm$treatment = as.factor(urchin_timeseries_lm$treatment)
-urchin_timeseries_lm$Hours = as.factor(urchin_timeseries_lm$Hours)
-
-# two way repeated measures anova of feeding
 
 # assumptions - no significant outliers
 library(rstatix)
-outliers <- urchin_timeseries_lm %>%
+outliers <- urchin_timeseries_assumptions %>%
   group_by(pycno) %>%
   identify_outliers(g_consumed)
-# FAILED - run ANOVA with and without outliers. If result is same, keep outliers
+outliers
+# FAILED - many outliers
 
 # normality of dependent variable
 library(ggpubr)
-urchin_timeseries_lm %>%
+urchin_timeseries_assumptions %>%
   ggqqplot("g_consumed")
-# FAILED - too many zeros
-
-# trying to use repeated measures correlation (rmcorr)
-urchin_timeseries_rmc <- urchin_timeseries%>%
-  group_by(pycno, ID) %>%
-  filter(timepoint != 0) %>%
-  mutate(cc_g_consumed =  cumsum(consumed * 0.341)) %>%
-  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) 
-
-############ NOPE
+# FAILED - not normal
+urchin_timeseries_assumptions %>%
+  shapiro_test(g_consumed)
+# FAILED - not normal
+ggplot(urchin_timeseries_assumptions, aes(x = g_consumed)) +
+  geom_histogram(binwidth = 0.1)
+100*sum(urchin_timeseries_assumptions$g_consumed == 0)/nrow(urchin_timeseries_assumptions)
+# FAILED - zero inflated data -> ~26% is zeros
 
 
+# CHANGE IN CONSUMPTION BETWEEN TIME POINTS
 
- mod_feeding_1 <- aov(g_consumed ~ pycno * Hours + Error(ID/(pycno + Hours + pycno:Hours)), data = urchin_timeseries_lm)
-summary(mod_feeding_1)
-# mean comparison test
-edf <- df.residual(mod_feeding_1$ID)
-ems <- deviance(mod_feeding_1$ID)/edf
-SNK.test1 <- SNK.test(y = mod_feeding_1,
-                      trt = "pycno",
-                      DFerror = edf,
-                      MSerror = ems,
-                      alpha = 0.05,
-                      group = TRUE)
-
-
-# compare slopes of treatment feeding
-
-mod_feeding_1 <- aov(`cc` ~ pycno*ID, data = urchin_timeseries_lm)
-summary(mod_feeding_1)
-
-# FIGURE - cumulative confetti per timepoint
-
-label1 <- paste("R^2 == ", round(summary(mod_2)$r.squared,3))
-
-urchin_timeseries %>%
-  group_by(pycno, ID) %>%
-  mutate(cc = cumsum(consumed) * 0.339) %>%
-  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
-  ggplot(aes(x = Hours, y = cc, color = Treatment)) +
-  scale_color_viridis(discrete = TRUE,
-                      begin = 0.3,
-                      end = 0.7,
-                      option = "magma") +
-  geom_line(aes(group = ID), alpha = 0.15) +
-  geom_point(size = 2, position = "jitter", alpha = 0.15) +
-  geom_smooth(method = "lm", size = 2) +
-  scale_y_continuous(name = "Kelp consumed (g)") + 
-  theme_minimal(base_size = 15) +
-  theme(legend.position = "top") +
-  annotate("text", label = label1, x = 10, y = 25, size = 5, parse = TRUE)
-
-#### END OF POSSIBLE CUTS
-
-
-
-
-
-
-# 1st half versus 2nd half feeding rates
-
-consumption_change <- trials2020_Q
-
-
-# calculating  change in consumption per timepoint per urchin
-timepoint_consumption_change <- consumption_change %>%
+timepoint_consumption_change <- trials2020_Q %>%
   group_by(ID, pycno) %>%
-  summarise(change = diff(consumed))
+  mutate(g_consumed = consumed * 0.341) %>%
+  summarise(change = diff(g_consumed))
 
-# recreate hours column
+# Change values failed all normality tests as well, even with outliers removed
+
+
+# only option is a Friedman Test - nonparametric repeated measure one-way ANOVA
+# have to split out treatements and test separately, can't directly compare
+# treatments to each other, but can detect differences in feeding rate within
+# each treatment across time. 
+
+
+
+
+# recreate hours column for visualizations and analyses
 timepoint_consumption_change$hours <- NA
 hourfill <- c(rep(c(1:7), 15), rep(c(1:9), 56))
 timepoint_consumption_change$hours <- hourfill
@@ -308,82 +240,16 @@ timepoint_consumption_change$hours <- timepoint_consumption_change$hours %>%
     '9' = 69
   )
 
-# create 1st half and 2nd half column
-timepoint_consumption_change <- timepoint_consumption_change %>%
-  mutate(half = case_when(hours %in% c(3, 9, 21, 27) ~ "first",
-                          hours %in% c(33, 45, 51, 57, 69) ~ "second"))
-  
-
-# average change per treatment
-timepoint_consumption_change %>%
-  group_by(half, pycno) %>%
-  summarise(mean_change = mean(change))
-
-
-# two way repeated measures anova of feeding rates
-
-# assumptions - no significant outliers
-library(rstatix)
-outliers <-timepoint_consumption_change %>%
-  group_by(pycno, half) %>%
-  identify_outliers(change)
-# FAILED - run ANOVA with and without outliers. If result is same, keep outliers
-
-# normality of dependent variable
-library(ggpubr)
-timepoint_consumption_change %>%
-  ggqqplot("change")
-ggplot(timepoint_consumption_change, aes(x = change)) +
-  geom_histogram(binwidth = 0.1)
-shapiro_test(timepoint_consumption_change$change)
-100*sum(timepoint_consumption_change$change == 0)/nrow(timepoint_consumption_change)
-# FAILED looks normal histogram but shapiro says NO
 
 
 
-# remove outliers
-`%notin%` <- Negate(`%in%`)
-timepoint_data <- timepoint_consumption_change %>%
-  unite(target, ID, hours, sep = "_", remove = FALSE)
-removal <- outliers %>%
-  select(ID, hours) %>%
-  unite(target, ID, hours, sep = "_")
-timepoint_normal <- timepoint_data %>%
-  filter(target %notin% removal$target)
+# STATISTICS - Friedman test (nonparametric one-way ANOVA) 
 
-# assumptions - no significant outliers
-library(rstatix)
-outliers <- timepoint_normal %>%
-  group_by(pycno, half) %>%
-  identify_outliers(change)
-# FAILED - run ANOVA with and without outliers. If result is same, keep outliers
-
-# normality of dependent variable
-library(ggpubr)
-timepoint_normal %>%
-  ggqqplot("change")
-ggplot(timepoint_normal, aes(x = change)) +
-  geom_histogram(binwidth = 0.1)
-shapiro_test(timepoint_normal$change)
-100*sum(timepoint_normal$change == 0)/nrow(timepoint_normal)
-# FAILED histogram and shapiro says NO
-
-
-
-
-
-
-
-
-
-
-# STATISTICS - Friedman test (nonparametric one-way ANOVA) test groups separately, not to each other 
-
-# pycno present, make confetti in g
-pycno_half <- timepoint_consumption_change %>%
-  filter(pycno == 'yes') %>%
-  mutate(change = change * 0.341)
-pycno_df <- as.data.frame(pycno_half)
+# pycno present
+pycno_change <- timepoint_consumption_change %>%
+  filter(pycno == 'yes')
+# make into dataframe for test
+pycno_df <- as.data.frame(pycno_change)
 # balance design by restricting to first 51 hours of trials
 trunc_pycno <- pycno_df %>%
   filter(hours %in% c(3, 9, 21, 27, 33, 45, 51))
@@ -405,10 +271,10 @@ frdAllPairsNemenyiTest(change ~ hours | ID, data = trunc_pycno)
 
 
 # no pycno present
-nopycno_half <- timepoint_consumption_change %>%
-  filter(pycno == 'no') %>%
-  mutate(change = change * 0.341)
-nopycno_df <- as.data.frame(nopycno_half)
+nopycno_change <- timepoint_consumption_change %>%
+  filter(pycno == 'no')
+# make into dataframe for test
+nopycno_df <- as.data.frame(nopycno_change)
 # balance design by restricting to first 51 hours of trials
 trunc_nopycno <- nopycno_df %>%
   filter(hours %in% c(3, 9, 21, 27, 33, 45, 51))
@@ -493,20 +359,6 @@ urchin_timeseries_join <- urchin_timeseries %>%
 change_cum_nopycno <-   trunc_nopycno %>%
   left_join(urchin_timeseries_join, by = "urchintime")
 
-# plot of change per timepoint mean sterror, overlay with overall rate of consumption
-ggplot(change_cum_nopycno, aes(x = hours, y = change)) +
-  geom_jitter(col = "grey", size = 3, width = 1) +
-  stat_summary(
-    geom = "point",
-    fun = "mean",
-    size = 2,
-    shape = 19
-  ) +
-  geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
-  stat_summary(aes(y = cc), fun = mean, color = "red", geom = "line") +
-  scale_y_continuous(sec.axis = sec_axis(~., labels = c("", "", "0", "2", "4", "6"), name = "mean cumulative grams of kelp consumed")) +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "blue") +
-  theme_minimal()
 
 
 
@@ -515,26 +367,45 @@ ggplot(change_cum_nopycno, aes(x = hours, y = change)) +
 
 # pycno and pycno trunc together in one figure
 
-biomass_timepoint <- timepoint_consumption_change %>%
-  mutate(change = change * 0.341)
+
 # balance design by restricting to first 51 hours of trials
-biomass_trunc <- biomass_timepoint %>%
+change_trunc <- timepoint_consumption_change %>%
   filter(hours %in% c(3, 9, 21, 27, 33, 45, 51)) %>%
   unite(urchintime, ID, hours, sep = "_", remove = FALSE)
 
-urchin_timeseries_join <- urchin_timeseries %>%
+# extract cumulative consumption at each time point per urchin to join
+
+urchin_cum_join <- trials2020_Q %>%
   filter(timepoint != 0) %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed * 0.341)) 
+urchin_cum_join$hours <- urchin_cum_join$timepoint %>%
+  recode(
+    '0' = 0,
+    '1' = 3,
+    '2' = 9,
+    '3' = 21,
+    '4' = 27,
+    '5' = 33,
+    '6' = 45,
+    '7' = 51,
+    '8' = 57,
+    '9' = 69
+  )
+urchin_cum_join <- urchin_cum_join %>%
   unite(urchintime, ID, hours, sep = "_") %>%
   ungroup() %>%
   select(-pycno)
 
-
-change_cum_all <-   biomass_trunc %>%
-  left_join(urchin_timeseries_join, by = "urchintime")
+change_cum_all <-  change_trunc %>%
+  left_join(urchin_cum_join, by = "urchintime")
+change_cum_all <- change_cum_all %>%
+  mutate(pycno = case_when(pycno == "yes" ~ "Pycno present",
+                           pycno == "no" ~ "Pycno not present"))
 
 # plot of change per timepoint mean sterror, overlay with overall rate of consumption
 ggplot(change_cum_all, aes(x = hours, y = change)) +
-  geom_jitter(col = "grey", size = 3, width = 1) +
+  geom_jitter(col = 'grey', size = 3, width = 1) +
   stat_summary(
     geom = "point",
     fun = "mean",
