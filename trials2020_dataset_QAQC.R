@@ -72,6 +72,11 @@ trials2020 <- trials2020 %>%
 # change 'bucket' to 'empty' in treatment column
 trials2020 <- trials2020 %>%
   mutate(treatment = replace(treatment, treatment == 'bucket', 'empty'))
+
+# add ND diameter to 61 (from notes?)
+trials2020 <- trials2020 %>%
+  mutate(diameter = replace_na(diameter, 61))
+
   
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
