@@ -2,7 +2,7 @@
 #                                                                                ##
 # Indirect Urchin MS Figures                                                     ##
 # Script Created 2023-01-13                                                      ##
-# Last updated 2023-01-16                                                        ##
+# Last updated 2023-01-31                                                        ##
 # Data source: Ross Whippo PhD Dissertation                                      ##
 # R code prepared by Ross Whippo                                                 ##
 #                                                                                ##
@@ -16,16 +16,9 @@
 # Required Files (check that script is loading latest version):
 # trials2020_QAQC.csv
 # trials2021_QAQC.csv
-# trials2021_trackerDist_QAQC.csv
-# trials2021_trackerCoord_QAQC.csv
-
-
-# Associated Scripts:
-# trials2020_dataset_QAQC.R
-# trials2021_dataset_QAQC.R
-# tracker2021_dataset_QAQC.R
 
 # TO DO 
+# Figure out a way to run stats that violate assumptions with boostrapping etc. 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # TABLE OF CONTENTS                                                            ####
@@ -35,7 +28,6 @@
 # READ IN DATA                                                                    +
 # 2020 URCHIN FEEDING                                                             +
 # 2021 URCHIN MOVEMENT                                                            +
-# 2021 TRACKER DATA                                                              +
 #                                                                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -43,20 +35,21 @@
 # RECENT CHANGES TO SCRIPT                                                     ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# 2023-01-13 Script Created
-# all 2020, 2021, and tracker data added
+# 2023-01-31 Script adapted from Indirect_Urchin_MS.R
+#   -reduced to feeding and movement stats
+#   -notes added throughout
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD PACKAGES                                                                ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-library(viridis) # color-blind-friendly palette
-library(car) # diameter stats, unbalanced design
-library(lmerTest) # lmer 
-library(nlme) #lme
-library(lme4) # feeding stats?
-library(adehabitatLT) # tracker movement analyses
-library(tidyverse) # data manipulation, tidying
+library(tidyverse) # data manipulation, tidying 
+library(viridis) # color-blind-friendly palette 
+library(ggpubr) # additional visualizations 
+library(DHARMa) # testing assumptions of stats 
+library(rstatix) # extracting stats summaries 
+library(PMCMRplus) # friedman test posthoc 
+library(lmerTest) # lmer
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LOAD FUNCTIONS                                                               ####
@@ -66,105 +59,133 @@ library(tidyverse) # data manipulation, tidying
 `%notin%` <- Negate(`%in%`)
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# READ IN DATA                                                     ####
+# READ IN DATA                                                                 ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 trials2020_Q <- read_csv("Data/2020/trials2020_QAQC.csv", 
                          col_types = cols(trial = col_character(), 
-                                          bin = col_character(), diameter = col_double()))
-
-confetti_weights <- read_csv("Data/2020/confetti_weights.csv", 
-                             col_types = cols(trial = col_character()))
+                                          bin = col_character(), 
+                                          diameter = col_double()))
 
 trials2021_Q <- read_csv("Data/2021/trials2021_QAQC.csv", 
-                         col_types = cols(date = col_character(),  location = col_character(), 
+                         col_types = cols(date = col_character(),  
+                                          location = col_character(), 
                                           movement = col_character(), 
-                                          timeBegin = col_character(), timeEnd = col_character()))
-
-trials2021_algal_consumption <- read_csv("Data/2021/algal_consumption.csv")
-
-trials2021_trackerDist_QAQC <- read_csv("Data/2021/trials2021_trackerDist_QAQC.csv")
-
-trials2021_trackerCoord_QAQC <- read_csv("Data/2021/trials2021_trackerCoord_QAQC.csv")
-
+                                          timeBegin = col_character(), 
+                                          timeEnd = col_character()))
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # 2020 URCHIN FEEDING                                                          ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# differences in urchin size between groups
+str(trials2020_Q)
 
-diams_2020 <- trials2020_Q %>%
-  filter(timepoint == 0)
-diams_2020$diameter <- as.numeric(diams_2020$diameter)
+# Experimental structure:
 
-t.test(diameter ~ pycno, data = diams_2020)
+# To detect indirect effects of Pycnopodia on purple urchin feeding rates, the experiment
+# tracked the consumption of kelp by urchins across 5 paired replicates with two treatments
+# (exposed to Pycno, not exposed to Pycno) for between 51 and 69 hours. Urchins were
+# held individually in small containers within one of two larger seawater tanks that either
+# had 'Pycno smell' or not. Kelp was fed to the urchins as small standardized disks
+# and consumption across the trial was calculated as the number of disks they ate between
+# each time point at which they were checked (every six hours during daylight, twelve hours
+# between next day). Values of disks consumed are transformed into biomass below in the 
+# script based on weights of 'test disks' of kelp (i.e.: 1 disk = 0.341 g kelp tissue).
 
-summary(diams_2020$diameter)
+# Primary questions:
 
-# Kelp confetti weights controls
+# Q1
+# Did the urchins consume different amounts of kelp based on their treatment?
 
-# mean biomass ('before' confetti)
-confetti_weights %>%
-  filter(`before-after` == "before") %>%
-  summarise(mean(weight_mg))
+# Q2
+# Did the rate of consumption for urchins change within the trials depending on treatment
+# (e.g. - did they eat less at first and then start eating more later?)
 
-# > pi*((2.1/2)^2)
-# [1] 3.463606 cm^2
-
-confetti_weights <- confetti_weights %>%
-  rename("beforeafter" = "before-after")
-
-# is weight different before and after? 
-weightmix <- lmer(weight_mg ~ beforeafter + (1|trial/tank), data = confetti_weights)
-summary(weightmix)
+# Q3
+# Was there a very short-term effect of treatment in amount consumed when urchins were
+# first put into the experiment (i.e.: Did urchins exposed to Pycno eat a lot less
+# right from the beginning?)
 
 
+# PROBLEM 1:
 
+# Trial 1 was only run for 51 hours, while trials 2-5 were run for 69 hours. This reduces
+# the number of sampling points for trial 1 and makes an unbalanced design. For now, I 
+# have truncated all trials to the 51 hour mark (i.e.: removed the last two observation
+# points for trials 2-5 so they match up with trial 1). I had to do this because the 
+# stats I was using required a balanced design, but if there's a way around this, that
+# would be great.
 
-# TRIALS 2-5 HAVE TO BE TRUNCATED TO MATCH THE TIME SPAN OF TRIAL 1 FOR A
-# REPRESENTATIVE 'END OF TRIAL' AMOUNT. cANNOT REMOVE TRIAL 1 WITHOUT LOSING
-# STATISTICAL POWER, NEED THE REPS.  
-# DATA WERE LOG+1 TRANSFORMED TO MEET ASSUMPTIONS OF HOMOSCEDASTICITY 
+####################################
 
+####################
+#      ##     ##   #
+#    ##  ##    #   #
+#   #     #    #   # 
+#   #     #    #   #
+#   #  #  #    #   #
+#    #  ##     #   #
+#     ### #   ###  #
+#                  #
+#################### 
+
+# Addressing Q1 : total consumption differences by end of experiment between treatments
+
+# create dataframe of trials 1-5, up to time point 7 (i.e.: hour 51), and remove timepoint
+# zero which is all zeros. Summarise total amount consumed per urchin to compare 
+# overall feeding rate.
 per_urchin_consumed_trunc <- trials2020_Q %>%
   filter(timepoint %notin% c(0, 8, 9)) %>%
   group_by(trial, bin, tank, ID, pycno) %>%
   summarise(cc = (sum(consumed) * 0.341)) %>%
   ungroup()
 
-# ALL TRIALS TRUNCATED total consumption per urchin in grams Log for tests
 
+# create mixed effects model testing total consumption per urchin against treatment
+# with trial as a random factor
+feeding_lme <- lmer(cc ~ pycno + (1|trial), data = per_urchin_consumed_trunc)
+
+# test if assumptions of model are met
+feeding_sim <- simulateResiduals(fittedModel = feeding_lme, plot = F)
+plot(feeding_sim)
+testDispersion(feeding_lme)
+
+# Assumptions NOT MET (failed Levene Test for homogeneity of variance)
+
+# Log transform data to see if that helps
+
+# All trials truncated total consumption per urchin in grams Log for tests
 per_urchin_consumed_trunc_log <- trials2020_Q %>%
   filter(timepoint %notin% c(0, 8, 9)) %>%
   group_by(trial, bin, tank, ID, pycno) %>%
   summarise(cc = log((sum(consumed) * 0.341)+1)) %>%
   ungroup()
 
-# STATS - differences in total consumption per urchin between trials
-library(lme4)
-
-# TANK WAS NOT A SIGNIFICANT RANDOM FACTOR AND WAS REMOVED
+# create mixed effects model testing total consumption per urchin against treatment
+# with trial as a random factor and log-transformed response
 feeding_lme <- lmer(cc ~ pycno + (1|trial), data = per_urchin_consumed_trunc_log)
 
-library(DHARMa)
+# test if assumptions of model are met
 feeding_sim <- simulateResiduals(fittedModel = feeding_lme, plot = F)
 plot(feeding_sim)
 testDispersion(feeding_lme)
 
+# Assumptions are now met!
+
+# view summary of test
 summary(feeding_lme)
+# effect of treatment is significant p < 0.02
 
-
+# Calculate the actual difference in consumption between groups
 per_urchin_consumed_trunc %>%
   group_by(pycno) %>%
   summarise(mean_total = mean(cc)) 
-
 # difference between pycno and no pycno total consumption
 5.67-2.86
 
 # percentage reduction in feeding
-
 2.81/5.67
+# a 50% reduction in feeding by urchins exposed to Pycnos at 51 hours
 
 
 # FIGURE - total consumed per urchin across all trials with standard error
@@ -190,27 +211,29 @@ per_urchin_consumed_trunc %>%
   theme(legend.position = "none") +
   annotate("text", label = "p = 0.012", x = 2.3, y = 21, size = 5)
 
+####################
+#      ##    ###   #
+#    ##  ##     #  #
+#   #     #     #  # 
+#   #     #    ##  #
+#   #  #  #   ##   #
+#    #  ##   ##    #
+#     ### #  ####  #
+#                  #
+####################
+
+# Q2 : differences in feeding rates over the course of each trial between treatments
 
 
-# QUANTITY CONSUMED across timepoints
-
-
-# Change values failed all major assumptions, even with outliers removed
-
-
-# only option is a Friedman Test - nonparametric repeated measure one-way ANOVA
-# have to split out treatments and test separately, can't directly compare
-# treatments to each other, but can detect differences in feeding rate within
-# each treatment across time. 
-
-
-
-
-# recreate hours column for visualizations and analyses
+# Create data frame of truncated feeding per urchin per time point. Calculate the 
+# 'difference in feeding rate' between time points per urchin (e.g.: no change between 
+# time point for an urchin = 0, increase in feeding since last timepoint = positive number,
+# decrease in feeding = negative number). Convert 'time point' into the actual hours that 
+# they represent for analyses and visualizations
 timepoint_consumption_change <- trials2020_Q %>%
   filter(timepoint %notin% c(8, 9)) %>%
   mutate(g_consumed = consumed * 0.341) %>%
-  group_by(ID, pycno) %>%
+  group_by(ID, pycno, trial) %>%
   summarise(change = diff(g_consumed))
 timepoint_consumption_change$hours <- rep(1:7, 71)
 timepoint_consumption_change$hours <- timepoint_consumption_change$hours %>%
@@ -224,91 +247,131 @@ timepoint_consumption_change$hours <- timepoint_consumption_change$hours %>%
     '7' = 51
   )
 
+# Mixed effects model testing if feeding rate changes for urchins within a single
+# trials, with urchin ID nested within trial as random factors
+change_lme <- lmer(change ~ pycno + (1|ID:trial) + (1|trial), data = timepoint_consumption_change)
 
+# test if assumptions of model are met
+change_sim <- simulateResiduals(fittedModel = change_lme, plot = F)
+plot(change_sim)
+testDispersion(change_lme)
+# Almost all assumptions are violated
 
+# make plot of variances around each trial
+# visualize spread of data per trial
+ggboxplot(timepoint_consumption_change, x = "hours", y = "change", add = "jitter")
 
+# Try again with log transformed data shifted by a constant to make all 
+# values positive before taking the log
+timepoint_consumption_change_log <- timepoint_consumption_change %>%
+  mutate(change = log(change + (abs(min(change)) + 0.001)))
 
-# STATISTICS - Friedman test (nonparametric one-way ANOVA) and Nemeny Posthoc 
-library(rstatix)
-library(ggpubr)
-# pycno present
+# Mixed effects model testing if feeding rate changes for urchins within a single
+# trials, with urchin ID nested within trial as random factors log transformed
+change_lme <- lmer(change ~ pycno + (1|ID:trial) + (1|trial), data = timepoint_consumption_change_log)
+
+# test if assumptions of model are met
+change_sim <- simulateResiduals(fittedModel = change_lme, plot = F)
+plot(change_sim)
+testDispersion(change_lme)
+# Almost all assumptions are still violated
+
+# make plot of variances around each trial for log data
+# visualize spread of data per trial
+ggboxplot(timepoint_consumption_change_log, x = "hours", y = "change", add = "jitter")
+
+# only option is a Friedman Test - nonparametric repeated measure one-way ANOVA
+# have to split out treatments and test separately, can't directly compare
+# treatments to each other, but can detect differences in feeding rate within
+# each treatment across time. 
+
+# Friedman test (nonparametric one-way ANOVA) and Nemeny Posthoc 
+
+# separate out pycno treatment for testing
 pycno_change <- timepoint_consumption_change %>%
   filter(pycno == 'yes')
-# make into dataframe for test
+
+# make into dataframe for test (required by the friedman_test function)
 pycno_df <- as.data.frame(pycno_change)
-# pycno present summary and friedman
+
+# extract common stats from the data
 pycno_df %>%
   group_by(hours) %>%
   get_summary_stats(change, type = "common")
+
+# visualize spread of data per trial
 ggboxplot(pycno_df, x = "hours", y = "change", add = "jitter")
+
+# run friedman test on pycno treatment
 pycno_fried <- pycno_df %>% 
   friedman_test(change ~ hours | ID)
 pycno_fried
-# test effect size 
+# test was significant p = 0.046. There was change in feeding rates within trials
+
+# test how strong the effect was with Kendall's W test (0 = no effect, 1 = huge effect)
 pycno_df %>% 
   friedman_effsize(change ~ hours |ID)
+# effect was small X = 0.0657
 
+# what was the mean change across all trials for the Pycno treatment?
 pycno_change %>%
   ungroup() %>%
   summarise(mean(change))
+# mean change was positive value 0.0717 (overall increase in feeding, but unknown
+# WHEN during trials this effect is strongest)
 
-# friedman and post-hoc in one
-library(PMCMRplus)
+# run posthoc test to detect which time points were different from each other
 frdAllPairsNemenyiTest(change ~ hours | ID, data = pycno_df)
-
-# hour 3 change in consumption
-pycno_df %>%
-  filter(hours == 3) %>%
-  summarise(mean(change))
+# NONE were different in posthoc, likely b/c marginal friedman value (0.046)
 
 
 
-# no pycno present
+
+# separate out no pycno for testing
 nopycno_change <- timepoint_consumption_change %>%
   filter(pycno == 'no')
-# make into dataframe for test
+
+# make into dataframe for test (required by the friedman_test function)
 nopycno_df <- as.data.frame(nopycno_change)
-# no pycno present summary and friedman
+
+# extract common stats from the data
 nopycno_df %>%
   group_by(hours) %>%
   get_summary_stats(change, type = "common")
+
+# visualize spread of data per trial
 ggboxplot(nopycno_df, x = "hours", y = "change", add = "jitter")
+
+# run friedman test on pycno treatment
 nopycno_fried <- nopycno_df %>% 
   friedman_test(change ~ hours | ID)
 nopycno_fried
-# test effect size 
+# test was significant p = 0.00116. There was change in feeding rates within trials
+
+# test how strong the effect was with Kendall's W test (0 = no effect, 1 = huge effect)
 nopycno_df %>% 
   friedman_effsize(change ~ hours |ID)
+# effect was small X = 0.0970
 
+# what was the mean change across all trials for the Pycno treatment?
 nopycno_change %>%
   ungroup() %>%
   summarise(mean(change))
+# mean change was positive value 0.104 (overall increase in feeding, but unknown
+# WHEN during trials this effect is strongest)
 
-# friedman and post-hoc in one
-library(PMCMRplus)
+# run posthoc test to detect which time points were different from each other
 frdAllPairsNemenyiTest(change ~ hours | ID, data = nopycno_df)
-
-# hour 3 change in consumption
-nopycno_df %>%
-  filter(hours == 3) %>%
-  summarise(mean(change))
+# hour 3 was different from 4 of the 6 other trials p < 0.02
 
 
+# Visualize these results in a single figure with cumulative consumption as well
 
-
-
-
-
-
-# pycno and pycno trunc together in one figure
-
-
-# balance design by restricting to first 51 hours of trials
+# prepare to join datasets - change dataset
 change_trunc <- timepoint_consumption_change %>%
   unite(urchintime, ID, hours, sep = "_", remove = FALSE)
 
-# extract cumulative consumption at each time point per urchin to join
-
+# extract cumulative consumption at each time point per urchin to join - cumulative dataset
 urchin_cum_join <- trials2020_Q %>%
   filter(timepoint != 0) %>%
   group_by(pycno, ID) %>%
@@ -329,18 +392,20 @@ urchin_cum_join$hours <- urchin_cum_join$timepoint %>%
 urchin_cum_join <- urchin_cum_join %>%
   unite(urchintime, ID, hours, sep = "_") %>%
   ungroup() %>%
-  select(-pycno)
+  select(-pycno, -trial)
 
+# join change dataset with cumulative consumption dataset
 change_cum_all <-  change_trunc %>%
   left_join(urchin_cum_join, by = "urchintime")
+# change treatment labels for plot
 change_cum_all <- change_cum_all %>%
   mutate(pycno = case_when(pycno == "yes" ~ "Pycno present",
                            pycno == "no" ~ "Pycno not present"))
 
-library(egg) # tag_facet
 # plot of change per timepoint mean sterror, overlay with overall rate of consumption
 ggplot(change_cum_all, aes(x = hours, y = change)) +
   geom_jitter(col = 'grey', size = 3, width = 1) +
+  facet_grid(~pycno) +
   stat_summary(
     geom = "point",
     fun = "mean",
@@ -354,77 +419,177 @@ ggplot(change_cum_all, aes(x = hours, y = change)) +
   scale_x_continuous(breaks = seq(0, 60, 24)) +
   xlab("Hours") +
   geom_hline(yintercept = 0, linetype = "dashed", color = "blue") +
-  facet_grid(~pycno) +
   theme_bw() +
   theme(axis.title.y.right = element_text(margin = margin(t = 12, r = 12, b = 12, l = 12)),
         axis.title.y.left = element_text(margin = margin(t = 12, r = 12, b = 12, l = 12))) 
 
+####################
+#      ##    ###   #
+#    ##  ##     #  #
+#   #     #     #  # 
+#   #     #   ##   #
+#   #  #  #     #  #
+#    #  ##      #  #
+#     ### #  ###   #
+#                  #
+####################
 
+# Q3 : Did urchins eat a lot less/more at the beginning of the trial based on treatment? 
+#      (kind of an inversion of Q1 which dealt with the end of the trial/overall consumption)
 
-# CAN NOW TEST IF INITIAL CONSUMPTION (hour 3) were different between treatments!
-
+# Separate out the first time point (hour 3) for amount consumed across all urchins and 
+# transform kelp disk to biomass
 per_urchin_consumed_initial <- trials2020_Q %>%
   filter(timepoint == 1) %>%
   mutate(g_consumed = consumed * 0.341)
 
-# TANK NOT A SIGNIFICANT RANDOM FACTOR - REMOVED
+# Create mixed effects model to test if initial consumption was different based on treatment
+# with urchin nested within trial
 initial_lme <- lmer(g_consumed ~ pycno + (1|trial), data = per_urchin_consumed_initial)
 
-ggplot(per_urchin_consumed_initial) +
-  geom_boxplot(aes(x = trial, y = g_consumed)) +
-  geom_jitter(aes(x = trial, y = g_consumed, color = pycno), width = 0.2)
-
-t.test(g_consumed ~ pycno, data = per_urchin_consumed_initial)
-
-library(DHARMa)
+# test if assumptions of model are met
 initial_sim <- simulateResiduals(fittedModel = initial_lme, plot = F)
 plot(initial_sim)
 testDispersion(initial_sim)
-outliers(initial_sim)
-summary(initial_lme)
+# assumptions of model are not met
+
+# try a square root transformation on data
+per_urchin_consumed_initial_sqrt <- trials2020_Q %>%
+  filter(timepoint == 1) %>%
+  mutate(g_consumed = sqrt(consumed * 0.341))
+
+# Create mixed effects model to test if initial consumption was different based on treatment
+# with urchin nested within trial square root transformed data
+initial_lme <- lmer(g_consumed ~ pycno + (1|trial), data = per_urchin_consumed_initial_sqrt)
+
+# test if assumptions of model are met
+initial_sim <- simulateResiduals(fittedModel = initial_lme, plot = F)
+plot(initial_sim)
+testDispersion(initial_sim)
+# assumptions equal variance not met
+
+# visualize the data to observe unequal variances
+ggboxplot(per_urchin_consumed_initial, x = "trial", y = "g_consumed", color = "pycno", add = "jitter")
 
 
-per_urchin_consumed_initial %>%
-  group_by(pycno) %>%
-  summarise(mean_total = mean(g_consumed)) 
-# # A tibble: 2 x 2
-# pycno mean_total
-#  <chr>      <dbl>
-#  1 no         0.572
-#  2 yes        0.116
 
-# difference between pycno and no pycno total consumption
-5.67-2.86
+# PROBLEM 2:
 
-# percentage reduction in feeding
+# Ideally, I'd like to run a model that would account for all the cumulative consumption
+# and/or changes in feeding rates across trials per urchin. I've included a figure
+# that I made a while ago to illustrate what I mean, but I could not figure out any 
+# statistical test that would work because it's essentially a repeated measures mixed-
+# effects model (two-way ANOVA) with data that doesn't conform to assumptions. So far 
+# as I can figure there is no non-parametric equivalent that exists. Any thoughts
+# you have on this would be great. It would prevent a lot of the overly complex analyses
+# I've done above from being necessary (e.g.: breaking out treatment groups and not being 
+# able to compare between them.)
 
-2.81/5.67
+# here is the figure I originally made before running the stats. If you can think of a way
+# to statistically test this for things like significant differences in slope, and changes
+# in rates between time points, that would be awesome. Essentially non of the assumptions
+# for normal repeated measures are met, plus I'm missing the last two timepoints' data 
+# for the first trial. 
 
+cumulative_figure <- trials2020_Q
+cumulative_figure$hours <- cumulative_figure$timepoint %>%
+  recode(
+    '0' = 0,
+    '1' = 3,
+    '2' = 9,
+    '3' = 21,
+    '4' = 27,
+    '5' = 33,
+    '6' = 45,
+    '7' = 51,
+    '8' = 57,
+    '9' = 69
+  )
+ cumulative_figure %>%
+  unite('ID',
+      trial,
+      bin,
+      sep = "_",
+      remove = FALSE) %>%
+  group_by(pycno, ID) %>%
+  mutate(cc = cumsum(consumed) * 0.341) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  ggplot(aes(x = hours, y = cc, color = Treatment)) +
+  scale_color_viridis(discrete = TRUE,
+                      begin = 0.3,
+                      end = 0.7,
+                      option = "magma") +
+  geom_line(aes(group = ID), alpha = 0.15) +
+  geom_point(size = 2, position = "jitter", alpha = 0.15) +
+  geom_smooth(method = "lm", size = 2) +
+  scale_y_continuous(name = "Kelp consumed (g)") + 
+  theme_minimal(base_size = 15) +
+  theme(legend.position = "top")
+
+# caption: x = hours since experiment started, y = cumulative amount of kelp
+ #consumed per urchins, solid lines are a regression of feeding rate, and
+ # transparent points are individual urchins cumulative consumption color
+ # coded for treatment.
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # 2021 URCHIN MOVEMENT                                                         ####
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# differences in urchin diameter between groups
+ str(trials2021_Q)
+ 
+ # Experimental structure:
+ 
+ # To detect indirect effects of Pycnopodia on purple urchin movement over short (i.e.:
+ # 1 hour) time scales and to determine if urchins will risk feeding depending on if
+ # they're well fed or starved, I ran an experiment testing various behaviors.
+ # Urchins were split into two groups, starved and fed, and held in those conditions
+ # (food withheld or given) for 7 weeks to precondition them for the experiment. 
+ # For the actual experiment I had two arenas (for convenience, identical) that I 
+ # would place an urchin into and watch for an hour. Like the previous experiment,
+ # one of the treatments was exposure to Pycnopodia water that was plumbed from a header
+ # tank into the center of the arena. There was also a no-Pycno control treatment.
+ # The other factors in the experiment were the starvation state of the particular urchin
+ # tested (fed, starved), and the presence or absence of a kelp cue in the middle of the
+ # tank next to the outflow from the header tank. This created a fully crossed design of 
+ # Pycno (present, absent), urchnin (fed, starved), and kelp (present, absent). I would place
+ # the urchins in the tank and record their behavior every minute for an hour. The only
+ # behaviors I'm addressing here are movement (i.e.: how much time did they spend moving around
+ # versus sitting still), and how much time they spent 'interacting' with the cue 
+ # sources in the center of the tank (interacting, not interacting). For the purposes
+ # of the experiment, 'interacting' meant that the urchin had at least one tube foot 
+ # touching the kelp/kelp control, or the actual inflow from which the Pycno or control
+ # water was flowing from. 
+ #
+ # I also filmed all the trials with GoPro and used some software to extract xy coordinates
+ # set to a scale bar and caculate total distance moved by each urchin. 
+ #  
+ # The idea is that movement can be a proxy for 'escape response' and interaction with
+ # the signal (particularly in the treatments where kelp was present) can be a proxy
+ # for 'willingness to risk predation for food'. 
 
-diams_2021 <- trials2021_Q %>%
-  select(urchinID, urchinGroup, pycnoTreat, algalTreat, urchinDiam_mm) %>%
-  distinct(urchinID, urchinGroup, pycnoTreat, algalTreat, urchinDiam_mm) %>%
-  unite("overallGroup", c("urchinGroup", "pycnoTreat", "algalTreat"), 
-                              sep = "_", remove = FALSE)
+ # Primary questions:
+ 
+ # Q4
+ # Did any of the treatments change amount of time urchins spent moving around?
+ 
+ # Q5
+ # Did any of the treatments change amount of time interacting with the signal?
+ 
+ # Q6
+ # Was the total distance moved different between treatments? 
 
-# FIGURE - urchin diameters 2021
-
-diams_2021 %>%
-  ggplot(aes(x = overallGroup, y = urchinDiam_mm, fill = overallGroup)) +
-  geom_boxplot() +
-  scale_fill_viridis(discrete = TRUE)
-
-# ANOVA - urchin diameter 2021
-
-diam2021_anova <- aov(urchinDiam_mm ~ overallGroup, data = diams_2021)
-Anova(diam2021_anova, type = "III")
+ ##############################
+ 
+ # PROBLEM 3:
+ #
+ # There are immediate problems with this dataset. It is not balanced (I had to 
+ # rerun a trial b/c a GoPro wasn't turned on) so there is an extra trial for
+ # one of the treatments. In addition, since I ran it in two separate arenas,
+ # it turned out there was a 'tank effect' for the movement stats. I think
+ # this was because treatments were not even distributed between the tanks,
+ # but my stats to try to figure this out have been unclear. Any thoughts you 
+ # have here would be helpful.
 
 # moving
 
@@ -840,26 +1005,3 @@ ggpubr::ggarrange(plot_dist, plot_dist_overall,
 
 # SCRATCH PAD ####
 
-data(sweetpotato)
-model<-aov(yield~virus,data=sweetpotato)
-out <- SNK.test(mod_feeding_1,"pycno", console=TRUE, 
-                main="Yield of sweetpotato. Dealt with different virus")
-print(SNK.test(model,"virus", group=FALSE))
-# version old SNK.test()
-df<-df.residual(model)
-MSerror<-deviance(model)/df
-out <- with(sweetpotato,SNK.test(yield,virus,df,MSerror, group=TRUE))
-print(out$groups)
-
-# two way repeated measures anova of feeding
-mod_feeding_1 <- aov(cc ~ pycno * Hours + Error(ID/(pycno + Hours + pycno:Hours)), data = urchin_timeseries_lm)
-summary(mod_feeding_1)
-# mean comparison test
-edf <- df.residual(mod_feeding_1$Within)
-ems <- deviance(mod_feeding_1$Within)/edf
-SNK.test1 <- SNK.test(y = mod_feeding_1,
-                      trt = "pycno",
-                      DFerror = edf,
-                      MSerror = ems,
-                      alpha = 0.05,
-                      group = TRUE)

@@ -96,7 +96,7 @@ model_1_dat_60 <- model_1_dat %>%
   summarise(interacting = mean(interacting))
 model_1_datetank_60 <- glm(interacting ~ date + tank, family = binomial, data = model_1_dat_60)
 summary(model_1_datetank_60)
-model_1_60 <- glm(interacting ~ urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_60)
+model_1_60 <- glm(interacting ~ urchinGroup + trial + pycnoTreat*algalTreat, family = binomial, data = model_1_dat_60)
 summary(model_1_60)
 
 # is there a correlation between tank and one of the other factors?
@@ -111,7 +111,14 @@ tank_dat = table(model_1_dat_60$algalTreat, model_1_dat_60$tank)
 print(tank_dat)
 
 
-# 5 minute increments
+# 5 minute increments INTERACTION
+
+model_1_dat <- trials2021_Q
+model_1_dat <- model_1_dat %>%
+  select(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, interaction) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat) %>%
+  mutate(interacting = case_when(interaction == "ni" ~ 0,
+                                 interaction == "i" ~ 1)) 
 
 model_1_dat_5 <- model_1_dat %>%
   mutate(minutes = c(rep(5, 5), rep(10, 5), rep(15, 5), rep(20, 5), rep(25, 5), rep(30, 5), rep(35, 5), rep(40, 5), rep(45, 5), rep(50, 5), rep(55, 5), rep(60, 5))) %>%
@@ -119,7 +126,7 @@ model_1_dat_5 <- model_1_dat %>%
   summarise(interacting = mean(interacting))
 model_1_datetank_5 <- glm(interacting ~ date + tank, family = binomial, data = model_1_dat_5)
 summary(model_1_datetank_5)
-model_1_5 <- glm(interacting ~ tank + urchinGroup + pycnoTreat + algalTreat, family = binomial, data = model_1_dat_5)
+model_1_5 <- glm(interacting ~ urchinGroup + pycnoTreat + algalTreat + tank, family = binomial, data = model_1_dat_5)
 summary(model_1_5)
 
 # output to new csv for other scripts to access:
@@ -152,15 +159,16 @@ control_avg <-
   pull(avg)
 
 
-model_1_plotdat_5 %>%
+plot_interact <- model_1_plotdat_5 %>%
   ggplot(aes(y = interacting, x = Treatment, color = urchinGroup)) +
-  geom_hline(aes(yintercept = control_avg), color = "gray70", size = 0.6) +
+  geom_hline(aes(yintercept = control_avg), color = "gray70", size = 0.8, linetype = "dashed") +
   geom_jitter(position = position_jitter(seed = 227, width = 0.2), size = 2, alpha = 0.20) +
-  stat_summary(fun = mean, geom = "point", size = 5, pch = 17, position = position_jitter(seed = 227)) +
+  stat_summary(fun = mean, geom = "point", size = 6.5, shape = 21, fill = "black", position = position_jitter(seed = 227, width = 0.2)) +
+  stat_summary(fun = mean, geom = "point", size = 5, shape = 16, position = position_jitter(seed = 227, width = 0.2)) +
   scale_y_continuous(
     limits = c(-0.1, 1.1), expand = c(0.005, 0.005)) +
   coord_flip() +
-  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.8) +
+  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.9) +
   labs(color = "Urchin Group") +
   labs(y = "Proportion Time Interacting", x = NULL) +
   theme(
@@ -169,7 +177,72 @@ model_1_plotdat_5 %>%
     panel.grid = element_blank()
   ) 
   
-  
+
+
+# 5 minute increments MOVING
+
+model_1_dat <- trials2021_Q
+model_1_dat <- model_1_dat %>%
+  select(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat) %>%
+  mutate(movement = case_when(movement == "st" ~ 0,
+                                 movement == "ma" ~ 1,
+                                 movement == "mt" ~ 1,
+                                 movement == "mp" ~ 1)) 
+
+model_1_dat_5 <- model_1_dat %>%
+  mutate(minutes = c(rep(5, 5), rep(10, 5), rep(15, 5), rep(20, 5), rep(25, 5), rep(30, 5), rep(35, 5), rep(40, 5), rep(45, 5), rep(50, 5), rep(55, 5), rep(60, 5))) %>%
+  group_by(trial, date, tank, urchinGroup, pycnoTreat, algalTreat, minutes) %>%
+  summarise(movement = mean(movement))
+model_1_datetank_5 <- glm(movement ~ date + tank, family = binomial, data = model_1_dat_5)
+summary(model_1_datetank_5)
+model_1_5 <- glm(movement ~ urchinGroup + pycnoTreat + algalTreat + tank, family = binomial, data = model_1_dat_5)
+summary(model_1_5)
+
+# figure of time spent moving based on all the factors
+
+theme_set(theme_light(base_size = 18))
+
+model_1_plotdat_5 <- model_1_dat_5 %>%
+  unite(Treatment, pycnoTreat, algalTreat, sep = "/" ) %>%
+  mutate(Treatment = case_when(Treatment == "pycno/control" ~ "Pycno",
+                               Treatment == "control/nereo" ~ "Nereo",
+                               Treatment == "control/control" ~ "Control",
+                               Treatment == "pycno/nereo" ~ "Pycno/Nereo")) 
+treatMeans <- model_1_plotdat_5 %>%
+  group_by(Treatment, urchinGroup) %>%
+  summarise(treatMean = mean(movement))
+
+model_1_plotdat_5 <- model_1_plotdat_5 %>%
+  left_join(treatMeans)
+
+theme_set(theme_light(base_size = 18))
+
+control_avg <- 
+  model_1_plotdat_5 %>%
+  ungroup() %>%
+  filter(Treatment == "Control") %>%
+  summarize(avg = mean(movement)) %>%
+  pull(avg)
+
+
+plot_move <- model_1_plotdat_5 %>%
+  ggplot(aes(y = movement, x = Treatment, color = urchinGroup)) +
+  geom_hline(aes(yintercept = control_avg), color = "gray70", size = 0.6) +
+  geom_jitter(position = position_jitter(seed = 227, width = 0.2), size = 2, alpha = 0.20) +
+  stat_summary(fun = mean, geom = "point", size = 6.5, shape = 21, fill = "black", position = position_jitter(seed = 227, width = 0.2)) +
+  stat_summary(fun = mean, geom = "point", size = 5, shape = 16, position = position_jitter(seed = 227, width = 0.2)) +
+  scale_y_continuous(
+    limits = c(-0.1, 1.1), expand = c(0.005, 0.005)) +
+  coord_flip() +
+  scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8, option = "H") +
+  labs(color = "Urchin Group") +
+  labs(y = "Proportion Time Moving", x = NULL) +
+  theme(
+    axis.title = element_text(size = 16),
+    axis.text.x = element_text(size = 12),
+    panel.grid = element_blank()
+  ) 
 
 
 
