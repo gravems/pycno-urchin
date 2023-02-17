@@ -294,7 +294,7 @@ pycno_change <- timepoint_consumption_change %>%
 # make into dataframe for test (required by the friedman_test function)
 pycno_df <- as.data.frame(pycno_change)
 
-# extract common stats from the data
+# view table of 'common' stats from the data
 pycno_df %>%
   group_by(hours) %>%
   get_summary_stats(change, type = "common")
@@ -311,7 +311,7 @@ pycno_fried
 # test how strong the effect was with Kendall's W test (0 = no effect, 1 = huge effect)
 pycno_df %>% 
   friedman_effsize(change ~ hours |ID)
-# effect was small X = 0.0657
+# effect was small X = 0.0647
 
 # what was the mean change across all trials for the Pycno treatment?
 pycno_change %>%
@@ -334,7 +334,7 @@ nopycno_change <- timepoint_consumption_change %>%
 # make into dataframe for test (required by the friedman_test function)
 nopycno_df <- as.data.frame(nopycno_change)
 
-# extract common stats from the data
+# view table of 'common' stats from the data
 nopycno_df %>%
   group_by(hours) %>%
   get_summary_stats(change, type = "common")
@@ -527,7 +527,7 @@ cumulative_figure$hours <- cumulative_figure$timepoint %>%
   theme(legend.position = "top")
 
 # caption: x = hours since experiment started, y = cumulative amount of kelp
- #consumed per urchins, solid lines are a regression of feeding rate, and
+ # consumed per urchins, solid lines are a regression of feeding rate, and
  # transparent points are individual urchins cumulative consumption color
  # coded for treatment.
 
