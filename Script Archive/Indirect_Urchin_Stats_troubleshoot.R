@@ -591,16 +591,67 @@ cumulative_figure$hours <- cumulative_figure$timepoint %>%
  # but my stats to try to figure this out have been unclear. Any thoughts you 
  # have here would be helpful.
 
-# moving
+ ####################
+ #      ##    #  #  #
+ #    ##  ##  #  #  #
+ #   #     #  #  #  # 
+ #   #     #  ##### #
+ #   #  #  #     #  #
+ #    #  ##      #  #
+ #     ### #     #  #
+ #                  #
+ ####################
+ 
+ # Q4
+ # Did any of the treatments change amount of time urchins spent moving around?
 
+# select all factors to be tested and only the movement observations, calculate
+ # percentage of time (in 60 mins) each urchin spent moving.
 movement <- trials2021_Q %>%
-  dplyr::select(trial, tank, urchinGroup, pycnoTreat, algalTreat, movement) %>%
+  select(trial, tank, urchinGroup, pycnoTreat, algalTreat, movement) %>%
   filter(movement != "st") %>%
   add_column(move = 1) %>%
   group_by(trial, urchinGroup, pycnoTreat, algalTreat, move, tank) %>%
   count(move) %>%
   mutate(time_moving = n/60)
 
+
+# A linear mixed-effects model testing if urchins spent different amounts of time
+# moving based on treatment
+
+moving_lme <- lmer(n ~ pycnoTreat + algalTreat + urchinGroup + (1 | tank), data = movement)
+
+# test if assumptions of model are met
+moving_sim <- simulateResiduals(fittedModel = moving_lme, plot = F)
+plot(moving_sim)
+testDispersion(moving_lme)
+
+# Assumptions NOT MET, combined adjusted quantile test significant. HOWEVER
+# I read in this post: https://stats.stackexchange.com/questions/531601/dharma-quantile-deviations-detected
+# that since the Q-Q plot looks good, there's no need to worry about the residuals
+# versus predicted. Is this right? Does that mean it doesn't matter for any of
+# my above tests either?
+
+# proceeding on the assumption that this data is 'normal enough' to test with lmer
+
+summary(moving_lme)
+# The result indicates that there is a singificant difference between only the 
+# starved vs. fed groups in terms of time spent moving (p < 0.001)
+
+# Calculate the actual difference in time moving between starved and fed
+movement %>%
+  group_by(urchinGroup) %>%
+  summarise(mean_total = mean(n)) 
+# difference between pycno and no pycno total movement
+52-35.9
+
+# percentage reduction in feeding
+1 - 35.9/52
+# a 31% reduction in movement by starved urchins across all treatments
+
+
+# create a figure of percent of time spent moving by creating labels for each 
+# of the treatment combinations 
 movement %>%
   mutate(pycnoTreat = ifelse(pycnoTreat == 'pycno', "Pycno", "No Pycno")) %>%
   mutate(algalTreat = ifelse(algalTreat == 'nereo', "Algae", "No Algae")) %>%
@@ -626,9 +677,26 @@ movement %>%
   geom_errorbar(stat="summary", fun.data="mean_se", size = 1) +
   theme_minimal()
 
-#### Movement stats
+# caption: x axis = percent of time urchins spent moving, y axis = each of the
+# 8 possible treatment combinations, points represent mean and whiskers are
+# standard error. 
 
-summary(lmer(n ~ pycnoTreat + algalTreat + urchinGroup + (1 | tank), data = movement))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # interacting 
 
