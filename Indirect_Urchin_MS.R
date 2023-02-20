@@ -107,7 +107,7 @@ summary(diams_2020$diameter)
 # mean biomass ('before' confetti)
 confetti_weights %>%
   filter(`before-after` == "before") %>%
-  summarise(mean(weight_mg))
+  summarise(mean(weight_mg), sd(weight_mg))
 
 # > pi*((2.1/2)^2)
 # [1] 3.463606 cm^2
@@ -169,7 +169,7 @@ per_urchin_consumed_trunc %>%
 
 # FIGURE - total consumed per urchin across all trials with standard error
 per_urchin_consumed_trunc %>%
-  mutate(Treatment = ifelse(pycno == 'yes', "Pycno", "Control")) %>%
+  mutate(Treatment = ifelse(pycno == 'yes', "Pycno present", "Pycno absent")) %>%
   ggplot(aes(x = Treatment, y = cc, color = Treatment)) + 
   geom_point(col = "grey", size = 3) +
   scale_color_viridis(discrete = TRUE,
@@ -335,7 +335,7 @@ change_cum_all <-  change_trunc %>%
   left_join(urchin_cum_join, by = "urchintime")
 change_cum_all <- change_cum_all %>%
   mutate(pycno = case_when(pycno == "yes" ~ "Pycno present",
-                           pycno == "no" ~ "Pycno not present"))
+                           pycno == "no" ~ "Pycno absent"))
 
 library(egg) # tag_facet
 # plot of change per timepoint mean sterror, overlay with overall rate of consumption
@@ -526,7 +526,7 @@ trials2021_algal_consumption %>%
   mutate(eaten = eaten * 0.0985) %>%
   filter(eaten != 0) %>%
   group_by(pycnoTreat) %>%
-  summarise(mean(eaten))
+  summarise(mean(eaten), sd(eaten))
 
 
 
@@ -708,6 +708,8 @@ plot_move <- model_1_plotdat_5 %>%
   stat_summary(fun = mean, geom = "point", size = 5, shape = 16, position = position_jitter(seed = 227, width = 0.2)) +
   scale_y_continuous(
     limits = c(-0.1, 1.1), expand = c(0.005, 0.005)) +
+  scale_x_discrete(labels=c("Pycno/Nereo" = "Pycno/Kelp", "Pycno" = "Pycno",
+                              "Nereo" = "Kelp", "Control" = "Control")) +
   coord_flip() +
   scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8, option = "H") +
   labs(color = "Urchin Group") +
@@ -803,6 +805,8 @@ plot_dist <- dist_data %>%
   geom_jitter(position = position_jitter(seed = 227, width = 0.2), size = 2, alpha = 0.20) +
   stat_summary(fun = mean, geom = "point", size = 6.5, shape = 21, fill = "black", position = position_jitter(seed = 007, width = 0.2)) +
   stat_summary(fun = mean, geom = "point", size = 5, shape = 16, position = position_jitter(seed = 007, width = 0.2)) +
+  scale_x_discrete(labels=c("Pycno/Nereo" = "Pycno/Kelp", "Pycno" = "Pycno",
+                              "Nereo" = "Kelp", "Control" = "Control")) +
   coord_flip() +
   scale_color_viridis(discrete = TRUE, begin = 0.3, end = 0.8, option = "H") +
   labs(color = "Urchin Group") +
