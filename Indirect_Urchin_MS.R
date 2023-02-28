@@ -102,6 +102,9 @@ t.test(diameter ~ pycno, data = diams_2020)
 
 summary(diams_2020$diameter)
 
+# SD
+sd(diams_2020$diameter)
+
 # Kelp confetti weights controls
 
 # mean biomass ('before' confetti)
@@ -157,7 +160,7 @@ summary(feeding_lme)
 
 per_urchin_consumed_trunc %>%
   group_by(pycno) %>%
-  summarise(mean_total = mean(cc)) 
+  summarise(mean_total = mean(cc), sd_total = sd(cc)) 
 
 # difference between pycno and no pycno total consumption
 5.67-2.86
@@ -425,6 +428,9 @@ diams_2021 %>%
 
 diam2021_anova <- aov(urchinDiam_mm ~ overallGroup, data = diams_2021)
 Anova(diam2021_anova, type = "III")
+
+# SD
+sd(diams_2021$urchinDiam_mm)
 
 # moving
 
